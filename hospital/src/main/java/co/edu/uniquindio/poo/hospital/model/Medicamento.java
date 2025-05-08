@@ -1,14 +1,18 @@
 package co.edu.uniquindio.poo.hospital.model;
 
+import java.util.LinkedList;
+
 public class Medicamento {
     private String id;
     private String nombreMedicamento;
     private String descripcion;
+    private LinkedList<PrescripcionMedica>listaPrescripcionMedicas;
 
     public Medicamento(String id,String nombreMedicamento,String descripcion){
         this.id=id;
         this.nombreMedicamento=nombreMedicamento;
         this.descripcion=descripcion;
+        listaPrescripcionMedicas=new LinkedList<>();
     }
 
     public String getId() {
@@ -33,5 +37,13 @@ public class Medicamento {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public LinkedList<PrescripcionMedica> getListaPrescripcionMedicas() {
+        return listaPrescripcionMedicas;
+    }
+
+    public void setListaPrescripcionMedicas(LinkedList<PrescripcionMedica> listaPrescripcionMedicas) {
+        this.listaPrescripcionMedicas = listaPrescripcionMedicas;
     }
 }

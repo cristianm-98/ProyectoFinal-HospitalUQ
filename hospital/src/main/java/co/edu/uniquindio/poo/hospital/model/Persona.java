@@ -6,13 +6,15 @@ public class Persona {
     protected int edad;
     protected String telefono;
     protected String direccion;
+    protected Usuario theUsuario;
 
-    public Persona(String id, String nombre, int edad, String telefono,String direccion){
+    public Persona(String id, String nombre, int edad, String telefono,String direccion,Usuario theUsusario){
         this.id=id;
         this.nombre=nombre;
         this.edad=edad;
         this.telefono=telefono;
         this.direccion=direccion;
+        this.theUsuario=theUsusario;
 
     }
 
@@ -54,5 +56,13 @@ public class Persona {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public Usuario getTheUsuario() {
+        return theUsuario;
+    }
+
+    public void setTheUsuario(Usuario theUsuario) {
+        this.theUsuario = theUsuario;
     }
 }

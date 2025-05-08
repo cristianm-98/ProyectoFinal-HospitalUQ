@@ -4,8 +4,8 @@ public class Administrador extends Persona {
     private String cargo;
     private String areaResponsable;
 
-    public Administrador(String id, String nombre, int edad, String telefono,String direccion,String cargo,String areaResponsable){
-        super(id,nombre,edad,telefono,direccion);
+    public Administrador(String id, String nombre, int edad, String telefono,String direccion,Usuario theUsusario,String cargo,String areaResponsable){
+        super(id,nombre,edad,telefono,direccion,theUsusario);
         this.cargo=cargo;
         this.areaResponsable=areaResponsable;
     }

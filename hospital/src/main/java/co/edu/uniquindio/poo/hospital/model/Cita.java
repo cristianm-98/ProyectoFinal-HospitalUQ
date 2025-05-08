@@ -3,12 +3,14 @@ package co.edu.uniquindio.poo.hospital.model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+
 public class Cita {
     private String id;
     private LocalDate dia;
     private LocalTime horaInicio;
     private LocalTime horaFinal;
     private boolean estado;
+
 
     public Cita(String id, LocalDate dia, LocalTime horaInicio, LocalTime horaFinal, boolean estado){
         this.id=id;
