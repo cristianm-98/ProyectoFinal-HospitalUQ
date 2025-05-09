@@ -8,19 +8,22 @@ public class HistorialMedico {
     private LocalDate fecha;
     private String descripcion;
     private String diagnostico;
-    private LinkedList<Examen>listaExamenes;
-    private LinkedList<Tratamiento>listaTratamientos;
-    private LinkedList<PrescripcionMedica>listaPrescripcionMedicas;
+    private Paciente paciente;
+    private LinkedList<Examen> listaExamenes;
+    private LinkedList<Tratamiento> listaTratamientos;
+    private LinkedList<PrescripcionMedica> listaPrescripcionMedicas;
 
 
-    public HistorialMedico(String id, LocalDate fecha, String descripcion,String diagnostico){
-        this.id=id;
-        this.fecha=fecha;
-        this.descripcion=descripcion;
-        this.diagnostico=diagnostico;
-        listaExamenes=new LinkedList<>();
-        listaTratamientos=new LinkedList<>();
-        listaPrescripcionMedicas=new LinkedList<>();
+
+    public HistorialMedico(String id, LocalDate fecha, String descripcion, String diagnostico, Paciente paciente) {
+        this.id = id;
+        this.fecha = fecha;
+        this.descripcion = descripcion;
+        this.diagnostico = diagnostico;
+        this.paciente=paciente;
+        listaExamenes = new LinkedList<>();
+        listaTratamientos = new LinkedList<>();
+        listaPrescripcionMedicas = new LinkedList<>();
     }
 
     public String getId() {
@@ -77,6 +80,14 @@ public class HistorialMedico {
 
     public void setListaPrescripcionMedicas(LinkedList<PrescripcionMedica> listaPrescripcionMedicas) {
         this.listaPrescripcionMedicas = listaPrescripcionMedicas;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 }
 

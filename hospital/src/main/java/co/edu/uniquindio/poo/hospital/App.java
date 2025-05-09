@@ -2,6 +2,11 @@ package co.edu.uniquindio.poo.hospital;
 import co.edu.uniquindio.poo.hospital.model.*;
 
 
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+
 public class App {
     public static void app (String[]args){
 
@@ -20,6 +25,12 @@ public class App {
 
         Usuario usuario3=new Usuario("anderprada","7412",persona3,TipoUsuario.ADMINISTRADOR);
         persona3.setTheUsuario(usuario3);
+
+        Cita cita1=new Cita("001", LocalDate.of(2002,12,10),LocalTime.now(),LocalTime.now(),false);
+
+        HistorialMedico historialMedico1=new HistorialMedico("001",LocalDate.of(2025,05,8),"Paciente de 25 años con antecedentes de dolor en la pierna" +
+                "mas de 2 dias","dolor en parte superior",persona1);
+
 
 
 
