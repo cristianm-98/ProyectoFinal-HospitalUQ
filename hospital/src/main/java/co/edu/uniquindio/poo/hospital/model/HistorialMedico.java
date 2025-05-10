@@ -89,5 +89,131 @@ public class HistorialMedico {
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
+
+    /// Examen CRUD
+
+
+    public boolean agregarExamen(Examen examen) {
+        this.listaExamenes.add(examen);
+        return true;
+    }
+
+    public boolean eliminarExamen(Examen examen) {
+        String id = examen.getId();
+        for (Examen examen_local : this.listaExamenes){
+            if (examen_local.getId().equals(id)){
+                this.listaExamenes.remove(examen_local);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean modificarExamen(Examen examen) {
+        String id = examen.getId();
+        for (Examen examen_local: this.listaExamenes){
+            if (examen_local.getId().equals(id)){
+                this.listaExamenes.remove(examen_local);
+                this.listaExamenes.add(examen);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public Examen consultarExamen(String id) {
+        for (Examen examen_local : this.listaExamenes){
+            if (examen_local.getId().equals(id)){
+                return examen_local;
+            }
+        }
+        return null;
+    }
+
+    /// Tratamiento CRUD
+
+
+    public boolean agregarTratamiento(Tratamiento tratamiento) {
+        this.listaTratamientos.add(tratamiento);
+        return true;
+    }
+
+    public boolean eliminarTratamiento(Tratamiento tratamiento) {
+        String id = tratamiento.getId();
+        for (Tratamiento tratamiento_local : this.listaTratamientos){
+            if (tratamiento_local.getId().equals(id)){
+                this.listaTratamientos.remove(tratamiento_local);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean modificarTratamiento(Tratamiento tratamiento) {
+        String id = tratamiento.getId();
+        for (Tratamiento tratamiento_local : this.listaTratamientos){
+            if (tratamiento_local.getId().equals(id)){
+                this.listaTratamientos.remove(tratamiento_local);
+                this.listaTratamientos.add(tratamiento);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public Tratamiento consultarTratamiento(String id) {
+        for (Tratamiento tratamiento_local : this.listaTratamientos){
+            if (tratamiento_local.getId().equals(id)){
+                return tratamiento_local;
+            }
+        }
+        return null;
+    }
+
+    /// PrescripcionMedica CRUD
+
+
+    public boolean agregarPrescripcion(PrescripcionMedica prescripcionMedica) {
+        this.listaPrescripcionMedicas.add(prescripcionMedica);
+        return true;
+    }
+
+    public boolean eliminarPrescripcion(PrescripcionMedica prescripcionMedica) {
+        String id = prescripcionMedica.getId();
+        for (PrescripcionMedica prescripcionMedica_local : this.listaPrescripcionMedicas){
+            if (prescripcionMedica_local.getId().equals(id)){
+                this.listaPrescripcionMedicas.remove(prescripcionMedica_local);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean modificarPrescripcion(PrescripcionMedica prescripcionMedica) {
+        String id = prescripcionMedica.getId();
+        for (PrescripcionMedica prescripcionMedica_local : this.listaPrescripcionMedicas){
+            if (prescripcionMedica_local.getId().equals(id)){
+                this.listaPrescripcionMedicas.remove(prescripcionMedica_local);
+                this.listaPrescripcionMedicas.add(prescripcionMedica);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public PrescripcionMedica consultarPrescripcion(String id) {
+        for (PrescripcionMedica prescripcionMedica_local : this.listaPrescripcionMedicas){
+            if (prescripcionMedica_local.getId().equals(id)){
+                return prescripcionMedica_local;
+            }
+        }
+        return null;
+    }
 }
 
