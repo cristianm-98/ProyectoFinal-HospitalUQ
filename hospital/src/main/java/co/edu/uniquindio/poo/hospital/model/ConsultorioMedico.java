@@ -1,8 +1,10 @@
 package co.edu.uniquindio.poo.hospital.model;
 
+import co.edu.uniquindio.poo.hospital.model.Interfaces.ICitaCRUD;
+
 import java.util.LinkedList;
 
-public class ConsultorioMedico {
+public class ConsultorioMedico implements ICitaCRUD {
     private String id;
     private String nombre;
     private boolean disponible;
@@ -55,5 +57,45 @@ public class ConsultorioMedico {
 
     public void setListaCitas(LinkedList<Cita> listaCitas) {
         this.listaCitas = listaCitas;
+    }
+
+    /// Cita CRUD
+    @Override
+    public boolean agregarCita(Cita cita) {
+        this.listaCitas.add(cita);
+        return true;
+    }
+    @Override
+    public boolean eliminarCita(Cita cita) {
+        String id = cita.getId();
+        for (Cita cita_local : this.listaCitas){
+            if (cita_local.getId().equals(id)){
+                this.listaCitas.remove(cita_local);
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
+    public boolean modificarCita(Cita cita) {
+        String id = cita.getId();
+        for (Cita cita_local : this.listaCitas){
+            if (cita_local.getId().equals(id)){
+                this.listaCitas.remove(cita_local);
+                this.listaCitas.add(cita);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public Cita consultarCita(String id) {
+        for (Cita cita_local: this.listaCitas){
+            if (cita_local.getId().equals(id)){
+                return cita_local;
+            }
+        }
+        return null;
     }
 }

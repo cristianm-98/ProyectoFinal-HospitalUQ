@@ -1,9 +1,11 @@
 package co.edu.uniquindio.poo.hospital.model;
 
-import javax.swing.text.AsyncBoxView;
+import co.edu.uniquindio.poo.hospital.model.Interfaces.IHistorialCRUD;
+import co.edu.uniquindio.poo.hospital.model.Interfaces.INotificacionCRUD;
+
 import java.util.LinkedList;
 
-public class Medico extends Persona {
+public class Medico extends Persona implements IHistorialCRUD, INotificacionCRUD {
     private String licencia;
     private int anioExperiencia;
     private LinkedList<HistorialMedico>listaHistorialMedicos;
@@ -78,5 +80,88 @@ public class Medico extends Persona {
 
     public void setEspecialidad(Especialidad especialidad) {
         this.especialidad = especialidad;
+    }
+
+    /// Notificaciones CRUD
+    @Override
+    public boolean agregarNotificacion(Notificacion notificacion) {
+        this.listaNotificaciones.add(notificacion);
+        return true;
+    }
+    @Override
+    public boolean eliminarNotificacion(Notificacion notificacion) {
+        String id = notificacion.getId();
+        for (Notificacion notificacion_local : this.listaNotificaciones){
+            if (notificacion_local.getId().equals(id)){
+                this.listaNotificaciones.remove(notificacion_local);
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
+    public boolean modificarNotificacion(Notificacion notificacion) {
+        String id = notificacion.getId();
+        for (Notificacion notificacion_local : this.listaNotificaciones){
+            if (notificacion_local.getId().equals(id)){
+                this.listaNotificaciones.remove(notificacion_local);
+                this.listaNotificaciones.add(notificacion);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public Notificacion consultarNotificacion(String id) {
+        for (Notificacion notificacion_local: this.listaNotificaciones){
+            if (notificacion_local.getId().equals(id)){
+                return notificacion_local;
+            }
+        }
+        return null;
+    }
+
+    /// Historial CRUD
+
+    @Override
+    public boolean agregarHistorial(HistorialMedico historial) {
+        this.listaHistorialMedicos.add(historial);
+        return true;
+    }
+
+    @Override
+    public boolean eliminarHistorial(HistorialMedico historial) {
+        String id = historial.getId();
+        for (HistorialMedico historial_local: this.listaHistorialMedicos){
+            if (historial_local.getId().equals(id)){
+                this.listaHistorialMedicos.remove(historial_local);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean modificarHistorial(HistorialMedico historial) {
+        String id = historial.getId();
+        for (HistorialMedico historial_local: this.listaHistorialMedicos){
+            if (historial_local.getId().equals(id)){
+                this.listaHistorialMedicos.remove(historial_local);
+                this.listaHistorialMedicos.add(historial);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public HistorialMedico consultarHistorial(String id) {
+        for (HistorialMedico historial_local: this.listaHistorialMedicos){
+            if (historial_local.getId().equals(id)){
+                return historial_local;
+            }
+        }
+        return null;
     }
 }
