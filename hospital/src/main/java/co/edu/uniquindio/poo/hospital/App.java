@@ -29,7 +29,7 @@ public class App {
         Cita cita1=new Cita("001", LocalDate.of(2002,12,10),LocalTime.now(),LocalTime.now(),false);
 
         HistorialMedico historialMedico1=new HistorialMedico("001",LocalDate.of(2025,05,8),"Paciente de 25 años con antecedentes de dolor en la pierna" +
-                "mas de 2 dias","dolor en parte superior",persona1);
+                "mas de 2 dias","dolor en parte superior", (Paciente) persona1);
 
 
 

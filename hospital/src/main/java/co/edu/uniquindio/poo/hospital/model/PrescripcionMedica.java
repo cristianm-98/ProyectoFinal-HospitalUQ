@@ -4,11 +4,11 @@ import java.util.LinkedList;
 
 public class PrescripcionMedica {
     private String id;
-    private LinkedList<Medicamento>listaMedicamentos;
+    private Medicamento theMedicamentos;
 
-    public PrescripcionMedica(String id) {
+    public PrescripcionMedica(String id, Medicamento theMedicamentos) {
         this.id=id;
-        listaMedicamentos=new LinkedList<>();
+        this.theMedicamentos = theMedicamentos;
     }
 
     public String getId() {
@@ -19,11 +19,11 @@ public class PrescripcionMedica {
         this.id = id;
     }
 
-    public LinkedList<Medicamento> getListaMedicamentos() {
-        return listaMedicamentos;
+    public Medicamento getTheMedicamentos() {
+        return theMedicamentos;
     }
 
-    public void setListaMedicamentos(LinkedList<Medicamento> listaMedicamentos) {
-        this.listaMedicamentos = listaMedicamentos;
+    public void setTheMedicamentos(Medicamento theMedicamentos) {
+        this.theMedicamentos = theMedicamentos;
     }
 }

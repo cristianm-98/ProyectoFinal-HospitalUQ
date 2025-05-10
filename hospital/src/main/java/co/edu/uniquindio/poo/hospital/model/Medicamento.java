@@ -46,4 +46,46 @@ public class Medicamento {
     public void setListaPrescripcionMedicas(LinkedList<PrescripcionMedica> listaPrescripcionMedicas) {
         this.listaPrescripcionMedicas = listaPrescripcionMedicas;
     }
+
+    /// PrescripcionMedica CRUD
+
+
+    public boolean agregarPrescripcion(PrescripcionMedica prescripcionMedica) {
+        this.listaPrescripcionMedicas.add(prescripcionMedica);
+        return true;
+    }
+
+    public boolean eliminarPrescripcion(PrescripcionMedica prescripcionMedica) {
+        String id = prescripcionMedica.getId();
+        for (PrescripcionMedica prescripcionMedica_local : this.listaPrescripcionMedicas){
+            if (prescripcionMedica_local.getId().equals(id)){
+                this.listaPrescripcionMedicas.remove(prescripcionMedica_local);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean modificarPrescripcion(PrescripcionMedica prescripcionMedica) {
+        String id = prescripcionMedica.getId();
+        for (PrescripcionMedica prescripcionMedica_local : this.listaPrescripcionMedicas){
+            if (prescripcionMedica_local.getId().equals(id)){
+                this.listaPrescripcionMedicas.remove(prescripcionMedica_local);
+                this.listaPrescripcionMedicas.add(prescripcionMedica);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public PrescripcionMedica consultarPrescripcion(String id) {
+        for (PrescripcionMedica prescripcionMedica_local : this.listaPrescripcionMedicas){
+            if (prescripcionMedica_local.getId().equals(id)){
+                return prescripcionMedica_local;
+            }
+        }
+        return null;
+    }
 }

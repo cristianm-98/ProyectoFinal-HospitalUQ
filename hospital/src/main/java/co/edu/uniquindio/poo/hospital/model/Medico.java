@@ -164,4 +164,46 @@ public class Medico extends Persona implements IHistorialCRUD, INotificacionCRUD
         }
         return null;
     }
+
+    /// Horario Atencion CRUD
+
+
+    public boolean agregarHorarioAtencion(HorarioAtencion horario) {
+        this.listaHorarioAtenciones.add(horario);
+        return true;
+    }
+
+    public boolean eliminarHorarioAtencion(HorarioAtencion horario) {
+        String id = horario.getId();
+        for (HorarioAtencion horario_local: this.listaHorarioAtenciones){
+            if (horario_local.getId().equals(id)){
+                this.listaHorarioAtenciones.remove(horario_local);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean modificarHorarioAtencion(HorarioAtencion horario) {
+        String id = horario.getId();
+        for (HorarioAtencion horario_local: this.listaHorarioAtenciones){
+            if (horario_local.getId().equals(id)){
+                this.listaHorarioAtenciones.remove(horario_local);
+                this.listaHorarioAtenciones.add(horario);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public HorarioAtencion consultarHorarioAtencion(String id) {
+        for (HorarioAtencion horario_local: this.listaHorarioAtenciones){
+            if (horario_local.getId().equals(id)){
+                return horario_local;
+            }
+        }
+        return null;
+    }
 }
