@@ -1,15 +1,16 @@
 package co.edu.uniquindio.poo.hospital.model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Notificacion {
     private String id;
-    private LocalDate fechaEnvio;
+    private LocalTime fechaEnvio;
     private String mensaje;
     private boolean leido;
     Persona destinatario;
 
-    public Notificacion(String id, LocalDate fechaEnvio, String mensaje, boolean leido, Persona destinatario){
+    public Notificacion(String id, LocalTime fechaEnvio, String mensaje, boolean leido, Persona destinatario){
         this.id=id;
         this.fechaEnvio=fechaEnvio;
         this.mensaje=mensaje;
@@ -25,11 +26,11 @@ public class Notificacion {
         this.id = id;
     }
 
-    public LocalDate getFechaEnvio() {
+    public LocalTime getFechaEnvio() {
         return fechaEnvio;
     }
 
-    public void setFechaEnvio(LocalDate fechaEnvio) {
+    public void setFechaEnvio(LocalTime fechaEnvio) {
         this.fechaEnvio = fechaEnvio;
     }
 

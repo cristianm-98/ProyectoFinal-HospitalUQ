@@ -8,22 +8,24 @@ public class HistorialMedico {
     private LocalDate fecha;
     private String descripcion;
     private String diagnostico;
-    private Paciente paciente;
+    private Paciente thePaciente;
+    private Medico theMedico;
     private LinkedList<Examen> listaExamenes;
     private LinkedList<Tratamiento> listaTratamientos;
     private LinkedList<PrescripcionMedica> listaPrescripcionMedicas;
 
 
 
-    public HistorialMedico(String id, LocalDate fecha, String descripcion, String diagnostico, Paciente paciente) {
+    public HistorialMedico(String id, LocalDate fecha, String descripcion, String diagnostico, Paciente thePaciente, Medico theMedico) {
         this.id = id;
         this.fecha = fecha;
         this.descripcion = descripcion;
         this.diagnostico = diagnostico;
-        this.paciente=paciente;
-        listaExamenes = new LinkedList<>();
-        listaTratamientos = new LinkedList<>();
-        listaPrescripcionMedicas = new LinkedList<>();
+        this.thePaciente = thePaciente;
+        this.theMedico = theMedico;
+        this.listaExamenes = new LinkedList<>();
+        this.listaTratamientos = new LinkedList<>();
+        this.listaPrescripcionMedicas = new LinkedList<>();
     }
 
     public String getId() {
@@ -82,14 +84,20 @@ public class HistorialMedico {
         this.listaPrescripcionMedicas = listaPrescripcionMedicas;
     }
 
-    public Paciente getPaciente() {
-        return paciente;
+    public Paciente getThePaciente() {
+        return thePaciente;
     }
 
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
+    public void setThePaciente(Paciente thePaciente) {
+        this.thePaciente = thePaciente;
     }
 
+    public Medico getTheMedico() {
+        return theMedico;
+    }
+    public void setTheMedico(Medico theMedico) {
+        this.theMedico = theMedico;
+    }
     /// Examen CRUD
 
 
