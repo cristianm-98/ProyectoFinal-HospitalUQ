@@ -206,4 +206,42 @@ public class Medico extends Persona implements IHistorialCRUD, INotificacionCRUD
         }
         return null;
     }
+
+    /// CRUD cita
+
+    public boolean agregarCita(Cita cita) {
+        this.listaCitas.add(cita);
+        return true;
+    }
+
+    public boolean eliminarCita(Cita cita) {
+        String id = cita.getId();
+        for (Cita cita_local : this.listaCitas){
+            if (cita_local.getId().equals(id)){
+                this.listaCitas.remove(cita_local);
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean modificarCita(Cita cita) {
+        String id = cita.getId();
+        for (Cita cita_local : this.listaCitas){
+            if (cita_local.getId().equals(id)){
+                this.listaCitas.remove(cita_local);
+                this.listaCitas.add(cita);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Cita consultarCita(String id) {
+        for (Cita cita_local: this.listaCitas){
+            if (cita_local.getId().equals(id)){
+                return cita_local;
+            }
+        }
+        return null;
+    }
 }

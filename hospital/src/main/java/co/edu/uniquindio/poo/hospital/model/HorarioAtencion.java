@@ -5,11 +5,11 @@ import java.time.LocalTime;
 
 public class HorarioAtencion {
     private String id;
-    private LocalDate dia;
+    private String dia;
     private LocalTime horaInicio;
     private LocalTime horaFinal;
 
-    public HorarioAtencion(String id,LocalDate dia,LocalTime horaInicio, LocalTime horaFinal){
+    public HorarioAtencion(String id,String dia,LocalTime horaInicio, LocalTime horaFinal){
         this.id=id;
         this.dia=dia;
         this.horaInicio=horaInicio;
@@ -24,11 +24,11 @@ public class HorarioAtencion {
         this.id = id;
     }
 
-    public LocalDate getDia() {
+    public String getDia() {
         return dia;
     }
 
-    public void setDia(LocalDate dia) {
+    public void setDia(String dia) {
         this.dia = dia;
     }
 
