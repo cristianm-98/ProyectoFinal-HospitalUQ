@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo.hospital.model;
 
+import co.edu.uniquindio.poo.hospital.App;
+
 import java.util.LinkedList;
 
 public class Hospital {
@@ -11,6 +13,11 @@ public class Hospital {
     private LinkedList<Administrador>listaAdministradores;
     private LinkedList<ConsultorioMedico>listaConsultorioMedicos;
 
+    private App app;
+
+    public void setApp(App app) {
+        this.app = app;
+    }
 
     public Hospital(String nit,String nombre){
         this.nit=nit;
