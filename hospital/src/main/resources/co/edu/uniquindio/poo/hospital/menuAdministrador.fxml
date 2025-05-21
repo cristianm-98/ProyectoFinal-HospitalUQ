@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="380.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.MenuAdministradorViewController">
+   <children>
+      <Pane prefHeight="380.0" prefWidth="575.0">
+         <children>
+            <ImageView fitHeight="380.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="236.0" layoutY="29.0" text="MENU ADMINISTRADOR">
+               <font>
+                  <Font name="System Bold Italic" size="27.0" />
+               </font>
+            </Label>
+            <Separator layoutX="233.0" layoutY="78.0" prefHeight="11.0" prefWidth="320.0" />
+            <Button fx:id="btnGestionarMedico" layoutX="230.0" layoutY="101.0" mnemonicParsing="false" onAction="#onGestionarMedico" text="Gestionar Medico">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnGestionarPaciente" layoutX="230.0" layoutY="144.0" mnemonicParsing="false" onAction="#onGestionarPaciente" text="Gestionar Paciente">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnGestionarSalaHorarios" layoutX="230.0" layoutY="185.0" mnemonicParsing="false" onAction="#onGestionarSalaHorarios" text="Gestionar Salas y Horarios">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAsignarPaciente" layoutX="230.0" layoutY="223.0" mnemonicParsing="false" onAction="#onAsignarPaciente" text="Asignar Paciente">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnReporte" layoutX="230.0" layoutY="262.0" mnemonicParsing="false" onAction="#onReporte" text="Ver Reporte">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Separator layoutX="233.0" layoutY="305.0" prefHeight="11.0" prefWidth="320.0" />
+            <Button fx:id="btnCerrarSesion" layoutX="274.0" layoutY="330.0" mnemonicParsing="false" onAction="#onCerrarSesion" prefHeight="30.0" prefWidth="266.0" text="Cerrar Sesion">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <ImageView fitHeight="163.0" fitWidth="171.0" layoutX="409.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagen/Admin.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

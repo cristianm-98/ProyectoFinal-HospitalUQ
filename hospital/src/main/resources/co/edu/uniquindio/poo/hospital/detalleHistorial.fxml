@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="652.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.DetalleHistorialViewController">
+   <children>
+      <Pane prefHeight="663.0" prefWidth="510.0">
+         <children>
+            <Label layoutX="74.0" layoutY="13.0" text="DETALLE DE HISTORIAL MEDICO">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbIdHistorial" layoutX="39.0" layoutY="69.0" text="ID del historial">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbFechaHistorial" layoutX="186.0" layoutY="69.0" text="Fecha del historial">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbDiagnostico" layoutX="348.0" layoutY="69.0" text="Diagnostico General">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtDescripcion" editable="false" layoutX="14.0" layoutY="116.0" prefHeight="59.0" prefWidth="484.0" />
+            <Separator layoutX="14.0" layoutY="46.0" prefHeight="12.0" prefWidth="484.0" />
+            <TableView fx:id="tbExamenes" layoutX="12.0" layoutY="220.0" prefHeight="110.0" prefWidth="484.0">
+              <columns>
+                <TableColumn fx:id="columIdExamen" prefWidth="84.0" text="Id" />
+                <TableColumn fx:id="columNombreExamen" prefWidth="156.0" text="Nombre Examen" />
+                  <TableColumn fx:id="columDescripcionExamen" prefWidth="237.0" text="Descripción" />
+              </columns>
+            </TableView>
+            <TableView fx:id="tbTratamientos" layoutX="14.0" layoutY="371.0" prefHeight="100.0" prefWidth="484.0">
+              <columns>
+                <TableColumn fx:id="columIdTratamiento" prefWidth="82.0" text="Id" />
+                <TableColumn fx:id="columDescripcionTratamiento" prefWidth="300.0" text="Descripción" />
+              </columns>
+            </TableView>
+            <TableView fx:id="tbPrescripcionMedicas" layoutX="14.0" layoutY="511.0" prefHeight="100.0" prefWidth="484.0">
+              <columns>
+                <TableColumn fx:id="columIdPrescripcion" prefWidth="85.0" text="Id" />
+                <TableColumn fx:id="columMedicamentos" prefWidth="291.0" text="Medicamentos" />
+              </columns>
+            </TableView>
+            <Separator layoutX="14.0" layoutY="107.0" prefHeight="12.0" prefWidth="484.0" />
+            <Separator layoutX="14.0" layoutY="182.0" prefHeight="12.0" prefWidth="484.0" />
+            <Separator layoutX="14.0" layoutY="334.0" prefHeight="12.0" prefWidth="484.0" />
+            <Separator layoutX="14.0" layoutY="474.0" prefHeight="12.0" prefWidth="484.0" />
+            <Label layoutX="212.0" layoutY="188.0" text="Examenes">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="342.0" text="Tratamientos">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="174.0" layoutY="484.0" text="Prescripcion Medica">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutX="14.0" layoutY="615.0" prefHeight="12.0" prefWidth="484.0" />
+            <Button fx:id="btnCerrar" layoutX="230.0" layoutY="628.0" mnemonicParsing="false" onAction="#onCerrar" text="Cerrar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

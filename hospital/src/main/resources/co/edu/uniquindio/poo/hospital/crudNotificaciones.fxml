@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="295.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.NotificacionViewController">
+   <children>
+      <Pane prefHeight="322.0" prefWidth="634.0">
+         <children>
+            <Label layoutX="297.0" layoutY="16.0" text="NOTIFICACIONES">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="322.0" fitWidth="185.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tbNotificaciones" layoutX="191.0" layoutY="62.0" prefHeight="200.0" prefWidth="432.0">
+              <columns>
+                <TableColumn fx:id="columFecha" prefWidth="83.0" text="Fecha" />
+                <TableColumn fx:id="columMensaje" prefWidth="296.0" text="Mesaje" />
+                  <TableColumn fx:id="columLeido" prefWidth="47.0" text="Leido" />
+              </columns>
+            </TableView>
+            <Separator layoutX="191.0" layoutY="48.0" prefHeight="12.0" prefWidth="432.0" />
+            <Button fx:id="btnMarcarLeido" layoutX="292.0" layoutY="278.0" mnemonicParsing="false" onAction="#onMarcarLeido" text="Marcar Como Leido">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="446.0" layoutY="278.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Separator layoutX="192.0" layoutY="266.0" prefHeight="12.0" prefWidth="432.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

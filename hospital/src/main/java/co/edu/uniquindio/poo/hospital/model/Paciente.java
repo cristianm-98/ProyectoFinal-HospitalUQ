@@ -52,6 +52,7 @@ public class Paciente extends Persona implements IHistorialCRUD, INotificacionCR
     public void setListahistorialMedico(LinkedList<HistorialMedico> listahistorialMedico) {
         this.listahistorialMedico = listahistorialMedico;
     }
+
     /// Cita CRUD
     @Override
     public boolean agregarCita(Cita cita) {

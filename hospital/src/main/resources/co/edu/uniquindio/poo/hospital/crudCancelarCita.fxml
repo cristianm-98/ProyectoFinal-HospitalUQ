@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="323.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.CancelarCitaViewController">
+   <children>
+      <Pane prefHeight="322.0" prefWidth="665.0">
+         <children>
+            <ImageView fitHeight="323.0" fitWidth="190.0" layoutY="-1.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="279.0" layoutY="14.0" text="VER / CANCELAR CITA">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="197.0" layoutY="50.0" prefHeight="13.0" prefWidth="461.0" />
+            <TableView fx:id="tblCitas" layoutX="197.0" layoutY="66.0" prefHeight="199.0" prefWidth="461.0">
+              <columns>
+                <TableColumn fx:id="columId" prefWidth="58.39996337890625" text="Id" />
+                <TableColumn fx:id="columDia" prefWidth="79.20001220703125" text="Dia" />
+                  <TableColumn fx:id="columHoraInicio" prefWidth="115.20001220703125" text="Hora Inicio" />
+                  <TableColumn fx:id="columHoraFinal" prefWidth="105.60000610351562" text="Hora Final " />
+                  <TableColumn fx:id="columEstado" prefWidth="81.60003662109375" text="Estado" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnCancelarCita" layoutX="277.0" layoutY="284.0" mnemonicParsing="false" onAction="#onCancelarCita" text="Cancelar  Cita">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Separator layoutX="200.0" layoutY="271.0" prefHeight="13.0" prefWidth="461.0" />
+            <Button fx:id="btnLimpiar" layoutX="397.0" layoutY="284.0" mnemonicParsing="false" onAction="#onLimpiar" text="Limpiar">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="478.0" layoutY="284.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

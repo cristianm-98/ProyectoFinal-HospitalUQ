@@ -1,25 +1,32 @@
 package co.edu.uniquindio.poo.hospital.model;
 
+import co.edu.uniquindio.poo.hospital.App;
+
 import java.util.LinkedList;
 
 public class Hospital {
     private String nit;
     private String nombre;
-    private LinkedList<Persona>listaPersonas;
-    private LinkedList<Paciente>listaPacientes;
-    private LinkedList<Medico>listaMedicos;
-    private LinkedList<Administrador>listaAdministradores;
-    private LinkedList<ConsultorioMedico>listaConsultorioMedicos;
+    private LinkedList<Persona> listaPersonas;
+    private LinkedList<Paciente> listaPacientes;
+    private LinkedList<Medico> listaMedicos;
+    private LinkedList<Administrador> listaAdministradores;
+    private LinkedList<ConsultorioMedico> listaConsultorioMedicos;
 
+    private App app;
 
-    public Hospital(String nit,String nombre){
-        this.nit=nit;
-        this.nombre=nombre;
+    public void setApp(App app) {
+        this.app = app;
+    }
+
+    public Hospital(String nit, String nombre) {
+        this.nit = nit;
+        this.nombre = nombre;
         listaPersonas = new LinkedList<>();
-        listaPacientes=new LinkedList<>();
-        listaMedicos=new LinkedList<>();
-        listaAdministradores=new LinkedList<>();
-        listaConsultorioMedicos=new LinkedList<>();
+        listaPacientes = new LinkedList<>();
+        listaMedicos = new LinkedList<>();
+        listaAdministradores = new LinkedList<>();
+        listaConsultorioMedicos = new LinkedList<>();
     }
 
     public String getNit() {
@@ -78,4 +85,54 @@ public class Hospital {
         this.listaConsultorioMedicos = listaConsultorioMedicos;
     }
 
+    public Usuario buscarUsuario(String nombreUsuario) {
+        for (Persona persona : listaPersonas) {
+            if (persona.getTheUsuario().getUsuario().equals(nombreUsuario)) {
+                return persona.getTheUsuario();
+            }
+        }
+        return null;
+    }
+
+    //Crud
+    public boolean verificarPersona(String id) {
+        boolean centinela = false;
+        for (Persona persona : listaPersonas) {
+            if (persona.getId().equals(id)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+    public boolean agregarPersona(Persona persona) {
+        boolean centinela = false;
+        if (!verificarPersona(persona.getId())) {
+            listaPersonas.add(persona);
+            centinela = true;
+        }
+        return centinela;
+    }
+    public boolean eliminarPaciente(String id){
+        return listaPacientes.removeIf(paciente -> paciente.getId().equals(id));
+    }
+    
+
+    public boolean actualizarPaciente(String id, Paciente actualizado) {
+        boolean centinela = false;
+        for (Paciente paciente : listaPacientes) {
+            if (paciente.getId().equals(id)) {
+                paciente.setId(actualizado.getId());
+                paciente.setNombre(actualizado.getNombre());
+                paciente.setEdad(actualizado.getEdad());
+                paciente.setTelefono(actualizado.getTelefono());
+                paciente.setDireccion(actualizado.getDireccion());
+                paciente.setTipoSangre(actualizado.getTipoSangre());
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
 }
+

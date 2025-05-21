@@ -1,0 +1,73 @@
+package co.edu.uniquindio.poo.hospital.viewController;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import co.edu.uniquindio.poo.hospital.App;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
+public class MenuAdministradorViewController {
+
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private Button btnAsignarPaciente;
+
+    @FXML
+    private Button btnGestionarMedico;
+
+    @FXML
+    private Button btnGestionarPaciente;
+
+    @FXML
+    private Button btnGestionarSalaHorarios;
+
+    @FXML
+    private Button btnReporte;
+
+    @FXML
+    private Button btnCerrarSesion;
+
+    @FXML
+    void onAsignarPaciente(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onGestionarMedico(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onGestionarPaciente(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onGestionarSalaHorarios(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onReporte(ActionEvent event) {
+
+    }
+    @FXML
+    void onCerrarSesion(ActionEvent event) {
+
+    }
+
+    @FXML
+    void initialize() {
+
+    }
+
+    public void setApp(App app) {
+    }
+}
