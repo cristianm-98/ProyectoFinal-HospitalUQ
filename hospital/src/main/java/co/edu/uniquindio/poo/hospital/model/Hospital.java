@@ -46,7 +46,7 @@ public class Hospital {
     }
 
     public LinkedList<Persona> getListaPersonas() {
-        return listaPersonas;
+        return this.listaPersonas;
     }
 
     public void setListaPersonas(LinkedList<Persona> listaPersonas) {
@@ -54,7 +54,7 @@ public class Hospital {
     }
 
     public LinkedList<Paciente> getListaPacientes() {
-        return listaPacientes;
+        return this.listaPacientes;
     }
 
     public void setListaPacientes(LinkedList<Paciente> listaPacientes) {
@@ -62,7 +62,7 @@ public class Hospital {
     }
 
     public LinkedList<Medico> getListaMedicos() {
-        return listaMedicos;
+        return this.listaMedicos;
     }
 
     public void setListaMedicos(LinkedList<Medico> listaMedicos) {
