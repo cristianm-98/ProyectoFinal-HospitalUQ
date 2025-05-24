@@ -5,7 +5,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,13 +40,14 @@ public class App extends Application {
         }
     }
 
-    public void abrirVistaPaciente() {
+    public void abrirVistaPaciente(Paciente paciente) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("menuPaciente.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
             MenuPacienteViewController menuPacienteViewController = loader.getController();
             menuPacienteViewController.setApp(this);
+            menuPacienteViewController.setPaciente(paciente);
             Scene scene = new Scene(rootLayout);
             loginStage.setScene(scene);
             loginStage.show();
@@ -86,12 +86,13 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
-    public void abrirCrudVistaDatosPersonales() {
+    public void abrirCrudVistaDatosPersonalesPaciente(Paciente paciente) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("crudDatosPersonales.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
             DatosPersonalesViewController datosPersonalesViewController = loader.getController();
+            datosPersonalesViewController.initPaciente(paciente);
             datosPersonalesViewController.setApp(this);
             Scene scene = new Scene(rootLayout);
             loginStage.setScene(scene);
@@ -101,6 +102,7 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+
 
     public static void app(String[] args) {
         launch();

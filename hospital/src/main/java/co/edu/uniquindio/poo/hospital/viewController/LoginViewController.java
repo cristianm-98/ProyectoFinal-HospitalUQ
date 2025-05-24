@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.hospital.App;
 import co.edu.uniquindio.poo.hospital.controller.LoginController;
+import co.edu.uniquindio.poo.hospital.model.Paciente;
 import co.edu.uniquindio.poo.hospital.model.Persona;
 import co.edu.uniquindio.poo.hospital.model.Usuario;
 import javafx.event.ActionEvent;
@@ -47,7 +48,7 @@ public class LoginViewController {
         Persona personaLogeada = app.buscarUsuario(usuarioIngresado, claveIngresada);
         if (personaLogeada != null) {
             switch (personaLogeada.getTheUsuario().getTipoUsuario()) {
-                case PACIENTE -> app.abrirVistaPaciente();
+                case PACIENTE -> app.abrirVistaPaciente((Paciente) personaLogeada);
                 case MEDICO -> app.abrirVistaMedico();
                 case ADMINISTRADOR -> app.abrirVistaAdministrador();
             }

@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.hospital.App;
+import co.edu.uniquindio.poo.hospital.model.Paciente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +17,7 @@ import javafx.stage.Stage;
 
 public class MenuPacienteViewController {
     private App app;
-
+    private Paciente paciente;
 
     @FXML
     private ResourceBundle resources;
@@ -46,7 +47,7 @@ public class MenuPacienteViewController {
 
     @FXML
     void onDatosPersonales(ActionEvent event) {
-        app.abrirCrudVistaDatosPersonales();
+        app.abrirCrudVistaDatosPersonalesPaciente(this.paciente);
     }
 
     @FXML
@@ -71,5 +72,9 @@ public class MenuPacienteViewController {
 
     public void setApp(App app) {
         this.app = app;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 }
