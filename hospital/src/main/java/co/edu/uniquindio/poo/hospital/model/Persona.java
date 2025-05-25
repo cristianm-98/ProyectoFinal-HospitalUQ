@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.hospital.model;
 
-public class Persona {
+public abstract class Persona {
     protected String id;
     protected String nombre;
     protected int edad;
