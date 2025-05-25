@@ -1,6 +1,5 @@
 package co.edu.uniquindio.poo.hospital.viewController;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -8,12 +7,7 @@ import co.edu.uniquindio.poo.hospital.App;
 import co.edu.uniquindio.poo.hospital.model.Paciente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 
 public class MenuPacienteViewController {
     private App app;
@@ -47,22 +41,27 @@ public class MenuPacienteViewController {
 
     @FXML
     void onDatosPersonales(ActionEvent event) {
-        app.abrirCrudVistaDatosPersonalesPaciente(this.paciente);
+        app.abrirVistaDatosPersonalesPaciente(this.paciente);
     }
 
     @FXML
     void onNotificaciones(ActionEvent event) {
-
+        app.abrirVistaNotificacionPaciente(this.paciente);
     }
 
     @FXML
     void onSolicitarCita(ActionEvent event) {
-
+        app.abrirVistaSolicitarCitaPaciente(this.paciente);
     }
 
     @FXML
     void onVerCancelarCita(ActionEvent event) {
+        app.abrirVistaCancelarCitaPaciente(this.paciente);
+    }
 
+    @FXML
+    void onVerHistorialMedico(ActionEvent event) {
+        app.abrirVistaHistorialPaciente(this.paciente);
     }
 
     @FXML

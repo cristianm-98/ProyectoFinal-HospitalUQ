@@ -56,7 +56,7 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
-    public void abrirVistaMedico() {
+    public void abrirVistaMedico(Medico medico) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("menuMedico.fxml"));
@@ -86,7 +86,7 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
-    public void abrirCrudVistaDatosPersonalesPaciente(Paciente paciente) {
+    public void abrirVistaDatosPersonalesPaciente(Paciente paciente) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("crudDatosPersonales.fxml"));
@@ -94,6 +94,92 @@ public class App extends Application {
             DatosPersonalesViewController datosPersonalesViewController = loader.getController();
             datosPersonalesViewController.initPaciente(paciente);
             datosPersonalesViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void abrirVistaSolicitarCitaPaciente(Paciente paciente) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudSolicitarCita.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            SolicitarCitaViewController solicitarCitaViewController = loader.getController();
+            solicitarCitaViewController.initPaciente(paciente);
+            solicitarCitaViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void abrirVistaCancelarCitaPaciente(Paciente paciente) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudCancelarCita.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            CancelarCitaViewController CancelarCitaViewController = loader.getController();
+            CancelarCitaViewController.initPaciente(paciente);
+            CancelarCitaViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void abrirVistaHistorialPaciente(Paciente paciente) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudHistorialMedico.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            HistorialMedicoViewController historialViewController = loader.getController();
+            historialViewController.initPaciente(paciente);
+            historialViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void abrirVistaDetallesHistorialPaciente(HistorialMedico historialMedico, Paciente paciente) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("detalleHistorial.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            DetalleHistorialViewController detalleHistorialViewController = loader.getController();
+            detalleHistorialViewController.initPaciente(paciente);
+            detalleHistorialViewController.initHistorial(historialMedico);
+            detalleHistorialViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void abrirVistaNotificacionPaciente(Paciente paciente) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudNotificaciones.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            NotificacionViewController notificacionViewControllerViewController = loader.getController();
+            notificacionViewControllerViewController.initPaciente(paciente);
+            notificacionViewControllerViewController.setApp(this);
             Scene scene = new Scene(rootLayout);
             loginStage.setScene(scene);
             loginStage.show();

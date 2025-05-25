@@ -38,7 +38,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="246.0" layoutY="223.0" mnemonicParsing="false" text="Historial Medico">
+            <Button layoutX="246.0" layoutY="223.0" mnemonicParsing="false" onAction="#onVerHistorialMedico" text="Historial Medico">
                <font>
                   <Font size="14.0" />
                </font>
@@ -48,7 +48,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnCerrarSeccion" layoutX="274.0" layoutY="333.0" mnemonicParsing="false" onAction="#onCerrarSeccion" prefHeight="30.0" prefWidth="266.0" text="Cerrar Sección">
+            <Button fx:id="btnCerrarSeccion" layoutX="274.0" layoutY="333.0" mnemonicParsing="false" onAction="#onCerrarSeccion" prefHeight="30.0" prefWidth="266.0" text="Cerrar Sesión">
                <font>
                   <Font size="14.0" />
                </font>

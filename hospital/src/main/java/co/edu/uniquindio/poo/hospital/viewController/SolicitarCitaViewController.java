@@ -2,6 +2,9 @@ package co.edu.uniquindio.poo.hospital.viewController;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import co.edu.uniquindio.poo.hospital.App;
+import co.edu.uniquindio.poo.hospital.model.Paciente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,6 +13,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 public class SolicitarCitaViewController {
+    private App app;
+    private Paciente paciente;
 
     @FXML
     private ResourceBundle resources;
@@ -51,4 +56,17 @@ public class SolicitarCitaViewController {
 
     }
 
+    @FXML
+    void onAtras(ActionEvent event) {
+        app.abrirVistaPaciente(this.paciente);
+    }
+
+
+
+    public void setApp(App app) {
+        this.app = app;
+    }
+    public void initPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
 }

@@ -4,10 +4,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.hospital.App;
-import co.edu.uniquindio.poo.hospital.controller.LoginController;
+import co.edu.uniquindio.poo.hospital.model.Medico;
 import co.edu.uniquindio.poo.hospital.model.Paciente;
 import co.edu.uniquindio.poo.hospital.model.Persona;
-import co.edu.uniquindio.poo.hospital.model.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -15,8 +14,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import javax.swing.*;
 
 public class LoginViewController {
     private App app;
@@ -49,7 +46,7 @@ public class LoginViewController {
         if (personaLogeada != null) {
             switch (personaLogeada.getTheUsuario().getTipoUsuario()) {
                 case PACIENTE -> app.abrirVistaPaciente((Paciente) personaLogeada);
-                case MEDICO -> app.abrirVistaMedico();
+                case MEDICO -> app.abrirVistaMedico((Medico) personaLogeada);
                 case ADMINISTRADOR -> app.abrirVistaAdministrador();
             }
         } else {
