@@ -3,8 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,11 +10,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="513.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.DatosPersonalesViewController">
+<AnchorPane prefHeight="291.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.DatosPersonalesViewController">
    <children>
-      <Pane prefHeight="514.0" prefWidth="551.0">
+      <Pane prefHeight="290.0" prefWidth="551.0">
          <children>
-            <ImageView fitHeight="290.0" fitWidth="182.0" layoutY="-1.0" pickOnBounds="true" smooth="false">
+            <ImageView fitHeight="291.0" fitWidth="182.0" layoutY="-1.0" pickOnBounds="true" smooth="false">
                <image>
                   <Image url="@Imagen/Logo.png" />
                </image>
@@ -63,22 +61,12 @@
             <TextField fx:id="txtTelefono" layoutX="303.0" layoutY="154.0" />
             <TextField fx:id="txtDireccion" layoutX="303.0" layoutY="182.0" />
             <TextField fx:id="txtTipoSangre" layoutX="303.0" layoutY="211.0" />
-            <Separator layoutX="2.0" layoutY="288.0" prefHeight="18.0" prefWidth="538.0" />
+            <Separator layoutX="198.0" layoutY="236.0" prefHeight="18.0" prefWidth="345.0" />
             <Button fx:id="btnActualizar" layoutX="263.0" layoutY="257.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
-            <TableView fx:id="tblPaciente" layoutX="9.0" layoutY="306.0" prefHeight="200.0" prefWidth="532.0">
-              <columns>
-                <TableColumn fx:id="columIdentificacion" prefWidth="91.0" text="Identificacion" />
-                <TableColumn fx:id="columNombre" prefWidth="104.0" text="Nombre" />
-                  <TableColumn fx:id="columEdad" prefWidth="54.0" text="Edad" />
-                  <TableColumn fx:id="columTelefono" prefWidth="90.0" text="Telefono" />
-                  <TableColumn fx:id="columDireccion" prefWidth="111.0" text="Dirección" />
-                  <TableColumn fx:id="columTipoSangre" prefWidth="72.0" text="Tipo Sangre" />
-              </columns>
-            </TableView>
             <Button fx:id="btnAtras" layoutX="352.0" layoutY="257.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
