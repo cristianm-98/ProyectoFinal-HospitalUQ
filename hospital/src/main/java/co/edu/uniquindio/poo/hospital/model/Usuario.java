@@ -13,6 +13,9 @@ public class Usuario {
         this.tipoUsuario = tipoUsuario;
     }
 
+    public Usuario(String usuario, String contraseña, String thePersona) {
+    }
+
     public String getUsuario() {
         return usuario;
     }

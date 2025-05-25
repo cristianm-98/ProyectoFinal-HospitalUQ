@@ -28,6 +28,9 @@ public class HistorialMedico {
         this.listaPrescripcionMedicas = new LinkedList<>();
     }
 
+    public HistorialMedico(String id, String fecha) {
+    }
+
     public String getId() {
         return id;
     }

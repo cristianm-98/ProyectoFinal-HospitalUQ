@@ -26,6 +26,9 @@ public class Cita {
         this.themedico=themedico;
     }
 
+    public Cita(String id, String dia) {
+    }
+
     public String getId() {
         return id;
     }

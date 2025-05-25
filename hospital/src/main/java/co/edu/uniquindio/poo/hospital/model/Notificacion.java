@@ -18,6 +18,9 @@ public class Notificacion {
         this.destinatario=destinatario;
     }
 
+    public Notificacion(String id, String fechaEnvio) {
+    }
+
     public String getId() {
         return id;
     }
