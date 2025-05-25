@@ -3,7 +3,6 @@ package co.edu.uniquindio.poo.hospital.model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-
 public class Cita {
     private String id;
     private LocalDate dia;
@@ -77,6 +76,5 @@ public class Cita {
 
     public Medico getThemedico() { return themedico; }
     public void setThemedico(Medico themedico) { this.themedico = themedico; }
-
 
 }
