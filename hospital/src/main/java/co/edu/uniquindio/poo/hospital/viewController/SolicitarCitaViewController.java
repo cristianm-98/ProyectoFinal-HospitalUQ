@@ -29,13 +29,10 @@ public class SolicitarCitaViewController {
     private TableColumn<?, ?> columEspecialidad;
 
     @FXML
-    private TableColumn<?, ?> columFechaFinal;
+    private TableColumn<?, ?> columHoraFinal;
 
     @FXML
-    private TableColumn<?, ?> columFechaInicio;
-
-    @FXML
-    private TableColumn<?, ?> columHoraAtencion;
+    private TableColumn<?, ?> columHoraInicio;
 
     @FXML
     private TableColumn<?, ?> columNombreMedico;
@@ -59,9 +56,8 @@ public class SolicitarCitaViewController {
         assert btnSolicitarCita != null : "fx:id=\"btnSolicitarCita\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
         assert columDia != null : "fx:id=\"columDia\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
         assert columEspecialidad != null : "fx:id=\"columEspecialidad\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert columFechaFinal != null : "fx:id=\"columFechaFinal\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert columFechaInicio != null : "fx:id=\"columFechaInicio\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert columHoraAtencion != null : "fx:id=\"columHoraAtencion\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert columHoraFinal != null : "fx:id=\"columHoraFinal\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert columHoraInicio != null : "fx:id=\"columHoraInicio\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
         assert columNombreMedico != null : "fx:id=\"columNombreMedico\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
         assert tblCita != null : "fx:id=\"tblCita\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
 
