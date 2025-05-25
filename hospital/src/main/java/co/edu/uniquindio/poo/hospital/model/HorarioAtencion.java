@@ -16,6 +16,9 @@ public class HorarioAtencion {
         this.horaFinal=horaFinal;
     }
 
+    public HorarioAtencion(String id, String dia) {
+    }
+
     public String getId() {
         return id;
     }
