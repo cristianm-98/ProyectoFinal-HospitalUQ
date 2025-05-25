@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="481.0" prefWidth="359.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.VerDetalleMedicoHistorialViewController">
+   <children>
+      <Pane prefHeight="625.0" prefWidth="637.0">
+         <children>
+            <Label layoutX="159.0" layoutY="16.0" text="DETALLE HISTORIAL MEDICO">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="284.0" layoutY="63.0" text="Examenes">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblExamen" layoutX="15.0" layoutY="83.0" prefHeight="87.0" prefWidth="609.0">
+              <columns>
+                <TableColumn fx:id="columNombExamen" prefWidth="164.0" text="Nombre" />
+                <TableColumn fx:id="columDescripcion" prefWidth="399.0" text="Descripcion" />
+              </columns>
+            </TableView>
+            <Separator layoutX="14.0" layoutY="51.0" prefHeight="11.0" prefWidth="609.0" />
+            <Button fx:id="btnAgregarExamen" layoutX="207.0" layoutY="186.0" mnemonicParsing="false" onAction="#onAgregarExamen" text="Agregar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnActualizarExamen" layoutX="279.0" layoutY="186.0" mnemonicParsing="false" onAction="#onActualizarExamen" text="Actualizar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnElimanarExamen" layoutX="365.0" layoutY="186.0" mnemonicParsing="false" onAction="#onEliminarExamen" text="Eliminar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="272.0" layoutY="229.0" text="Tratamiento">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblTratamiento" layoutX="15.0" layoutY="258.0" prefHeight="96.0" prefWidth="609.0">
+              <columns>
+                <TableColumn fx:id="columDescripTratamiento" prefWidth="600.0" text="Descripcion" />
+              </columns>
+            </TableView>
+            <Separator layoutX="13.0" layoutY="219.0" prefHeight="11.0" prefWidth="609.0" />
+            <Button fx:id="btnAgregarTratamiento" layoutX="207.0" layoutY="368.0" mnemonicParsing="false" onAction="#onAgregarTratamiento" text="Agregar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnActualizarTratamiento" layoutX="279.0" layoutY="368.0" mnemonicParsing="false" onAction="#onActualizarTratamiento" text="Actualizar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEliminarTratamiento" layoutX="365.0" layoutY="368.0" mnemonicParsing="false" onAction="#onEliminarTratamiento" text="Eliminar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Separator layoutX="13.0" layoutY="405.0" prefHeight="11.0" prefWidth="609.0" />
+            <Label layoutX="247.0" layoutY="417.0" text="Prescripcion Medica">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblMedicamento" layoutX="15.0" layoutY="441.0" prefHeight="96.0" prefWidth="609.0">
+              <columns>
+                <TableColumn fx:id="columMedicamento" prefWidth="587.0" text="Medicamentos" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnAgregarMedicamento" layoutX="207.0" layoutY="543.0" mnemonicParsing="false" onAction="#onAgregarMedicamento" text="Agregar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnActualizarMedicamento" layoutX="279.0" layoutY="543.0" mnemonicParsing="false" onAction="#onActualizarMedicamento" text="Actualizar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEliminarMedicamento" layoutX="365.0" layoutY="543.0" mnemonicParsing="false" onAction="#onEliminarMedicamento" text="Eliminar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Separator layoutX="19.0" layoutY="575.0" prefHeight="11.0" prefWidth="609.0" />
+            <Button fx:id="btnVolver" layoutX="290.0" layoutY="586.0" mnemonicParsing="false" onAction="#onVolver" text="Volver">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="416.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.DetalleTratamientoViewController">
+   <children>
+      <Pane prefHeight="433.0" prefWidth="540.0">
+         <children>
+            <Label layoutX="200.0" layoutY="20.0" text="DETALLE TRATAMIENTO">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="210.0" fitWidth="171.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="178.0" layoutY="61.0" prefHeight="11.0" prefWidth="342.0" />
+            <Label layoutX="179.0" layoutY="94.0" text="Descripcion">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtDescripcionTratamiento" layoutX="260.0" layoutY="77.0" prefHeight="54.0" prefWidth="262.0" />
+            <Separator layoutX="10.0" layoutY="210.0" prefHeight="11.0" prefWidth="513.0" />
+            <Button fx:id="btnAgregarTratamiento" layoutX="196.0" layoutY="158.0" mnemonicParsing="false" onAction="#onAgregarTratamiento" text="Agregar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnActualizarTratamiento" layoutX="270.0" layoutY="158.0" mnemonicParsing="false" onAction="#onActualizarTratamiento" text="Actualizar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEliminarTrtamiento" layoutX="356.0" layoutY="158.0" mnemonicParsing="false" onAction="#onEliminarTratamiento" text="Eliminar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="432.0" layoutY="158.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tblDescripcion" layoutX="7.0" layoutY="222.0" prefHeight="200.0" prefWidth="522.0">
+              <columns>
+                <TableColumn fx:id="columDescripcionTratam" prefWidth="512.0" text="Descripcion" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

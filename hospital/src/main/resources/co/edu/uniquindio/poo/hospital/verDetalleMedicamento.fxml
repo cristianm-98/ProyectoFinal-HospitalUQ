@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="328.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.DetalleMedicamentoViewController">
+   <children>
+      <Pane prefHeight="337.0" prefWidth="754.0">
+         <children>
+            <Label layoutX="321.0" layoutY="19.0" text="DETALLE MEDICAMENTOS">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="337.0" fitWidth="189.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="191.0" layoutY="53.0" prefHeight="13.0" prefWidth="555.0" />
+            <Button fx:id="btnAgregarMedicamento" layoutX="403.0" layoutY="294.0" mnemonicParsing="false" onAction="#onAgregarMedicamento" text="Agregar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="483.0" layoutY="294.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tblMedicamento" layoutX="191.0" layoutY="71.0" prefHeight="207.0" prefWidth="555.0">
+              <columns>
+                <TableColumn fx:id="columNombreMedic" prefWidth="260.0" text="Nombre" />
+                <TableColumn fx:id="columDescripcionMedic" prefWidth="290.0" text="Descripcion" />
+              </columns>
+            </TableView>
+            <Separator layoutX="191.0" layoutY="281.0" prefHeight="13.0" prefWidth="555.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

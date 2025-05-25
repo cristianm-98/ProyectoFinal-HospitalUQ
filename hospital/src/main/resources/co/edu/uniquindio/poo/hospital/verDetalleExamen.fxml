@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.DetalleExamenViewController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="223.0" fitWidth="165.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="268.0" layoutY="14.0" text="DETALLE EXAMENES">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="181.0" layoutY="46.0" prefHeight="17.0" prefWidth="403.0" />
+            <Label layoutX="195.0" layoutY="88.0" text="Nombre">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="124.0" text="Descripcion">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNombreExamen" layoutX="283.0" layoutY="85.0" />
+            <TextArea fx:id="txtDescripcionMedic" layoutX="283.0" layoutY="115.0" prefHeight="8.0" prefWidth="200.0" />
+            <Separator layoutX="9.0" layoutY="223.0" prefHeight="17.0" prefWidth="583.0" />
+            <Button fx:id="btnAgregarExamen" layoutX="242.0" layoutY="173.0" mnemonicParsing="false" onAction="#onAgregarExamen" text="Agregar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnActualizarExamen" layoutX="314.0" layoutY="173.0" mnemonicParsing="false" onAction="#onActualizarExamen" text="Actualizar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEliminarExamen" layoutX="399.0" layoutY="173.0" mnemonicParsing="false" onAction="#onEliminarExamen" text="Eliminar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="473.0" layoutY="173.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tblExamen" layoutX="11.0" layoutY="240.0" prefHeight="140.0" prefWidth="575.0">
+              <columns>
+                <TableColumn fx:id="columNombreExamen" prefWidth="145.0" text="Nombre" />
+                <TableColumn fx:id="columDescripcionExam" prefWidth="395.0" text="Descripcion" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
