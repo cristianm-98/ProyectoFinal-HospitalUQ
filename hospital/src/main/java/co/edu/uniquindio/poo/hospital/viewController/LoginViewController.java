@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.hospital.App;
+import co.edu.uniquindio.poo.hospital.model.Administrador;
 import co.edu.uniquindio.poo.hospital.model.Medico;
 import co.edu.uniquindio.poo.hospital.model.Paciente;
 import co.edu.uniquindio.poo.hospital.model.Persona;
@@ -43,11 +44,11 @@ public class LoginViewController {
         String claveIngresada = txtContrasenia.getText();
 
         Persona personaLogeada = app.buscarUsuario(usuarioIngresado, claveIngresada);
-        if (personaLogeada != null) {
+        if (personaLogeada != null && personaLogeada.getTheUsuario()!=null) {
             switch (personaLogeada.getTheUsuario().getTipoUsuario()) {
                 case PACIENTE -> app.abrirVistaPaciente((Paciente) personaLogeada);
                 case MEDICO -> app.abrirVistaMedico((Medico) personaLogeada);
-                case ADMINISTRADOR -> app.abrirVistaAdministrador();
+                case ADMINISTRADOR -> app.abrirVistaAdministrador((Administrador)personaLogeada);
             }
         } else {
             Alert alerta = new Alert(Alert.AlertType.ERROR);

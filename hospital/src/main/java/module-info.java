@@ -6,7 +6,14 @@ module co.edu.uniquindio.poo.hospital {
 
 
     opens co.edu.uniquindio.poo.hospital to javafx.fxml;
+    opens co.edu.uniquindio.poo.hospital.viewController to javafx.fxml;
+    opens co.edu.uniquindio.poo.hospital.model to java.base;
+
     exports co.edu.uniquindio.poo.hospital;
     exports co.edu.uniquindio.poo.hospital.viewController;
-    opens co.edu.uniquindio.poo.hospital.viewController to javafx.fxml;
+    exports co.edu.uniquindio.poo.hospital.controller;
+    exports co.edu.uniquindio.poo.hospital.model;
+
+
+
 }

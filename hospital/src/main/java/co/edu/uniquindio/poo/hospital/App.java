@@ -2,6 +2,8 @@ package co.edu.uniquindio.poo.hospital;
 
 import co.edu.uniquindio.poo.hospital.viewController.*;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -14,7 +16,14 @@ import java.time.LocalTime;
 import co.edu.uniquindio.poo.hospital.model.*;
 
 public class App extends Application {
+
     private Stage loginStage;
+    private ObservableList<Medico>listaMedicos= FXCollections.observableArrayList();
+
+    public ObservableList<Medico> getListaMedicos() {
+        return listaMedicos;
+    }
+
     public static Hospital hospital_main = new Hospital("810000913", "Hospital UQ");
 
     @Override
@@ -39,7 +48,7 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
-
+    //-----Vistas del Paciente----------
     public void abrirVistaPaciente(Paciente paciente) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -48,36 +57,6 @@ public class App extends Application {
             MenuPacienteViewController menuPacienteViewController = loader.getController();
             menuPacienteViewController.setApp(this);
             menuPacienteViewController.setPaciente(paciente);
-            Scene scene = new Scene(rootLayout);
-            loginStage.setScene(scene);
-            loginStage.show();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-    public void abrirVistaMedico(Medico medico) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("menuMedico.fxml"));
-            AnchorPane rootLayout = (AnchorPane) loader.load();
-            MenuMedicoViewController menuMedicoViewController = loader.getController();
-            menuMedicoViewController.setApp(this);
-            Scene scene = new Scene(rootLayout);
-            loginStage.setScene(scene);
-            loginStage.show();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-    public void abrirVistaAdministrador() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("menuAdministrador.fxml"));
-            AnchorPane rootLayout = (AnchorPane) loader.load();
-            MenuAdministradorViewController menuAdministradorViewController = loader.getController();
-            menuAdministradorViewController.setApp(this);
             Scene scene = new Scene(rootLayout);
             loginStage.setScene(scene);
             loginStage.show();
@@ -100,6 +79,7 @@ public class App extends Application {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+
         }
     }
 
@@ -188,6 +168,59 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+    //---------Finaliza Vista del paciente
+
+    public void abrirVistaMedico(Medico medico) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("menuMedico.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            MenuMedicoViewController menuMedicoViewController = loader.getController();
+            menuMedicoViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    //---------Vista del administrador-----------
+    public void abrirVistaAdministrador(Administrador administrador) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("menuAdministrador.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            MenuAdministradorViewController menuAdministradorViewController = loader.getController();
+            menuAdministradorViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    public void abrirVistaGestionMedico(Administrador administrador) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudFormularioMedico.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            DatosMedicosViewController datosMedicosViewController = loader.getController();
+            datosMedicosViewController.initAdministrador(administrador);
+            datosMedicosViewController.setApp(this);
+            datosMedicosViewController.setListaMedicos(listaMedicos);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+
+        }
+    }
+
+
 
 
     public static void app(String[] args) {
@@ -501,9 +534,6 @@ public class App extends Application {
             }
         }
         return null;
-
-
-
-
     }
+
 }

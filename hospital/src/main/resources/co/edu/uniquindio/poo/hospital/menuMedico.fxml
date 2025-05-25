@@ -28,22 +28,12 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnRegistrarDiagnostico" layoutX="244.0" layoutY="142.0" mnemonicParsing="false" onAction="#onRegistrarDiagnostico" text="Registrar Diagnostico">
+            <Button fx:id="btnGestionarHorario" layoutX="244.0" layoutY="142.0" mnemonicParsing="false" onAction="#onGestionarHorario" text="Gestionar Horario">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnRegistrarTratamiento" layoutX="244.0" layoutY="181.0" mnemonicParsing="false" onAction="#onRegistrarTratamiento" text="Registrar Tratamiento">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnGestionarHorario" layoutX="244.0" layoutY="222.0" mnemonicParsing="false" onAction="#onGestionarHorario" text="Gestionar Horario">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="btrnNotificarCambioCita" layoutX="244.0" layoutY="262.0" mnemonicParsing="false" onAction="#onNotificarCambioCita" text="Notificar Cambio Cita">
+            <Button fx:id="btrnNotificarCambioCita" layoutX="244.0" layoutY="181.0" mnemonicParsing="false" onAction="#onNotificarCambioCita" text="Notificacion Cambio Cita">
                <font>
                   <Font size="14.0" />
                </font>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.DatosMedicosViewController">
+   <children>
+      <Pane prefHeight="536.0" prefWidth="605.0">
+         <children>
+            <Label layoutX="243.0" layoutY="14.0" text="DATOS DEL MEDICO">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="73.0" text="Nombre">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="101.0" text="Edad">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="129.0" prefWidth="53.0" text="Telefono">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="156.0" text="Direccion">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="185.0" text="Licencia">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNombreMedico" layoutX="356.0" layoutY="70.0" />
+            <Label layoutX="204.0" layoutY="214.0" text="Años de Experiencia">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="244.0" text="Especialidad">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtEdadMedico" layoutX="356.0" layoutY="98.0" />
+            <TextField fx:id="txtTelefonoMedico" layoutX="356.0" layoutY="126.0" />
+            <TextField fx:id="txtDireccionMedico" layoutX="356.0" layoutY="153.0" />
+            <TextField fx:id="txtLicenciaMedico" layoutX="356.0" layoutY="182.0" />
+            <TextField fx:id="txtExperienciaMedico" layoutX="356.0" layoutY="211.0" />
+            <TableView fx:id="tbMedicos" layoutX="10.0" layoutY="324.0" prefHeight="200.0" prefWidth="586.0">
+              <columns>
+                <TableColumn fx:id="columNombre" prefWidth="75.0" text="Nombre" />
+                <TableColumn fx:id="columEdad" prefWidth="75.0" text="Edad" />
+                  <TableColumn fx:id="columTelefono" prefWidth="75.0" text="Telefono" />
+                  <TableColumn fx:id="columDireccion" prefWidth="75.0" text="Direccion" />
+                  <TableColumn fx:id="columLicencia" prefWidth="75.0" text="Licencia" />
+                  <TableColumn fx:id="columExperiencia" prefWidth="75.0" text="Experiencia" />
+                  <TableColumn fx:id="columEspecialidad" prefWidth="87.0" text="Especialidad" />
+              </columns>
+            </TableView>
+            <ImageView fitHeight="321.0" fitWidth="180.0" layoutY="-2.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnAgregarMedico" layoutX="204.0" layoutY="289.0" mnemonicParsing="false" onAction="#onAgregar" text="Agregar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnActualizarMedico" layoutX="276.0" layoutY="289.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEliminarMedico" layoutX="361.0" layoutY="289.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnLimpiar" layoutX="434.0" layoutY="289.0" mnemonicParsing="false" onAction="#onLimpiar" text="Limpiar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="504.0" layoutY="289.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Separator layoutX="185.0" layoutY="268.0" prefHeight="13.0" prefWidth="402.0" />
+            <Separator layoutX="185.0" layoutY="43.0" prefHeight="13.0" prefWidth="402.0" />
+            <ComboBox fx:id="cboxEspecialidadMedico" layoutX="355.0" layoutY="241.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

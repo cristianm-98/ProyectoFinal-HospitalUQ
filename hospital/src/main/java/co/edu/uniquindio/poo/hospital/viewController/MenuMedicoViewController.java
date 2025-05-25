@@ -26,12 +26,6 @@ public class MenuMedicoViewController {
     private Button btnHistorialMedico;
 
     @FXML
-    private Button btnRegistrarDiagnostico;
-
-    @FXML
-    private Button btnRegistrarTratamiento;
-
-    @FXML
     private Button btrnNotificarCambioCita;
 
     @FXML
@@ -55,20 +49,15 @@ public class MenuMedicoViewController {
     }
 
     @FXML
-    void onRegistrarDiagnostico(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onRegistrarTratamiento(ActionEvent event) {
-
-    }
-
-    @FXML
     void initialize() {
+        assert btnCerrarSesion != null : "fx:id=\"btnCerrarSesion\" was not injected: check your FXML file 'menuMedico.fxml'.";
+        assert btnGestionarHorario != null : "fx:id=\"btnGestionarHorario\" was not injected: check your FXML file 'menuMedico.fxml'.";
+        assert btnHistorialMedico != null : "fx:id=\"btnHistorialMedico\" was not injected: check your FXML file 'menuMedico.fxml'.";
+        assert btrnNotificarCambioCita != null : "fx:id=\"btrnNotificarCambioCita\" was not injected: check your FXML file 'menuMedico.fxml'.";
 
     }
 
     public void setApp(App app) {
+
     }
 }

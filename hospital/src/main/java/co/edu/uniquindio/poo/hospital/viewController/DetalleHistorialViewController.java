@@ -70,6 +70,9 @@ public class DetalleHistorialViewController {
     private TableView<Tratamiento> tbTratamientos;
 
     @FXML
+    private TextArea txtDiagnostico;
+
+    @FXML
     private TextArea txtDescripcion;
 
     @FXML
@@ -126,9 +129,10 @@ public class DetalleHistorialViewController {
         tbTratamientos.setItems(lista_tratamiento);
         tbExamenes.setItems(lista_examen);
         tbPrescripcionMedicas.setItems(lista_prescripcion);
-        lbDiagnostico.setText(historialMedico.getDiagnostico());
+
         lbFechaHistorial.setText(historialMedico.getFecha().toString());
         lbIdHistorial.setText(historialMedico.getId());
         txtDescripcion.setText(historialMedico.getDescripcion());
+        txtDiagnostico.setText(historialMedico.getDiagnostico().toString());
     }
 }

@@ -4,11 +4,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.hospital.App;
+import co.edu.uniquindio.poo.hospital.model.Administrador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class MenuAdministradorViewController {
+    private App app;
+    private Administrador administrador;
 
     @FXML
     private ResourceBundle resources;
@@ -41,6 +44,8 @@ public class MenuAdministradorViewController {
 
     @FXML
     void onGestionarMedico(ActionEvent event) {
+        app.abrirVistaGestionMedico(this.administrador);
+
 
     }
 
@@ -69,5 +74,9 @@ public class MenuAdministradorViewController {
     }
 
     public void setApp(App app) {
+        this.app=app;
+    }
+    public void setAdministrador(Administrador administrador){
+        this.administrador=administrador;
     }
 }

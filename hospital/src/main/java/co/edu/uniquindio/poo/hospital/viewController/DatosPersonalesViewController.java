@@ -5,7 +5,6 @@ import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.hospital.App;
 import co.edu.uniquindio.poo.hospital.model.Paciente;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,7 +14,6 @@ import javafx.scene.control.TextField;
 
 public class DatosPersonalesViewController {
     private App app;
-    private Paciente paciente;
 
     @FXML
     private ResourceBundle resources;
@@ -39,25 +37,25 @@ public class DatosPersonalesViewController {
     private Button btnRegistrar;
 
     @FXML
-    private TableColumn<Paciente, String> columDireccion;
+    private TableColumn<?, ?> columDireccion;
 
     @FXML
-    private TableColumn<Paciente, String> columEdad;
+    private TableColumn<?, ?> columEdad;
 
     @FXML
-    private TableColumn<Paciente, String> columIdentificacion;
+    private TableColumn<?, ?> columIdentificacion;
 
     @FXML
-    private TableColumn<Paciente, String> columNombre;
+    private TableColumn<?, ?> columNombre;
 
     @FXML
-    private TableColumn<Paciente, String> columTelefono;
+    private TableColumn<?, ?> columTelefono;
 
     @FXML
-    private TableColumn<Paciente, String> columTipoSangre;
+    private TableColumn<?, ?> columTipoSangre;
 
     @FXML
-    private TableView<Paciente> tblPaciente;
+    private TableView<?> tblPaciente;
 
     @FXML
     private TextField txtDireccion;
@@ -84,7 +82,7 @@ public class DatosPersonalesViewController {
 
     @FXML
     void onAtras(ActionEvent event) {
-        app.abrirVistaPaciente(this.paciente);
+
     }
 
     @FXML
@@ -123,29 +121,13 @@ public class DatosPersonalesViewController {
         assert txtTelefono != null : "fx:id=\"txtTelefono\" was not injected: check your FXML file 'crudDatosPersonales.fxml'.";
         assert txtTipoSangre != null : "fx:id=\"txtTipoSangre\" was not injected: check your FXML file 'crudDatosPersonales.fxml'.";
 
-
-
     }
     public void setApp(App app) {
         this.app = app;
+
     }
 
-    public void initPaciente(Paciente paciente) { this.paciente = paciente;
+    public void initPaciente(Paciente paciente) {
 
-        columIdentificacion.setCellValueFactory(cell ->
-                new SimpleStringProperty(cell.getValue().getId()));
-        columNombre.setCellValueFactory(cell ->
-                new SimpleStringProperty(cell.getValue().getNombre()));
-        columEdad.setCellValueFactory(cell ->
-                new SimpleStringProperty(String.valueOf(cell.getValue().getEdad())));
-        columTelefono.setCellValueFactory(cell ->
-                new SimpleStringProperty(cell.getValue().getTelefono()));
-        columDireccion.setCellValueFactory(cell ->
-                new SimpleStringProperty(cell.getValue().getDireccion()));
-        columTipoSangre.setCellValueFactory(cell ->
-                new SimpleStringProperty(cell.getValue().getTipoSangre()));
-
-        tblPaciente.getItems().add(this.paciente);
-        tblPaciente.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);}
-
+    }
 }
