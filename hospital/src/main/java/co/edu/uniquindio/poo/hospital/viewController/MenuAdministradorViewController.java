@@ -51,6 +51,7 @@ public class MenuAdministradorViewController {
 
     @FXML
     void onGestionarPaciente(ActionEvent event) {
+        app.abrirVistaGestionPaciente(this.administrador);
 
     }
 

@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.DatosMedicosViewController">
    <children>
       <Pane prefHeight="536.0" prefWidth="605.0">
@@ -64,22 +63,7 @@
             <TextField fx:id="txtDireccionMedico" layoutX="356.0" layoutY="153.0" />
             <TextField fx:id="txtLicenciaMedico" layoutX="356.0" layoutY="182.0" />
             <TextField fx:id="txtExperienciaMedico" layoutX="356.0" layoutY="211.0" />
-            <TableView fx:id="tbMedicos" layoutX="10.0" layoutY="324.0" prefHeight="200.0" prefWidth="586.0">
-              <columns>
-                <TableColumn fx:id="columNombre" prefWidth="75.0" text="Nombre" />
-                <TableColumn fx:id="columEdad" prefWidth="75.0" text="Edad" />
-                  <TableColumn fx:id="columTelefono" prefWidth="75.0" text="Telefono" />
-                  <TableColumn fx:id="columDireccion" prefWidth="75.0" text="Direccion" />
-                  <TableColumn fx:id="columLicencia" prefWidth="75.0" text="Licencia" />
-                  <TableColumn fx:id="columExperiencia" prefWidth="75.0" text="Experiencia" />
-                  <TableColumn fx:id="columEspecialidad" prefWidth="87.0" text="Especialidad" />
-              </columns>
-            </TableView>
-            <ImageView fitHeight="321.0" fitWidth="180.0" layoutY="-2.0" pickOnBounds="true" smooth="false">
-               <image>
-                  <Image url="@Imagen/Logo.png" />
-               </image>
-            </ImageView>
+            <ComboBox fx:id="cboxEspecialidadMedico" layoutX="355.0" layoutY="241.0" prefWidth="150.0" />
             <Button fx:id="btnAgregarMedico" layoutX="204.0" layoutY="289.0" mnemonicParsing="false" onAction="#onAgregar" text="Agregar">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
@@ -105,9 +89,24 @@
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
+            <TableView fx:id="tbMedicos" layoutX="10.0" layoutY="324.0" prefHeight="200.0" prefWidth="586.0">
+              <columns>
+                <TableColumn fx:id="columNombre" prefWidth="75.0" text="Nombre" />
+                <TableColumn fx:id="columEdad" prefWidth="75.0" text="Edad" />
+                  <TableColumn fx:id="columTelefono" prefWidth="75.0" text="Telefono" />
+                  <TableColumn fx:id="columDireccion" prefWidth="75.0" text="Direccion" />
+                  <TableColumn fx:id="columLicencia" prefWidth="75.0" text="Licencia" />
+                  <TableColumn fx:id="columExperiencia" prefWidth="75.0" text="Experiencia" />
+                  <TableColumn fx:id="columEspecialidad" prefWidth="87.0" text="Especialidad" />
+              </columns>
+            </TableView>
+            <ImageView fitHeight="321.0" fitWidth="180.0" layoutY="-2.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
             <Separator layoutX="185.0" layoutY="268.0" prefHeight="13.0" prefWidth="402.0" />
             <Separator layoutX="185.0" layoutY="43.0" prefHeight="13.0" prefWidth="402.0" />
-            <ComboBox fx:id="cboxEspecialidadMedico" layoutX="355.0" layoutY="241.0" prefWidth="150.0" />
          </children>
       </Pane>
    </children>

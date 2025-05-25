@@ -20,7 +20,6 @@ public class DatosMedicosViewController {
     private Administrador administrador;
 
     private ObservableList<Medico> listaMedicos = FXCollections.observableArrayList();
-
     public void setListaMedicos(ObservableList<Medico> lista) {
         this.listaMedicos = lista;
         tbMedicos.setItems(listaMedicos);

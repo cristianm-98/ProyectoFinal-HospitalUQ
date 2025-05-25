@@ -7,11 +7,11 @@ import java.util.LinkedList;
 public class Hospital {
     private String nit;
     private String nombre;
-    private LinkedList<Persona>listaPersonas;
-    private LinkedList<Paciente>listaPacientes;
-    private LinkedList<Medico>listaMedicos;
-    private LinkedList<Administrador>listaAdministradores;
-    private LinkedList<ConsultorioMedico>listaConsultorioMedicos;
+    private LinkedList<Persona> listaPersonas;
+    private LinkedList<Paciente> listaPacientes;
+    private LinkedList<Medico> listaMedicos;
+    private LinkedList<Administrador> listaAdministradores;
+    private LinkedList<ConsultorioMedico> listaConsultorioMedicos;
 
     private App app;
 
@@ -19,14 +19,14 @@ public class Hospital {
         this.app = app;
     }
 
-    public Hospital(String nit,String nombre){
-        this.nit=nit;
-        this.nombre=nombre;
+    public Hospital(String nit, String nombre) {
+        this.nit = nit;
+        this.nombre = nombre;
         listaPersonas = new LinkedList<>();
-        listaPacientes=new LinkedList<>();
-        listaMedicos=new LinkedList<>();
-        listaAdministradores=new LinkedList<>();
-        listaConsultorioMedicos=new LinkedList<>();
+        listaPacientes = new LinkedList<>();
+        listaMedicos = new LinkedList<>();
+        listaAdministradores = new LinkedList<>();
+        listaConsultorioMedicos = new LinkedList<>();
     }
 
     public String getNit() {
@@ -95,8 +95,8 @@ public class Hospital {
 
     public boolean eliminarPaciente(Paciente paciente) {
         String id = paciente.getId();
-        for (Paciente paciente_local : this.listaPacientes){
-            if (paciente_local.getId().equals(id)){
+        for (Paciente paciente_local : this.listaPacientes) {
+            if (paciente_local.getId().equals(id)) {
                 this.listaPacientes.remove(paciente_local);
                 return true;
             }
@@ -107,8 +107,8 @@ public class Hospital {
 
     public boolean modificarPaciente(Paciente paciente) {
         String id = paciente.getId();
-        for (Paciente paciente_local : this.listaPacientes){
-            if (paciente_local.getId().equals(id)){
+        for (Paciente paciente_local : this.listaPacientes) {
+            if (paciente_local.getId().equals(id)) {
                 this.listaPacientes.remove(paciente_local);
                 this.listaPacientes.add(paciente);
                 return true;
@@ -119,8 +119,8 @@ public class Hospital {
 
 
     public Paciente consultarPaciente(String id) {
-        for (Paciente paciente_local : this.listaPacientes){
-            if (paciente_local.getId().equals(id)){
+        for (Paciente paciente_local : this.listaPacientes) {
+            if (paciente_local.getId().equals(id)) {
                 return paciente_local;
             }
         }
@@ -137,8 +137,8 @@ public class Hospital {
 
     public boolean eliminarMedico(Medico medico) {
         String id = medico.getId();
-        for (Medico medico_local : this.listaMedicos){
-            if (medico_local.getId().equals(id)){
+        for (Medico medico_local : this.listaMedicos) {
+            if (medico_local.getId().equals(id)) {
                 this.listaMedicos.remove(medico_local);
                 return true;
             }
@@ -149,8 +149,8 @@ public class Hospital {
 
     public boolean modificarMedico(Medico medico) {
         String id = medico.getId();
-        for (Medico medico_local : this.listaMedicos){
-            if (medico_local.getId().equals(id)){
+        for (Medico medico_local : this.listaMedicos) {
+            if (medico_local.getId().equals(id)) {
                 this.listaMedicos.remove(medico_local);
                 this.listaMedicos.add(medico);
                 return true;
@@ -161,8 +161,8 @@ public class Hospital {
 
 
     public Medico consultarMedico(String id) {
-        for (Medico medico_local : this.listaMedicos){
-            if (medico_local.getId().equals(id)){
+        for (Medico medico_local : this.listaMedicos) {
+            if (medico_local.getId().equals(id)) {
                 return medico_local;
             }
         }
@@ -179,8 +179,8 @@ public class Hospital {
 
     public boolean eliminarAdministrador(Administrador administrador) {
         String id = administrador.getId();
-        for (Administrador administrador_local : this.listaAdministradores){
-            if (administrador_local.getId().equals(id)){
+        for (Administrador administrador_local : this.listaAdministradores) {
+            if (administrador_local.getId().equals(id)) {
                 this.listaAdministradores.remove(administrador_local);
                 return true;
             }
@@ -191,8 +191,8 @@ public class Hospital {
 
     public boolean modificarAdministrador(Administrador administrador) {
         String id = administrador.getId();
-        for (Administrador administrador_local : this.listaAdministradores){
-            if (administrador_local.getId().equals(id)){
+        for (Administrador administrador_local : this.listaAdministradores) {
+            if (administrador_local.getId().equals(id)) {
                 this.listaAdministradores.remove(administrador_local);
                 this.listaAdministradores.add(administrador);
                 return true;
@@ -203,8 +203,8 @@ public class Hospital {
 
 
     public Administrador consultarAdministrador(String id) {
-        for (Administrador administrador_local : this.listaAdministradores){
-            if (administrador_local.getId().equals(id)){
+        for (Administrador administrador_local : this.listaAdministradores) {
+            if (administrador_local.getId().equals(id)) {
                 return administrador_local;
             }
         }
@@ -213,7 +213,6 @@ public class Hospital {
 
     /// Consultorio Medico CRUD
 
-
     public boolean agregarConsultorio(ConsultorioMedico consultorioMedico) {
         this.listaConsultorioMedicos.add(consultorioMedico);
         return true;
@@ -221,8 +220,8 @@ public class Hospital {
 
     public boolean eliminarConsultorio(ConsultorioMedico consultorioMedico) {
         String id = consultorioMedico.getId();
-        for (ConsultorioMedico consultorio_local : this.listaConsultorioMedicos){
-            if (consultorio_local.getId().equals(id)){
+        for (ConsultorioMedico consultorio_local : this.listaConsultorioMedicos) {
+            if (consultorio_local.getId().equals(id)) {
                 this.listaConsultorioMedicos.remove(consultorio_local);
                 return true;
             }
@@ -233,8 +232,8 @@ public class Hospital {
 
     public boolean modificarConsultorio(ConsultorioMedico consultorioMedico) {
         String id = consultorioMedico.getId();
-        for (ConsultorioMedico consultorio_local : this.listaConsultorioMedicos){
-            if (consultorio_local.getId().equals(id)){
+        for (ConsultorioMedico consultorio_local : this.listaConsultorioMedicos) {
+            if (consultorio_local.getId().equals(id)) {
                 this.listaConsultorioMedicos.remove(consultorio_local);
                 this.listaConsultorioMedicos.add(consultorioMedico);
                 return true;
@@ -245,8 +244,8 @@ public class Hospital {
 
 
     public ConsultorioMedico consultarConsultorio(String id) {
-        for (ConsultorioMedico consultorio_local : this.listaConsultorioMedicos){
-            if (consultorio_local.getId().equals(id)){
+        for (ConsultorioMedico consultorio_local : this.listaConsultorioMedicos) {
+            if (consultorio_local.getId().equals(id)) {
                 return consultorio_local;
             }
         }

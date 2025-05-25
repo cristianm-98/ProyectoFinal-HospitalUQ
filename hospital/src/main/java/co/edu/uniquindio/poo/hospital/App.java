@@ -18,10 +18,16 @@ import co.edu.uniquindio.poo.hospital.model.*;
 public class App extends Application {
 
     private Stage loginStage;
+
+    //Creacion de la lista para las tableView
     private ObservableList<Medico>listaMedicos= FXCollections.observableArrayList();
+    private ObservableList<Paciente>listaPacientes=FXCollections.observableArrayList();
 
     public ObservableList<Medico> getListaMedicos() {
         return listaMedicos;
+    }
+    public ObservableList<Paciente>getListaPaciente(){
+        return listaPacientes;
     }
 
     public static Hospital hospital_main = new Hospital("810000913", "Hospital UQ");
@@ -185,6 +191,7 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+
     //---------Vista del administrador-----------
     public void abrirVistaAdministrador(Administrador administrador) {
         try {
@@ -210,6 +217,24 @@ public class App extends Application {
             datosMedicosViewController.initAdministrador(administrador);
             datosMedicosViewController.setApp(this);
             datosMedicosViewController.setListaMedicos(listaMedicos);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+
+        }
+    }
+    public void abrirVistaGestionPaciente(Administrador administrador) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudFormularioPaciente.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            DatosPacienteViewController datosPacienteViewController = loader.getController();
+            datosPacienteViewController.initAdministrador(administrador);
+            datosPacienteViewController.setApp(this);
+            datosPacienteViewController.setListaPacientes(listaPacientes);
             Scene scene = new Scene(rootLayout);
             loginStage.setScene(scene);
             loginStage.show();
