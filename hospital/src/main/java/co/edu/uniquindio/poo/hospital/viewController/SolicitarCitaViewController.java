@@ -2,19 +2,13 @@ package co.edu.uniquindio.poo.hospital.viewController;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import co.edu.uniquindio.poo.hospital.App;
-import co.edu.uniquindio.poo.hospital.model.Paciente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 public class SolicitarCitaViewController {
-    private App app;
-    private Paciente paciente;
 
     @FXML
     private ResourceBundle resources;
@@ -23,50 +17,54 @@ public class SolicitarCitaViewController {
     private URL location;
 
     @FXML
-    private Button btnSolicitar;
+    private Button btnAtras;
 
     @FXML
-    private ComboBox<?> cmboxDia;
+    private Button btnSolicitarCita;
 
     @FXML
-    private ComboBox<?> cmboxEstado;
+    private TableColumn<?, ?> columDia;
 
     @FXML
-    private DatePicker dateFinal;
+    private TableColumn<?, ?> columEspecialidad;
 
     @FXML
-    private DatePicker dateInicio;
+    private TableColumn<?, ?> columFechaFinal;
 
     @FXML
-    private TextField txtId;
+    private TableColumn<?, ?> columFechaInicio;
 
     @FXML
-    void onSolicitar(ActionEvent event) {
+    private TableColumn<?, ?> columHoraAtencion;
+
+    @FXML
+    private TableColumn<?, ?> columNombreMedico;
+
+    @FXML
+    private TableView<?> tblCita;
+
+    @FXML
+    void onAtras(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onSolicitarCita(ActionEvent event) {
 
     }
 
     @FXML
     void initialize() {
-        assert btnSolicitar != null : "fx:id=\"btnSolicitar\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert cmboxDia != null : "fx:id=\"cmboxDia\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert cmboxEstado != null : "fx:id=\"cmboxEstado\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert dateFinal != null : "fx:id=\"dateFinal\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert dateInicio != null : "fx:id=\"dateInicio\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert txtId != null : "fx:id=\"txtId\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert btnAtras != null : "fx:id=\"btnAtras\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert btnSolicitarCita != null : "fx:id=\"btnSolicitarCita\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert columDia != null : "fx:id=\"columDia\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert columEspecialidad != null : "fx:id=\"columEspecialidad\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert columFechaFinal != null : "fx:id=\"columFechaFinal\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert columFechaInicio != null : "fx:id=\"columFechaInicio\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert columHoraAtencion != null : "fx:id=\"columHoraAtencion\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert columNombreMedico != null : "fx:id=\"columNombreMedico\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
+        assert tblCita != null : "fx:id=\"tblCita\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
 
     }
 
-    @FXML
-    void onAtras(ActionEvent event) {
-        app.abrirVistaPaciente(this.paciente);
-    }
-
-
-
-    public void setApp(App app) {
-        this.app = app;
-    }
-    public void initPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
 }

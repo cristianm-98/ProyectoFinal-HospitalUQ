@@ -1,68 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="304.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.SolicitarCitaViewController">
+<AnchorPane prefHeight="392.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.SolicitarCitaViewController">
    <children>
-      <Pane prefHeight="304.0" prefWidth="466.0">
+      <Pane prefHeight="393.0" prefWidth="976.0">
          <children>
-            <Label layoutX="220.0" layoutY="19.0" text="SOLICITAR CITA">
-               <font>
-                  <Font name="System Bold Italic" size="24.0" />
-               </font>
-            </Label>
-            <Separator layoutX="191.0" layoutY="74.0" prefHeight="11.0" prefWidth="259.0" />
-            <ImageView fitHeight="304.0" fitWidth="181.0" pickOnBounds="true" smooth="false">
+            <ImageView fitHeight="393.0" fitWidth="167.0" pickOnBounds="true" smooth="false">
                <image>
                   <Image url="@Imagen/Logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="198.0" layoutY="94.0" text="Id">
+            <Label layoutX="459.0" layoutY="14.0" text="SOLICITAR CITA">
                <font>
-                  <Font name="System Bold Italic" size="14.0" />
+                  <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="198.0" layoutY="127.0" text="Dia">
-               <font>
-                  <Font name="System Bold Italic" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="198.0" layoutY="160.0" text="Fecha Inicio">
-               <font>
-                  <Font name="System Bold Italic" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="198.0" layoutY="190.0" text="Fecha Final">
-               <font>
-                  <Font name="System Bold Italic" size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtId" layoutX="279.0" layoutY="91.0" />
-            <ComboBox fx:id="cmboxDia" layoutX="279.0" layoutY="125.0" prefWidth="150.0" />
-            <DatePicker fx:id="dateInicio" layoutX="279.0" layoutY="157.0" />
-            <DatePicker fx:id="dateFinal" layoutX="279.0" layoutY="187.0" />
-            <Button fx:id="btnSolicitar" layoutX="220.0" layoutY="263.0" mnemonicParsing="false" onAction="#onSolicitar" text="Solicitar">
+            <Separator layoutX="170.0" layoutY="44.0" prefHeight="11.0" prefWidth="789.0" />
+            <Separator layoutX="169.0" layoutY="340.0" prefHeight="11.0" prefWidth="789.0" />
+            <TableView fx:id="tblCita" layoutX="170.0" layoutY="67.0" prefHeight="267.0" prefWidth="801.0">
+              <columns>
+                <TableColumn fx:id="columHoraAtencion" prefWidth="105.0" text="Hora Atención" />
+                <TableColumn fx:id="columDia" prefWidth="89.0" text="Dia" />
+                  <TableColumn fx:id="columFechaInicio" prefWidth="111.0" text="Fecha Inicio" />
+                  <TableColumn fx:id="columFechaFinal" prefWidth="121.0" text="Fecha Final" />
+                  <TableColumn fx:id="columNombreMedico" prefWidth="166.0" text="Nombre Medico" />
+                  <TableColumn fx:id="columEspecialidad" prefWidth="203.0" text="Especialidad" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnSolicitarCita" layoutX="470.0" layoutY="351.0" mnemonicParsing="false" onAction="#onSolicitarCita" text="Solicitar Cita">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
-            <Separator layoutX="193.0" layoutY="252.0" prefHeight="11.0" prefWidth="259.0" />
-            <Button layoutX="295.0" layoutY="263.0" mnemonicParsing="false" text="Limpiar">
-               <font>
-                  <Font name="System Bold Italic" size="13.0" />
-               </font>
-            </Button>
-            <Button layoutX="368.0" layoutY="263.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+            <Button fx:id="btnAtras" layoutX="578.0" layoutY="351.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>

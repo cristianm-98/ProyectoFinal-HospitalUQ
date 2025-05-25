@@ -13,34 +13,34 @@
 
 <AnchorPane prefHeight="313.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.HistorialMedicoViewController">
    <children>
-      <Pane prefHeight="331.0" prefWidth="671.0">
+      <Pane prefHeight="331.0" prefWidth="861.0">
          <children>
-            <ImageView fitHeight="331.0" fitWidth="170.0" pickOnBounds="true" smooth="false">
+            <ImageView fitHeight="331.0" fitWidth="153.0" pickOnBounds="true" smooth="false">
                <image>
                   <Image url="@Imagen/Logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="305.0" layoutY="14.0" text="HISTORIAL MEDICO">
+            <Label layoutX="402.0" layoutY="14.0" text="HISTORIAL MEDICO">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Separator layoutX="178.0" layoutY="48.0" prefHeight="20.0" prefWidth="476.0" />
-            <TableView fx:id="tbHistoriales" layoutX="178.0" layoutY="68.0" prefHeight="200.0" prefWidth="476.0">
+            <Separator layoutX="159.0" layoutY="48.0" prefHeight="20.0" prefWidth="689.0" />
+            <TableView fx:id="tbHistoriales" layoutX="159.0" layoutY="68.0" prefHeight="200.0" prefWidth="689.0">
               <columns>
-                <TableColumn fx:id="columId" prefWidth="66.0" text="Id" />
-                <TableColumn fx:id="columFecha" prefWidth="93.0" text="Fecha" />
-                  <TableColumn fx:id="columDescripcion" prefWidth="164.0" text="Descripción" />
-                  <TableColumn fx:id="columDiagnostico" prefWidth="152.0" text="Diagnostico" />
+                <TableColumn fx:id="columId" prefWidth="65.0" text="Id" />
+                <TableColumn fx:id="columFecha" prefWidth="104.0" text="Fecha" />
+                  <TableColumn fx:id="columDescripcion" prefWidth="248.0" text="Descripción" />
+                  <TableColumn fx:id="columDiagnostico" prefWidth="267.0" text="Diagnostico" />
               </columns>
             </TableView>
-            <Separator layoutX="189.0" layoutY="274.0" prefHeight="20.0" prefWidth="465.0" />
-            <Button fx:id="btnVerDetalle" layoutX="352.0" layoutY="294.0" mnemonicParsing="false" onAction="#onVerDetalle" text="Ver Detalle">
+            <Separator layoutX="159.0" layoutY="273.0" prefHeight="20.0" prefWidth="689.0" />
+            <Button fx:id="btnVerDetalle" layoutX="443.0" layoutY="294.0" mnemonicParsing="false" onAction="#onVerDetalle" text="Ver Detalle">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="btnAtras" layoutX="441.0" layoutY="294.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+            <Button fx:id="btnAtras" layoutX="532.0" layoutY="294.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
