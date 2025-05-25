@@ -18,6 +18,9 @@ public class Persona {
 
     }
 
+    public Persona(String number, String juan) {
+    }
+
     public String getId() {
         return id;
     }

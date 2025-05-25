@@ -10,6 +10,10 @@ public class Administrador extends Persona {
         this.areaResponsable=areaResponsable;
     }
 
+    public Administrador(String numero, String nombre) {
+        super(numero, nombre);
+    }
+
     public String getCargo() {
         return cargo;
     }

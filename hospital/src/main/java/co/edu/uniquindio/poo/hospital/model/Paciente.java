@@ -20,6 +20,10 @@ public class Paciente extends Persona implements IHistorialCRUD, INotificacionCR
         listahistorialMedico=new LinkedList<>();
     }
 
+    public Paciente(String numero, String nombre) {
+        super(numero, nombre);
+    }
+
     public String getTipoSangre() {
         return tipoSangre;
     }

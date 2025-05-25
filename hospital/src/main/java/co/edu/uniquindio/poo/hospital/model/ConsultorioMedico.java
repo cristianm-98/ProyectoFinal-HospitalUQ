@@ -19,6 +19,9 @@ public class ConsultorioMedico implements ICitaCRUD {
         listaCitas=new LinkedList<>();
     }
 
+    public ConsultorioMedico(String number) {
+    }
+
     public String getId() {
         return id;
     }

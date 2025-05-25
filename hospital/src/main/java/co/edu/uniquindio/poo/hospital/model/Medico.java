@@ -26,6 +26,10 @@ public class Medico extends Persona implements IHistorialCRUD, INotificacionCRUD
         listaCitas=new LinkedList<>();
     }
 
+    public Medico(String numero, String nombre) {
+        super(numero, nombre);
+    }
+
     public String getLicencia() {
         return licencia;
     }
