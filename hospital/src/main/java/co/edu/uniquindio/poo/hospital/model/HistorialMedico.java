@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo.hospital.model;
 
+import javafx.collections.ObservableList;
+
 import java.time.LocalDate;
 import java.util.LinkedList;
 
@@ -13,7 +15,6 @@ public class HistorialMedico {
     private LinkedList<Examen> listaExamenes;
     private LinkedList<Tratamiento> listaTratamientos;
     private LinkedList<PrescripcionMedica> listaPrescripcionMedicas;
-
 
 
     public HistorialMedico(String id, LocalDate fecha, String descripcion, String diagnostico, Paciente thePaciente, Medico theMedico) {

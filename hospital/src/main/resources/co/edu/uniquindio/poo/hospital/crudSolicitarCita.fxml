@@ -47,16 +47,10 @@
                   <Font name="System Bold Italic" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="198.0" layoutY="219.0" text="Estado">
-               <font>
-                  <Font name="System Bold Italic" size="14.0" />
-               </font>
-            </Label>
             <TextField fx:id="txtId" layoutX="279.0" layoutY="91.0" />
             <ComboBox fx:id="cmboxDia" layoutX="279.0" layoutY="125.0" prefWidth="150.0" />
             <DatePicker fx:id="dateInicio" layoutX="279.0" layoutY="157.0" />
             <DatePicker fx:id="dateFinal" layoutX="279.0" layoutY="187.0" />
-            <ComboBox fx:id="cmboxEstado" layoutX="279.0" layoutY="217.0" prefWidth="150.0" />
             <Button fx:id="btnSolicitar" layoutX="220.0" layoutY="263.0" mnemonicParsing="false" onAction="#onSolicitar" text="Solicitar">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
@@ -68,7 +62,7 @@
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
-            <Button layoutX="368.0" layoutY="263.0" mnemonicParsing="false" text="Atras">
+            <Button layoutX="368.0" layoutY="263.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>

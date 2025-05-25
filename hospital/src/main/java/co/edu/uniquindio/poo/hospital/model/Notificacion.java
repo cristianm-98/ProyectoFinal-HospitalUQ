@@ -8,7 +8,7 @@ public class Notificacion {
     private LocalTime fechaEnvio;
     private String mensaje;
     private boolean leido;
-    Persona destinatario;
+    private Persona destinatario;
 
     public Notificacion(String id, LocalTime fechaEnvio, String mensaje, boolean leido, Persona destinatario){
         this.id=id;

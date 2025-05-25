@@ -1,3 +1,4 @@
+
 import co.edu.uniquindio.poo.hospital.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -132,4 +133,5 @@ public class HospitalTest {
         assertTrue(hospital.modificarConsultorio(consultorio2));
         assertEquals(consultorio2, hospital.consultarConsultorio("4"));
     }
+
 }
