@@ -13,6 +13,9 @@ public class PrescripcionMedica {
         this.theHistorialMedico = theHistorialMedico;
     }
 
+    public PrescripcionMedica(String id, String theMedicamentos) {
+    }
+
     public String getId() {
         return id;
     }

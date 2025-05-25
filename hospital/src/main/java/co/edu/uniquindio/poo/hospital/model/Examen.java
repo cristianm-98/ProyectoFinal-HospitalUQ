@@ -11,6 +11,9 @@ public class Examen {
         this.descripcion=descripcion;
     }
 
+    public Examen(String id, String nombreExamen) {
+    }
+
     public String getId() {
         return id;
     }
