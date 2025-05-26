@@ -17,31 +17,13 @@ public class VerDetalleMedicoHistorialViewController {
     private URL location;
 
     @FXML
-    private Button btnActualizarExamen;
+    private Button btnDetalleExamen;
 
     @FXML
-    private Button btnActualizarMedicamento;
+    private Button btnDetallePrescripcion;
 
     @FXML
-    private Button btnActualizarTratamiento;
-
-    @FXML
-    private Button btnAgregarExamen;
-
-    @FXML
-    private Button btnAgregarMedicamento;
-
-    @FXML
-    private Button btnAgregarTratamiento;
-
-    @FXML
-    private Button btnElimanarExamen;
-
-    @FXML
-    private Button btnEliminarMedicamento;
-
-    @FXML
-    private Button btnEliminarTratamiento;
+    private Button btnDetalleTratamiento;
 
     @FXML
     private Button btnVolver;
@@ -68,47 +50,17 @@ public class VerDetalleMedicoHistorialViewController {
     private TableView<?> tblTratamiento;
 
     @FXML
-    void onActualizarExamen(ActionEvent event) {
+    void onDetalleExamen(ActionEvent event) {
 
     }
 
     @FXML
-    void onActualizarMedicamento(ActionEvent event) {
+    void onDetallePrescripcion(ActionEvent event) {
 
     }
 
     @FXML
-    void onActualizarTratamiento(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onAgregarExamen(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onAgregarMedicamento(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onAgregarTratamiento(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onEliminarExamen(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onEliminarMedicamento(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onEliminarTratamiento(ActionEvent event) {
+    void onDetalleTratamiento(ActionEvent event) {
 
     }
 
@@ -119,15 +71,9 @@ public class VerDetalleMedicoHistorialViewController {
 
     @FXML
     void initialize() {
-        assert btnActualizarExamen != null : "fx:id=\"btnActualizarExamen\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnActualizarMedicamento != null : "fx:id=\"btnActualizarMedicamento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnActualizarTratamiento != null : "fx:id=\"btnActualizarTratamiento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnAgregarExamen != null : "fx:id=\"btnAgregarExamen\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnAgregarMedicamento != null : "fx:id=\"btnAgregarMedicamento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnAgregarTratamiento != null : "fx:id=\"btnAgregarTratamiento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnElimanarExamen != null : "fx:id=\"btnElimanarExamen\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnEliminarMedicamento != null : "fx:id=\"btnEliminarMedicamento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnEliminarTratamiento != null : "fx:id=\"btnEliminarTratamiento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
+        assert btnDetalleExamen != null : "fx:id=\"btnDetalleExamen\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
+        assert btnDetallePrescripcion != null : "fx:id=\"btnDetallePrescripcion\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
+        assert btnDetalleTratamiento != null : "fx:id=\"btnDetalleTratamiento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
         assert btnVolver != null : "fx:id=\"btnVolver\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
         assert columDescripTratamiento != null : "fx:id=\"columDescripTratamiento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
         assert columDescripcion != null : "fx:id=\"columDescripcion\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
