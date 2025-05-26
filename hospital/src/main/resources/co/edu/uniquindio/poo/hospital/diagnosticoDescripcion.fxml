@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="284.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.DiagnosticoDescripcion">
+   <children>
+      <Pane prefHeight="284.0" prefWidth="564.0">
+         <children>
+            <ImageView fitHeight="284.0" fitWidth="199.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="271.0" layoutY="14.0" text="DETALLE HISTORIAL">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="337.0" layoutY="63.0" text="Descripcion">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="336.0" layoutY="149.0" text="Diagnostico">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtDescripcion" layoutX="207.0" layoutY="85.0" prefHeight="51.0" prefWidth="336.0" />
+            <Separator layoutX="207.0" layoutY="49.0" prefHeight="17.0" prefWidth="336.0" />
+            <Separator layoutX="210.0" layoutY="136.0" prefHeight="17.0" prefWidth="336.0" />
+            <TextArea fx:id="txtDiagnostico" layoutX="207.0" layoutY="171.0" prefHeight="51.0" prefWidth="336.0" />
+            <Separator layoutX="207.0" layoutY="226.0" prefHeight="17.0" prefWidth="336.0" />
+            <Button fx:id="btnGuardar" layoutX="314.0" layoutY="243.0" mnemonicParsing="false" onAction="#onGuardar" text="Guardar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="386.0" layoutY="243.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

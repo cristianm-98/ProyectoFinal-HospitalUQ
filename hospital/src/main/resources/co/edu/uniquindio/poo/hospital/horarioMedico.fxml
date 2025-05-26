@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="417.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.HorarioMedicoViewController">
+   <children>
+      <Pane prefHeight="425.0" prefWidth="611.0">
+         <children>
+            <ImageView fitHeight="422.0" fitWidth="178.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="272.0" layoutY="9.0" text="HORARIO MEDICO">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="189.0" layoutY="42.0" prefHeight="13.0" prefWidth="418.0" />
+            <Label layoutX="226.0" layoutY="64.0" text="Dia Atencion">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="225.0" layoutY="95.0" text="Hora Inicio">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="227.0" layoutY="126.0" text="Hora Final">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="combDiaAtencion" layoutX="329.0" layoutY="61.0" prefWidth="150.0" />
+            <ComboBox fx:id="combHoraInicio" layoutX="329.0" layoutY="92.0" prefWidth="150.0" />
+            <ComboBox fx:id="combHoraFinal" layoutX="329.0" layoutY="123.0" prefWidth="150.0" />
+            <Button fx:id="btnAgregarHorarioM" layoutX="243.0" layoutY="173.0" mnemonicParsing="false" onAction="#onAgregarHorarioM" text="Agregar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnActualizarHorarioM" layoutX="315.0" layoutY="173.0" mnemonicParsing="false" onAction="#onActualizarHorarioM" text="Actualizar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEliminarHorarioM" layoutX="400.0" layoutY="173.0" mnemonicParsing="false" onAction="#onEliminarHorarioM" text="Eliminar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="474.0" layoutY="173.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <TableView fx:id="btlHorarioM" layoutX="181.0" layoutY="221.0" prefHeight="200.0" prefWidth="425.0">
+              <columns>
+                <TableColumn fx:id="columAtencion" prefWidth="132.0" text="Dia Atencion" />
+                <TableColumn fx:id="columHorarioInicio" prefWidth="144.0" text="Hora incio" />
+                  <TableColumn fx:id="columHorarioFinal" prefWidth="133.0" text="Hora Final" />
+              </columns>
+            </TableView>
+            <Separator layoutX="186.0" layoutY="207.0" prefHeight="13.0" prefWidth="418.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="323.0" prefWidth="588.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.ListaPacienteViewController">
+   <children>
+      <Pane prefHeight="323.0" prefWidth="590.0">
+         <children>
+            <Button fx:id="btnSeleccionarPacient" layoutX="299.0" layoutY="65.0" mnemonicParsing="false" onAction="#onSeleccionarPacient" text="Seleccionar">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="396.0" layoutY="65.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="241.0" layoutY="16.0" text="LISTA DE PACIENTES">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="323.0" fitWidth="169.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tblPaciente" layoutX="178.0" layoutY="102.0" prefHeight="216.0" prefWidth="402.0">
+              <columns>
+                <TableColumn fx:id="columIdentificacion" prefWidth="140.0" text="Identificacion " />
+                <TableColumn fx:id="columNombre" prefWidth="215.0" text="Nombre" />
+              </columns>
+            </TableView>
+            <Separator layoutX="180.0" layoutY="51.0" prefHeight="14.0" prefWidth="385.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
