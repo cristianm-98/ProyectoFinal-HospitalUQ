@@ -7,6 +7,8 @@ import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.hospital.App;
 import co.edu.uniquindio.poo.hospital.model.Cita;
+import co.edu.uniquindio.poo.hospital.model.ConsultorioMedico;
+import co.edu.uniquindio.poo.hospital.model.Medico;
 import co.edu.uniquindio.poo.hospital.model.Paciente;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
@@ -67,8 +69,13 @@ public class CancelarCitaViewController {
         Cita citaSeleccionada = tblCitas.getSelectionModel().getSelectedItem();
 
         if (citaSeleccionada != null) {
+            Medico medico = citaSeleccionada.getThemedico();
+            ConsultorioMedico consultorioMedico = citaSeleccionada.getTheConsultorioMedico();
             citasObservableList.remove(citaSeleccionada);
             paciente.eliminarCita(citaSeleccionada);
+            medico.eliminarCita(citaSeleccionada);
+            consultorioMedico.eliminarCita(citaSeleccionada);
+
         }
 
     }

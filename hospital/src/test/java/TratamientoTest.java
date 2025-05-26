@@ -10,7 +10,7 @@ public class TratamientoTest {
 
     @BeforeEach
     public void setUp() {
-        tratamiento = new Tratamiento("tr1", "Fisioterapia lumbar");
+        tratamiento = new Tratamiento("tr1", "Fisioterapia lumbar",null);
     }
 
     @Test

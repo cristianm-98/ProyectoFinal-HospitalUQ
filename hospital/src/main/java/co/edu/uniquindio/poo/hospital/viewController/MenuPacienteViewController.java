@@ -36,7 +36,7 @@ public class MenuPacienteViewController {
 
     @FXML
     void onCerrarSeccion(ActionEvent event) {
-        app.abrirVistaLogin();
+        app.abrirVistaLogin(false);
     }
 
     @FXML

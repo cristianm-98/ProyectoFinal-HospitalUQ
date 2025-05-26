@@ -66,7 +66,7 @@ public class MenuAdministradorViewController {
     }
     @FXML
     void onCerrarSesion(ActionEvent event) {
-
+        app.abrirVistaLogin(false);
     }
 
     @FXML

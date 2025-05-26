@@ -100,23 +100,7 @@ public class class_template {
         medico3.agregarHorarioAtencion(horarioAtencion5);
         medico3.agregarHorarioAtencion(horarioAtencion6);
 
-        //Examen
 
-        Examen examen1 = new Examen("2747","Test de sangre", "Se examina hemoglobina");
-        Examen examen2 = new Examen("2748", "Electrocardiograma", "Se examina la actividad eléctrica del corazón");
-        Examen examen3 = new Examen("2749", "Radiografía", "Examen de imagen de rayos X para visualizar huesos");
-        Examen examen4 = new Examen("2750", "Tomografía", "Examen de imágenes de cortes transversales del cuerpo");
-        Examen examen5 = new Examen("2751", "Análisis de orina", "Examina la composición de la orina");
-        Examen examen6 = new Examen("2752", "Ultrasonido", "Examina los órganos internos utilizando ondas sonoras");
-
-        //Tratamiento
-
-        Tratamiento tratamiento1 = new Tratamiento("6934", "Se indica comer carnes para subir la hemoglobina");
-        Tratamiento tratamiento2 = new Tratamiento("6935", "Se prescribe medicamento para regular la actividad cardíaca");
-        Tratamiento tratamiento3 = new Tratamiento("6936", "Se recomienda reposo y fisioterapia");
-        Tratamiento tratamiento4 = new Tratamiento("6937", "Se recomienda cirugía para eliminar el tumor");
-        Tratamiento tratamiento5 = new Tratamiento("6938", "Se prescribe antibiótico para tratar infección");
-        Tratamiento tratamiento6 = new Tratamiento("6939", "Se recomienda control regular y dieta baja en sal");
 
         //Medicamento
 
@@ -140,6 +124,24 @@ public class class_template {
         // Historial para paciente 3 relacionado con examen5 y tratamiento5
         HistorialMedico historialMedico5 = new HistorialMedico("25261", LocalDate.of(2025, 5, 10), "El paciente acudió por fiebre y malestar general, se realizó un análisis de orina", "Se encontró infección urinaria, se prescribe antibiótico para tratarla", paciente3, medico3);
         HistorialMedico historialMedico6 = new HistorialMedico("25262", LocalDate.of(2025, 5, 14), "El paciente acudió por hipertensión, se realizó un ultrasonido", "Se encontró agrandamiento del corazón, se recomienda control regular y dieta baja en sal", paciente3,medico3);
+
+        //Examen
+
+        Examen examen1 = new Examen("2747","Test de sangre", "Se examina hemoglobina",historialMedico1);
+        Examen examen2 = new Examen("2748", "Electrocardiograma", "Se examina la actividad eléctrica del corazón",historialMedico2);
+        Examen examen3 = new Examen("2749", "Radiografía", "Examen de imagen de rayos X para visualizar huesos",historialMedico3);
+        Examen examen4 = new Examen("2750", "Tomografía", "Examen de imágenes de cortes transversales del cuerpo",historialMedico4);
+        Examen examen5 = new Examen("2751", "Análisis de orina", "Examina la composición de la orina",historialMedico5);
+        Examen examen6 = new Examen("2752", "Ultrasonido", "Examina los órganos internos utilizando ondas sonoras",historialMedico6);
+
+        //Tratamiento
+
+        Tratamiento tratamiento1 = new Tratamiento("6934", "Se indica comer carnes para subir la hemoglobina",historialMedico1);
+        Tratamiento tratamiento2 = new Tratamiento("6935", "Se prescribe medicamento para regular la actividad cardíaca",historialMedico2);
+        Tratamiento tratamiento3 = new Tratamiento("6936", "Se recomienda reposo y fisioterapia",historialMedico3);
+        Tratamiento tratamiento4 = new Tratamiento("6937", "Se recomienda cirugía para eliminar el tumor",historialMedico4);
+        Tratamiento tratamiento5 = new Tratamiento("6938", "Se prescribe antibiótico para tratar infección",historialMedico5);
+        Tratamiento tratamiento6 = new Tratamiento("6939", "Se recomienda control regular y dieta baja en sal",historialMedico6);
 
         //Prescripcion medica
 

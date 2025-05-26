@@ -8,6 +8,7 @@ public class HorarioAtencion {
     private String dia;
     private LocalTime horaInicio;
     private LocalTime horaFinal;
+    private Medico theMedico;
 
     public HorarioAtencion(String id,String dia,LocalTime horaInicio, LocalTime horaFinal){
         this.id=id;
@@ -50,4 +51,8 @@ public class HorarioAtencion {
     public void setHoraFinal(LocalTime horaFinal) {
         this.horaFinal = horaFinal;
     }
+
+    public Medico getTheMedico() { return theMedico; }
+
+    public void setTheMedico(Medico theMedico) { this.theMedico = theMedico; }
 }

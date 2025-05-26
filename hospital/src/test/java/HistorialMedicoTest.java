@@ -76,15 +76,15 @@ public class HistorialMedicoTest {
 
     @Test
     public void testAgregarYConsultarTratamiento() {
-        Tratamiento tratamiento = new Tratamiento("tr1", "Fisioterapia");
+        Tratamiento tratamiento = new Tratamiento("tr1", "Fisioterapia", null);
         assertTrue(historial.agregarTratamiento(tratamiento));
         assertEquals(tratamiento, historial.consultarTratamiento("tr1"));
     }
 
     @Test
     public void testModificarTratamiento() {
-        Tratamiento tr1 = new Tratamiento("tr1", "Fisioterapia");
-        Tratamiento tr2 = new Tratamiento("tr1", "Medicamentos");
+        Tratamiento tr1 = new Tratamiento("tr1", "Fisioterapia",null);
+        Tratamiento tr2 = new Tratamiento("tr1", "Medicamentos",null);
         historial.agregarTratamiento(tr1);
         assertTrue(historial.modificarTratamiento(tr2));
         assertEquals(tr2, historial.consultarTratamiento("tr1"));
@@ -92,7 +92,7 @@ public class HistorialMedicoTest {
 
     @Test
     public void testEliminarTratamiento() {
-        Tratamiento tratamiento = new Tratamiento("tr1", "Fisioterapia");
+        Tratamiento tratamiento = new Tratamiento("tr1", "Fisioterapia",null);
         historial.agregarTratamiento(tratamiento);
         assertTrue(historial.eliminarTratamiento(tratamiento));
         assertNull(historial.consultarTratamiento("tr1"));

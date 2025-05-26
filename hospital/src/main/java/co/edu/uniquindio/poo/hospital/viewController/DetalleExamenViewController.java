@@ -2,6 +2,10 @@ package co.edu.uniquindio.poo.hospital.viewController;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import co.edu.uniquindio.poo.hospital.App;
+import co.edu.uniquindio.poo.hospital.model.Examen;
+import co.edu.uniquindio.poo.hospital.model.Medico;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,6 +15,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class DetalleExamenViewController {
+    public  App app;
+    public Medico medico;
+    public Examen examen;
 
     @FXML
     private ResourceBundle resources;
@@ -57,7 +64,7 @@ public class DetalleExamenViewController {
 
     @FXML
     void onAtras(ActionEvent event) {
-
+        app.abrirDetalleHistorialMedico(examen.getTheHistorialMedico(),medico);
     }
 
     @FXML
@@ -79,4 +86,15 @@ public class DetalleExamenViewController {
 
     }
 
+    public void setApp(App app) {
+        this.app=app;
+    }
+
+    public void initMedico(Medico medico) {
+        this.medico=medico;
+    }
+
+    public void initExamen(Examen examen) {
+        this.examen = examen;
+    }
 }

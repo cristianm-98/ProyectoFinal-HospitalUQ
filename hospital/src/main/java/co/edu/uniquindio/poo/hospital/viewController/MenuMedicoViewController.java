@@ -4,11 +4,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.hospital.App;
+import co.edu.uniquindio.poo.hospital.model.Medico;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class MenuMedicoViewController {
+    private App app;
+    private Medico medico;
 
     @FXML
     private ResourceBundle resources;
@@ -30,7 +33,7 @@ public class MenuMedicoViewController {
 
     @FXML
     void onCerrarSesion(ActionEvent event) {
-
+        app.abrirVistaLogin(false);
     }
 
     @FXML
@@ -40,7 +43,7 @@ public class MenuMedicoViewController {
 
     @FXML
     void onHistorialMedico(ActionEvent event) {
-
+        app.abrirHistorialMedico(this.medico);
     }
 
     @FXML
@@ -58,6 +61,9 @@ public class MenuMedicoViewController {
     }
 
     public void setApp(App app) {
-
+        this.app=app;
+    }
+    public void setMedico(Medico medico){
+        this.medico=medico;
     }
 }

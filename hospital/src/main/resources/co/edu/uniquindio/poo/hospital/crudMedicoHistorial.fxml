@@ -27,7 +27,7 @@
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="242.0" layoutY="105.0" text="Nombre Paciente">
+            <Label fx:id="lblPaciente" layoutX="242.0" layoutY="100.0" text="Nombre Paciente">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
@@ -42,7 +42,6 @@
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="txtNombPaciente" layoutX="357.0" layoutY="102.0" />
             <TextArea fx:id="txtDescripMedica" layoutX="357.0" layoutY="135.0" prefHeight="37.0" prefWidth="310.0" />
             <TextArea fx:id="txtDiagMedico" layoutX="357.0" layoutY="181.0" prefHeight="38.0" prefWidth="310.0" />
             <Button fx:id="btnAgregarHistorial" layoutX="284.0" layoutY="239.0" mnemonicParsing="false" onAction="#onAgregarHistorial" text="Agregar">

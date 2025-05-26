@@ -10,7 +10,7 @@ public class ExamenTest {
 
     @BeforeEach
     public void setUp() {
-        examen = new Examen("ex1", "Hemograma", "Análisis completo de sangre");
+        examen = new Examen("ex1", "Hemograma", "Análisis completo de sangre", null);
     }
 
     @Test

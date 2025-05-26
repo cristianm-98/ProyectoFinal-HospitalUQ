@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 public class LoginViewController {
     private App app;
-
+    private Boolean First_sesion = true;
     @FXML
     private ResourceBundle resources;
 

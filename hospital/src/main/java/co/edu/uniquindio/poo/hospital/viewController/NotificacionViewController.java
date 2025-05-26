@@ -65,6 +65,7 @@ public class NotificacionViewController {
         Notificacion notificacionSeleccionada = tbNotificaciones.getSelectionModel().getSelectedItem();
         if (notificacionSeleccionada != null){
             notificacionSeleccionada.setLeido(true);
+            tbNotificaciones.refresh();
         }
     }
 

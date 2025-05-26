@@ -4,11 +4,13 @@ public class Examen {
     private String id;
     private String nombreExamen;
     private String descripcion;
+    private HistorialMedico theHistorialMedico;
 
-    public Examen(String id, String nombreExamen, String descripcion){
+    public Examen(String id, String nombreExamen, String descripcion,HistorialMedico historialMedico){
         this.id=id;
         this.nombreExamen=nombreExamen;
         this.descripcion=descripcion;
+        this.theHistorialMedico = historialMedico;
     }
 
     public Examen(String id, String nombreExamen) {
@@ -37,4 +39,6 @@ public class Examen {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    public HistorialMedico getTheHistorialMedico() { return theHistorialMedico; }
+    public void setTheHistorialMedico(HistorialMedico theHistorialMedico) { this.theHistorialMedico = theHistorialMedico; }
 }
