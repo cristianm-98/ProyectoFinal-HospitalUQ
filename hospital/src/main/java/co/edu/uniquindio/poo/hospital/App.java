@@ -340,6 +340,23 @@ public class App extends Application {
         }
     }
 
+    public void abrirGestionHorarioMedico(Medico medico) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("horarioMedico.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            HorarioMedicoViewController horarioMedicoViewController = loader.getController();
+            horarioMedicoViewController.initMedico(medico);
+            horarioMedicoViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
     //---------Vista del administrador-----------
     public void abrirVistaAdministrador(Administrador administrador) {
         try {

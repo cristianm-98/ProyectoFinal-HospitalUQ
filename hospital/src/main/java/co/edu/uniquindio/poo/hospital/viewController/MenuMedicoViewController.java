@@ -38,7 +38,7 @@ public class MenuMedicoViewController {
 
     @FXML
     void onGestionarHorario(ActionEvent event) {
-
+        app.abrirGestionHorarioMedico(this.medico);
     }
 
     @FXML

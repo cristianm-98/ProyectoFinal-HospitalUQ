@@ -45,7 +45,11 @@
             </Label>
             <ComboBox fx:id="combDiaAtencion" layoutX="329.0" layoutY="61.0" prefWidth="150.0" />
             <ComboBox fx:id="combHoraInicio" layoutX="329.0" layoutY="92.0" prefWidth="150.0" />
-            <ComboBox fx:id="combHoraFinal" layoutX="329.0" layoutY="123.0" prefWidth="150.0" />
+            <Label fx:id="lbHoraFinal" layoutX="329.0" layoutY="123.0" text="Hora Final Seleccionada">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
             <Button fx:id="btnAgregarHorarioM" layoutX="243.0" layoutY="173.0" mnemonicParsing="false" onAction="#onAgregarHorarioM" text="Agregar">
                <font>
                   <Font name="System Bold Italic" size="13.0" />

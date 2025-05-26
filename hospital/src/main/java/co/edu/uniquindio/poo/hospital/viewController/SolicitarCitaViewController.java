@@ -3,9 +3,7 @@ package co.edu.uniquindio.poo.hospital.viewController;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.LinkedList;
-import java.util.ResourceBundle;
-import java.util.UUID;
+import java.util.*;
 
 import co.edu.uniquindio.poo.hospital.App;
 import co.edu.uniquindio.poo.hospital.model.*;
@@ -111,10 +109,17 @@ public class SolicitarCitaViewController {
         this.paciente = paciente;
     }
 
-    public void initHorarios(LinkedList<HorarioAtencion> horarios) {
-        this.horarios = FXCollections.observableArrayList(horarios);
-        tblCita.setItems(this.horarios);
-        tblCita.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+    public void initHorarios(LinkedList<HorarioAtencion> listaHorarios) {
+        LinkedHashSet<HorarioAtencion> set = new LinkedHashSet<>(listaHorarios);
+        List<HorarioAtencion> unique = new ArrayList<>(set);
+
+        if (this.horarios == null) {
+            this.horarios = FXCollections.observableArrayList(unique);
+            tblCita.setItems(this.horarios);
+            tblCita.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        } else {
+            this.horarios.setAll(unique);
+        }
     }
 
 
