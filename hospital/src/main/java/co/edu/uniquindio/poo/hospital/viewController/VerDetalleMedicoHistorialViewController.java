@@ -65,7 +65,7 @@ public class VerDetalleMedicoHistorialViewController {
 
     @FXML
     void onDetalleExamen(ActionEvent event) {
-
+        app.abrirDetalleExamenMedico(historialMedico,medico);
     }
 
     @FXML

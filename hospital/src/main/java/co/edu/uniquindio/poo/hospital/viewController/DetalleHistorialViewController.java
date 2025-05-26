@@ -16,6 +16,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 
+import javax.swing.*;
+
 public class DetalleHistorialViewController {
     private App app;
     private Paciente paciente;
@@ -59,6 +61,7 @@ public class DetalleHistorialViewController {
 
     @FXML
     private Label lbIdHistorial;
+
 
     @FXML
     private TableView<Examen> tbExamenes;

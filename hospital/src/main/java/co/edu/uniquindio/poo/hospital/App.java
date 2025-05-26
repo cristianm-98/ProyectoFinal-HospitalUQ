@@ -236,7 +236,7 @@ public class App extends Application {
         }
     }
 
-    public void abrirDetalleExamenMedico(Examen examen,Medico medico) {
+    public void abrirDetalleExamenMedico(HistorialMedico historialMedico,Medico medico) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("verDetalleExamen.fxml"));
@@ -244,8 +244,7 @@ public class App extends Application {
             DetalleExamenViewController detalleExamenViewController= loader.getController();
             detalleExamenViewController.setApp(this);
             detalleExamenViewController.initMedico(medico);
-            detalleExamenViewController.initExamen(examen);
-
+            detalleExamenViewController.initHistorialMedico(historialMedico);
             Scene scene = new Scene(rootLayout);
             loginStage.setScene(scene);
             loginStage.show();
