@@ -70,17 +70,17 @@ public class VerDetalleMedicoHistorialViewController {
 
     @FXML
     void onDetallePrescripcion(ActionEvent event) {
-
+        app.abrirDetalleMedicamentoMedico(historialMedico,medico);
     }
 
     @FXML
     void onDetalleTratamiento(ActionEvent event) {
-
+        app.abrirDetalleTratamientoMedico(historialMedico,medico);
     }
 
     @FXML
     void onVolver(ActionEvent event) {
-        app.abrirHistorialMedico(medico);
+            app.abrirHistorialMedico(medico);
     }
 
     @FXML

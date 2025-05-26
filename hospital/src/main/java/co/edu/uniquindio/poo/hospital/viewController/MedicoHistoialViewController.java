@@ -92,7 +92,7 @@ public class MedicoHistoialViewController {
 
     @FXML
     void onAgregarHistorial(ActionEvent event) {
-
+        app.abrirAgregarPacienteMedico(medico);
     }
 
     @FXML

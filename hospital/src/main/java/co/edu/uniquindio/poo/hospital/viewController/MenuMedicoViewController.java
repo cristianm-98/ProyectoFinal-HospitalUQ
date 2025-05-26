@@ -48,7 +48,7 @@ public class MenuMedicoViewController {
 
     @FXML
     void onNotificarCambioCita(ActionEvent event) {
-
+        app.abrirVistaNotificacionMedico(this.medico);
     }
 
     @FXML

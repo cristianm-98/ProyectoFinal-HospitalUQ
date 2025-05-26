@@ -254,6 +254,92 @@ public class App extends Application {
         }
     }
 
+    public void abrirDetalleTratamientoMedico(HistorialMedico historialMedico,Medico medico) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("verDetalleTratamiento.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            DetalleTratamientoViewController detalletratamientoViewController= loader.getController();
+            detalletratamientoViewController.setApp(this);
+            detalletratamientoViewController.initMedico(medico);
+            detalletratamientoViewController.initHistorialMedico(historialMedico);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void abrirDetalleMedicamentoMedico(HistorialMedico historialMedico,Medico medico) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("verDetalleMedicamento.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            DetalleMedicamentoViewController detalleMedicamentoViewController= loader.getController();
+            detalleMedicamentoViewController.setApp(this);
+            detalleMedicamentoViewController.initMedico(medico);
+            detalleMedicamentoViewController.initHistorialMedico(historialMedico);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    public void abrirAgregarPacienteMedico(Medico medico) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("listaPaciente.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            ListaPacienteViewController listaPacienteViewController= loader.getController();
+            listaPacienteViewController.setApp(this);
+            listaPacienteViewController.initMedico(medico);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    public void abrirAgregarDescDiagMedico(Paciente paciente,Medico medico) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("diagnosticoDescripcion.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            DiagnosticoDescripcion diagnosticoDescripcion= loader.getController();
+            diagnosticoDescripcion.setApp(this);
+            diagnosticoDescripcion.setMedico(medico);
+            diagnosticoDescripcion.setPaciente(paciente);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void abrirVistaNotificacionMedico(Medico medico) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudNotificaciones.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            NotificacionViewController notificacionViewControllerViewController = loader.getController();
+            notificacionViewControllerViewController.initMedico(medico);
+            notificacionViewControllerViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
     //---------Vista del administrador-----------
     public void abrirVistaAdministrador(Administrador administrador) {
         try {
@@ -737,5 +823,23 @@ public class App extends Application {
             }
         }
         return false;
+    }
+
+    public LinkedList<Medicamento> getMedicamentos() {
+        LinkedList<Medicamento> listaMedicamentos = new LinkedList<>();
+        for (Medico medico : hospital_main.getListaMedicos()) {
+            for (HistorialMedico historialMedico : medico.getListaHistorialMedicos()) {
+                for (PrescripcionMedica prescripcionMedica : historialMedico.getListaPrescripcionMedicas()){
+                    if (!(listaMedicamentos.contains(prescripcionMedica.getTheMedicamentos()))){
+                        listaMedicamentos.add(prescripcionMedica.getTheMedicamentos());
+                    }
+                }
+            }
+        }
+        return listaMedicamentos;
+    }
+
+    public LinkedList<Paciente> getPacientes() {
+        return hospital_main.getListaPacientes();
     }
 }
