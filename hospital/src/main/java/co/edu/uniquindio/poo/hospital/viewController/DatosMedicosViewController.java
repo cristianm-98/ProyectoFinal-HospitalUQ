@@ -19,8 +19,6 @@ public class DatosMedicosViewController {
     private Hospital hospital;
     private ObservableList<Medico> listaMedicos;
 
-
-
     @FXML
     private ResourceBundle resources;
 
@@ -41,6 +39,9 @@ public class DatosMedicosViewController {
 
     @FXML
     private Button btnLimpiar;
+
+    @FXML
+    private Button btnRestaurar;
 
     @FXML
     private ComboBox<Especialidad> cboxEspecialidadMedico;
@@ -101,6 +102,63 @@ public class DatosMedicosViewController {
 
     @FXML
     private TextField txtUsuario;
+
+    @FXML
+    void onAgregar(ActionEvent event) {
+        try {
+            if (txtIdentificacion.getText().isBlank() ||
+                    txtNombreMedico.getText().isBlank() ||
+                    txtEdadMedico.getText().isBlank() ||
+                    txtTelefonoMedico.getText().isBlank() ||
+                    txtDireccionMedico.getText().isBlank() ||
+                    txtLicenciaMedico.getText().isBlank() ||
+                    txtExperienciaMedico.getText().isBlank() ||
+                    cboxEspecialidadMedico.getValue() == null ||
+                    txtUsuario.getText().isBlank()||
+                    txtContrasenia.getText().isBlank())
+            {
+                mostrarAlerta("Por favor complete los datos completos y seleccione una especialidad");
+                return;
+            }
+
+            String id = txtIdentificacion.getText();
+            String nombre = txtNombreMedico.getText();
+            int edad = Integer.parseInt(txtEdadMedico.getText());
+            String telefono = txtTelefonoMedico.getText();
+            String direccion = txtDireccionMedico.getText();
+            String licencia = txtLicenciaMedico.getText();
+            int experiencia = Integer.parseInt(txtExperienciaMedico.getText());
+            Especialidad especialidad = cboxEspecialidadMedico.getValue();
+
+            //Crear usuario
+            String usuarioNombre=txtUsuario.getText();
+            String contrasenia=txtContrasenia.getText();
+            Usuario newUsuario= new Usuario(usuarioNombre,contrasenia,null,TipoUsuario.MEDICO);
+
+            //Crear medico
+            Medico newMedico = new Medico(id, nombre, edad, telefono, direccion, null, licencia, experiencia, especialidad);
+            newMedico.setTheUsuario(newUsuario);
+            newUsuario.setThePersona(newMedico);
+
+            //Agregar a la lista Medico
+
+            listaMedicos.add(newMedico);
+            hospital.getListaMedicos().add(newMedico);
+            tbMedicos.refresh();
+            limpiarCampo();
+            mostrarAlerta("Medico creado con exito. \nUsuario: " + usuarioNombre + "\nContraseña: "+ contrasenia +"\nGuarde esta informacion");
+        } catch (NumberFormatException e) {
+            mostrarAlerta("Edad y Años de experiencia deber ser numeros enteros");
+        }
+    }
+
+    private void mostrarAlerta(String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.ERROR);
+        alerta.setTitle("Error");
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
 
     @FXML
     void onActualizar(ActionEvent event) {
@@ -170,70 +228,6 @@ public class DatosMedicosViewController {
         }
     }
 
-
-    @FXML
-    void onAgregar(ActionEvent event) {
-        try {
-            if (txtIdentificacion.getText().isBlank() ||
-                    txtNombreMedico.getText().isBlank() ||
-                    txtEdadMedico.getText().isBlank() ||
-                    txtTelefonoMedico.getText().isBlank() ||
-                    txtDireccionMedico.getText().isBlank() ||
-                    txtLicenciaMedico.getText().isBlank() ||
-                    txtExperienciaMedico.getText().isBlank() ||
-                    cboxEspecialidadMedico.getValue() == null ||
-                    txtUsuario.getText().isBlank()||
-                    txtContrasenia.getText().isBlank())
-            {
-                mostrarAlerta("Por favor complete los datos completos y seleccione una especialidad");
-                return;
-            }
-
-            String id = txtIdentificacion.getText();
-            String nombre = txtNombreMedico.getText();
-            int edad = Integer.parseInt(txtEdadMedico.getText());
-            String telefono = txtTelefonoMedico.getText();
-            String direccion = txtDireccionMedico.getText();
-            String licencia = txtLicenciaMedico.getText();
-            int experiencia = Integer.parseInt(txtExperienciaMedico.getText());
-            Especialidad especialidad = cboxEspecialidadMedico.getValue();
-
-            //Crear usuario
-            String usuarioNombre=txtUsuario.getText();
-            String contrasenia=txtContrasenia.getText();
-            Usuario newUsuario= new Usuario(usuarioNombre,contrasenia,null,TipoUsuario.MEDICO);
-
-            //Crear medico
-            Medico newMedico = new Medico(id, nombre, edad, telefono, direccion, null, licencia, experiencia, especialidad);
-            newMedico.setTheUsuario(newUsuario);
-            newUsuario.setThePersona(newMedico);
-
-            //Agregar a la lista
-            listaMedicos.add(newMedico);
-            hospital.getListaMedicos().add(newMedico);
-            tbMedicos.refresh();
-            limpiarCampo();
-            mostrarAlerta("Medico creado con exito. \nUsuario: " + usuarioNombre + "\nContraseña: "+ contrasenia +"\nGuarde esta informacion");
-        } catch (NumberFormatException e) {
-            mostrarAlerta("Edad y Años de experiencia deber ser numeros enteros");
-        }
-
-    }
-
-    private void mostrarAlerta(String mensaje) {
-        Alert alerta = new Alert(Alert.AlertType.ERROR);
-        alerta.setTitle("Error");
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensaje);
-        alerta.showAndWait();
-    }
-
-    @FXML
-    void onAtras(ActionEvent event) {
-        app.abrirVistaAdministrador(this.administrador);
-
-    }
-
     @FXML
     void onEliminar(ActionEvent event) {
         Medico medicoSeleccionado = tbMedicos.getSelectionModel().getSelectedItem();
@@ -250,8 +244,18 @@ public class DatosMedicosViewController {
     @FXML
     void onLimpiar(ActionEvent event) {
         limpiarCampo();
+    }
+
+    @FXML
+    void onAtras(ActionEvent event) {
+        app.abrirVistaAdministrador(this.administrador);
+    }
+
+    @FXML
+    void onRestaurar(ActionEvent event) {
 
     }
+
 
     @FXML
     void initialize() {
@@ -272,13 +276,14 @@ public class DatosMedicosViewController {
                 return new SimpleStringProperty("No asignado");
             }
         });
+        tbMedicos.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> mostrarMedicoSeleccionado(newValue)
+        );
         tbMedicos.setItems(listaMedicos);
         tbMedicos.refresh();
 
 
-        tbMedicos.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> mostrarMedicoSeleccionado(newValue)
-        );
+
 
     }
 
