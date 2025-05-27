@@ -142,6 +142,7 @@ public class DatosPacienteViewController {
 
             Paciente newPaciente = new Paciente(id, nombre, edad, telefono, direccion, null, tipoSangre);
             listaPacientes.add(newPaciente);
+            hospital.getListaPacientes().add(newPaciente);
             tblPaciente.refresh();
             limpiarCampo();
         } catch (NumberFormatException e) {

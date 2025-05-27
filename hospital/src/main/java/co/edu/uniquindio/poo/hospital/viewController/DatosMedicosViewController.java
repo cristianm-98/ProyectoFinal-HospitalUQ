@@ -17,8 +17,8 @@ public class DatosMedicosViewController {
     private App app;
     private Administrador administrador;
     private Hospital hospital;
+    private ObservableList<Medico> listaMedicos;
 
-    private ObservableList<Medico> listaMedicos = FXCollections.observableArrayList();
 
 
     @FXML
@@ -138,6 +138,8 @@ public class DatosMedicosViewController {
                 newMedico.setTheUsuario(usuario);
                 usuario.setThePersona(newMedico);
                 listaMedicos.add(newMedico);
+                hospital.getListaMedicos().add(newMedico);
+                tbMedicos.refresh();
 
             } else {
                 medicoSeleccionado.setNombre(nombre);
@@ -208,6 +210,7 @@ public class DatosMedicosViewController {
 
             //Agregar a la lista
             listaMedicos.add(newMedico);
+            hospital.getListaMedicos().add(newMedico);
             tbMedicos.refresh();
             limpiarCampo();
             mostrarAlerta("Medico creado con exito. \nUsuario: " + usuarioNombre + "\nContraseña: "+ contrasenia +"\nGuarde esta informacion");
