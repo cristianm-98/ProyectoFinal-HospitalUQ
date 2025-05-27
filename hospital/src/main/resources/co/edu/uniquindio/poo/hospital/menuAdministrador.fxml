@@ -34,17 +34,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnGestionarSalaHorarios" layoutX="230.0" layoutY="185.0" mnemonicParsing="false" onAction="#onGestionarSalaHorarios" text="Gestionar Salas y Horarios">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnAsignarPaciente" layoutX="230.0" layoutY="223.0" mnemonicParsing="false" onAction="#onAsignarPaciente" text="Asignar Paciente">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnReporte" layoutX="230.0" layoutY="262.0" mnemonicParsing="false" onAction="#onReporte" text="Ver Reporte">
+            <Button fx:id="btnReporte" layoutX="230.0" layoutY="182.0" mnemonicParsing="false" onAction="#onReporte" text="Ver Reporte">
                <font>
                   <Font size="14.0" />
                </font>

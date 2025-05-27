@@ -253,6 +253,7 @@ public class DatosMedicosViewController {
 
     @FXML
     void onRestaurar(ActionEvent event) {
+        app.abrirContraseniaRestaurarMedico(this.administrador);
 
     }
 
@@ -281,10 +282,6 @@ public class DatosMedicosViewController {
         );
         tbMedicos.setItems(listaMedicos);
         tbMedicos.refresh();
-
-
-
-
     }
 
     private void mostrarMedicoSeleccionado(Medico medico) {

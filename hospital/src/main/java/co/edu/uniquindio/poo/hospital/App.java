@@ -2,8 +2,6 @@ package co.edu.uniquindio.poo.hospital;
 
 import co.edu.uniquindio.poo.hospital.viewController.*;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -20,6 +18,7 @@ import java.util.Locale;
 import java.util.Random;
 
 import co.edu.uniquindio.poo.hospital.model.*;
+
 public class App extends Application {
 
     private Stage loginStage;
@@ -31,8 +30,11 @@ public class App extends Application {
         this.loginStage.setTitle("Gestion de Hospital");
         abrirVistaLogin(true);
     }
+
     public void abrirVistaLogin(Boolean first_time) {
-        if (first_time){inicializarData();}
+        if (first_time) {
+            inicializarData();
+        }
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("login.fxml"));
@@ -47,6 +49,7 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+
     //-----Vistas del Paciente----------
     public void abrirVistaPaciente(Paciente paciente) {
         try {
@@ -64,6 +67,7 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+
     public void abrirVistaDatosPersonalesPaciente(Paciente paciente) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -192,7 +196,7 @@ public class App extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("crudMedicoHistorial.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-            MedicoHistoialViewController medicoHistoialViewController= loader.getController();
+            MedicoHistoialViewController medicoHistoialViewController = loader.getController();
             medicoHistoialViewController.setApp(this);
             medicoHistoialViewController.initMedico(medico);
             Scene scene = new Scene(rootLayout);
@@ -204,12 +208,12 @@ public class App extends Application {
         }
     }
 
-    public void abrirDetalleHistorialMedico(HistorialMedico historialMedico,Medico medico) {
+    public void abrirDetalleHistorialMedico(HistorialMedico historialMedico, Medico medico) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("verDetalleMedicoHistorial.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-            VerDetalleMedicoHistorialViewController verDetalleMedicoHistorialViewController= loader.getController();
+            VerDetalleMedicoHistorialViewController verDetalleMedicoHistorialViewController = loader.getController();
             verDetalleMedicoHistorialViewController.setApp(this);
             verDetalleMedicoHistorialViewController.initMedico(medico);
             verDetalleMedicoHistorialViewController.initHistorialMedico(historialMedico);
@@ -223,12 +227,12 @@ public class App extends Application {
         }
     }
 
-    public void abrirDetalleExamenMedico(HistorialMedico historialMedico,Medico medico) {
+    public void abrirDetalleExamenMedico(HistorialMedico historialMedico, Medico medico) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("verDetalleExamen.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-            DetalleExamenViewController detalleExamenViewController= loader.getController();
+            DetalleExamenViewController detalleExamenViewController = loader.getController();
             detalleExamenViewController.setApp(this);
             detalleExamenViewController.initMedico(medico);
             detalleExamenViewController.initHistorialMedico(historialMedico);
@@ -241,12 +245,12 @@ public class App extends Application {
         }
     }
 
-    public void abrirDetalleTratamientoMedico(HistorialMedico historialMedico,Medico medico) {
+    public void abrirDetalleTratamientoMedico(HistorialMedico historialMedico, Medico medico) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("verDetalleTratamiento.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-            DetalleTratamientoViewController detalletratamientoViewController= loader.getController();
+            DetalleTratamientoViewController detalletratamientoViewController = loader.getController();
             detalletratamientoViewController.setApp(this);
             detalletratamientoViewController.initMedico(medico);
             detalletratamientoViewController.initHistorialMedico(historialMedico);
@@ -259,12 +263,12 @@ public class App extends Application {
         }
     }
 
-    public void abrirDetalleMedicamentoMedico(HistorialMedico historialMedico,Medico medico) {
+    public void abrirDetalleMedicamentoMedico(HistorialMedico historialMedico, Medico medico) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("verDetalleMedicamento.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-            DetalleMedicamentoViewController detalleMedicamentoViewController= loader.getController();
+            DetalleMedicamentoViewController detalleMedicamentoViewController = loader.getController();
             detalleMedicamentoViewController.setApp(this);
             detalleMedicamentoViewController.initMedico(medico);
             detalleMedicamentoViewController.initHistorialMedico(historialMedico);
@@ -276,12 +280,13 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+
     public void abrirAgregarPacienteMedico(Medico medico) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("listaPaciente.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-            ListaPacienteViewController listaPacienteViewController= loader.getController();
+            ListaPacienteViewController listaPacienteViewController = loader.getController();
             listaPacienteViewController.setApp(this);
             listaPacienteViewController.initMedico(medico);
             Scene scene = new Scene(rootLayout);
@@ -292,12 +297,13 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
-    public void abrirAgregarDescDiagMedico(Paciente paciente,Medico medico) {
+
+    public void abrirAgregarDescDiagMedico(Paciente paciente, Medico medico) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("diagnosticoDescripcion.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-            DiagnosticoDescripcion diagnosticoDescripcion= loader.getController();
+            DiagnosticoDescripcion diagnosticoDescripcion = loader.getController();
             diagnosticoDescripcion.setApp(this);
             diagnosticoDescripcion.setMedico(medico);
             diagnosticoDescripcion.setPaciente(paciente);
@@ -360,6 +366,7 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+
     public void abrirVistaGestionPaciente(Administrador administrador) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -378,6 +385,7 @@ public class App extends Application {
 
         }
     }
+
     public void abrirVistaGestionMedico(Administrador administrador) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -396,6 +404,7 @@ public class App extends Application {
 
         }
     }
+
     public void abrirVistaDetalleReporte(Administrador administrador) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -413,6 +422,7 @@ public class App extends Application {
 
         }
     }
+
     public void abrirReporteCita(Administrador administrador) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -431,6 +441,7 @@ public class App extends Application {
 
         }
     }
+
     public void abrirReporteMedico(Administrador administrador) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -450,19 +461,59 @@ public class App extends Application {
         }
     }
 
+    public void abrirContraseniaRestaurarPaciente(Administrador administrador) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("contraseniaRestaurarPaciente.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            ContraseniaRestaurarViewController contraseniaRestaurarViewController = loader.getController();
+            contraseniaRestaurarViewController.initAdministrador(administrador);
+            contraseniaRestaurarViewController.initListaPaciente(hospital_main);
+            contraseniaRestaurarViewController.initListaMedico(hospital_main);
+            contraseniaRestaurarViewController.setVistaAnterior("paciente");
+            contraseniaRestaurarViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void abrirContraseniaRestaurarMedico(Administrador administrador) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("contraseniaRestaurarMedico.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            ContraseniaRestaurarViewController contraseniaRestaurarViewController = loader.getController();
+            contraseniaRestaurarViewController.initAdministrador(administrador);
+            contraseniaRestaurarViewController.initListaMedico(hospital_main);
+            contraseniaRestaurarViewController.setVistaAnterior("medico");
+            contraseniaRestaurarViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
 
     public static void app(String[] args) {
         launch();
     }
+
     //servicios
-    public void inicializarData(){
+    public void inicializarData() {
 
         //Hospital
-        hospital_main=new Hospital("8100","Hospital UQ");
+        hospital_main = new Hospital("8100", "Hospital UQ");
 
         //Personas
-        Usuario Ausuario1=new Usuario("jlinares","1234",null, TipoUsuario.ADMINISTRADOR);
-        Administrador administrador1=new Administrador("1234","Julia Linares",25,"256310","Manzana 50", null,"Jefe de Clinica","Citas");
+        Usuario Ausuario1 = new Usuario("jlinares", "1234", null, TipoUsuario.ADMINISTRADOR);
+        Administrador administrador1 = new Administrador("1234", "Julia Linares", 25, "256310", "Manzana 50", null, "Jefe de Clinica", "Citas");
         administrador1.setTheUsuario(Ausuario1);
         Ausuario1.setThePersona(administrador1);
 
@@ -477,12 +528,12 @@ public class App extends Application {
         Ausuario3.setThePersona(administrador3);
 
         Usuario Musuario1 = new Usuario("jperez", "4567", null, TipoUsuario.MEDICO);
-        Medico medico1 = new Medico("789","Jose Perez",25,"255673","Manzana 65",null,"A525",5, Especialidad.CIRUGIA_GENERAL);
+        Medico medico1 = new Medico("789", "Jose Perez", 25, "255673", "Manzana 65", null, "A525", 5, Especialidad.CIRUGIA_GENERAL);
         medico1.setTheUsuario(Musuario1);
         Musuario1.setThePersona(medico1);
 
         Usuario Musuario2 = new Usuario("aprada", "5678", null, TipoUsuario.MEDICO);
-        Medico medico2 = new Medico("890","Anderson Prada",30,"255674","Manzana 66",null,"A526",6, Especialidad.MEDICINA_GENERAL);
+        Medico medico2 = new Medico("890", "Anderson Prada", 30, "255674", "Manzana 66", null, "A526", 6, Especialidad.MEDICINA_GENERAL);
         medico2.setTheUsuario(Musuario2);
         Musuario2.setThePersona(medico2);
 
@@ -492,12 +543,12 @@ public class App extends Application {
         Musuario3.setThePersona(medico3);
 
         Usuario pusuario1 = new Usuario("jmartinez", "6789", null, TipoUsuario.PACIENTE);
-        Paciente paciente1 = new Paciente("3674","Julian Martinez",25,"255677","Manzana 69",null,"A+");
+        Paciente paciente1 = new Paciente("3674", "Julian Martinez", 25, "255677", "Manzana 69", null, "A+");
         paciente1.setTheUsuario(pusuario1);
         pusuario1.setThePersona(paciente1);
 
         Usuario pusuario2 = new Usuario("jperez", "6789", null, TipoUsuario.PACIENTE);
-        Paciente paciente2 = new Paciente("3626","Josefa Perez",25,"255677","Manzana 69",null,"A+");
+        Paciente paciente2 = new Paciente("3626", "Josefa Perez", 25, "255677", "Manzana 69", null, "A+");
         paciente2.setTheUsuario(pusuario2);
         pusuario2.setThePersona(paciente2);
 
@@ -507,7 +558,7 @@ public class App extends Application {
         pusuario3.setThePersona(paciente3);
 
         //Consultorio medico
-        ConsultorioMedico consultorioMedico1 = new ConsultorioMedico("2516","Cuarto Cirurgico",true, (byte) 2);
+        ConsultorioMedico consultorioMedico1 = new ConsultorioMedico("2516", "Cuarto Cirurgico", true, (byte) 2);
         ConsultorioMedico consultorioMedico2 = new ConsultorioMedico("2517", "Consultorio Medicina General", true, (byte) 3);
         ConsultorioMedico consultorioMedico3 = new ConsultorioMedico("2518", "Consultorio Medicina General", true, (byte) 4);
         ConsultorioMedico consultorioMedico4 = new ConsultorioMedico("2519", "Cuarto Cirurgico", true, (byte) 5);
@@ -537,17 +588,15 @@ public class App extends Application {
         HorarioAtencion horarioAtencion4 = new HorarioAtencion("2750", "Viernes", LocalTime.of(9, 0), LocalTime.of(10, 0));
         HorarioAtencion horarioAtencion5 = new HorarioAtencion("2751", "Sábado", LocalTime.of(8, 0), LocalTime.of(9, 0));
         HorarioAtencion horarioAtencion6 = new HorarioAtencion("2752", "Lunes", LocalTime.of(7, 30), LocalTime.of(8, 30));
-        HorarioAtencion horarioAtencion7  = new HorarioAtencion("2762", "Martes",   LocalTime.of(12, 45), LocalTime.of(13, 45));
-        HorarioAtencion horarioAtencion8  = new HorarioAtencion("2763", "Martes",   LocalTime.of(13, 45), LocalTime.of(14, 45));
-        HorarioAtencion horarioAtencion9  = new HorarioAtencion("2764", "Martes",   LocalTime.of(14, 45), LocalTime.of(15, 45));
-        HorarioAtencion horarioAtencion10 = new HorarioAtencion("2765", "Jueves",  LocalTime.of(11, 00), LocalTime.of(12, 00));
-        HorarioAtencion horarioAtencion11 = new HorarioAtencion("2766", "Jueves",  LocalTime.of(12, 00), LocalTime.of(13, 00));
-        HorarioAtencion horarioAtencion12 = new HorarioAtencion("2767", "Jueves",  LocalTime.of(13, 00), LocalTime.of(14, 00));
-        HorarioAtencion horarioAtencion13 = new HorarioAtencion("2768", "Sábado",  LocalTime.of(9, 00),  LocalTime.of(10, 00));
-        HorarioAtencion horarioAtencion14 = new HorarioAtencion("2769", "Sábado",  LocalTime.of(10, 00), LocalTime.of(11, 00));
-        HorarioAtencion horarioAtencion15 = new HorarioAtencion("2770", "Sábado",  LocalTime.of(11, 00), LocalTime.of(12, 00));
-
-
+        HorarioAtencion horarioAtencion7 = new HorarioAtencion("2762", "Martes", LocalTime.of(12, 45), LocalTime.of(13, 45));
+        HorarioAtencion horarioAtencion8 = new HorarioAtencion("2763", "Martes", LocalTime.of(13, 45), LocalTime.of(14, 45));
+        HorarioAtencion horarioAtencion9 = new HorarioAtencion("2764", "Martes", LocalTime.of(14, 45), LocalTime.of(15, 45));
+        HorarioAtencion horarioAtencion10 = new HorarioAtencion("2765", "Jueves", LocalTime.of(11, 00), LocalTime.of(12, 00));
+        HorarioAtencion horarioAtencion11 = new HorarioAtencion("2766", "Jueves", LocalTime.of(12, 00), LocalTime.of(13, 00));
+        HorarioAtencion horarioAtencion12 = new HorarioAtencion("2767", "Jueves", LocalTime.of(13, 00), LocalTime.of(14, 00));
+        HorarioAtencion horarioAtencion13 = new HorarioAtencion("2768", "Sábado", LocalTime.of(9, 00), LocalTime.of(10, 00));
+        HorarioAtencion horarioAtencion14 = new HorarioAtencion("2769", "Sábado", LocalTime.of(10, 00), LocalTime.of(11, 00));
+        HorarioAtencion horarioAtencion15 = new HorarioAtencion("2770", "Sábado", LocalTime.of(11, 00), LocalTime.of(12, 00));
 
 
         //Medicamento
@@ -571,25 +620,25 @@ public class App extends Application {
 
         // Historial para paciente 3 relacionado con examen5 y tratamiento5
         HistorialMedico historialMedico5 = new HistorialMedico("25261", LocalDate.of(2025, 5, 10), "El paciente acudió por fiebre y malestar general, se realizó un análisis de orina", "Se encontró infección urinaria, se prescribe antibiótico para tratarla", paciente3, medico3);
-        HistorialMedico historialMedico6 = new HistorialMedico("25262", LocalDate.of(2025, 5, 14), "El paciente acudió por hipertensión, se realizó un ultrasonido", "Se encontró agrandamiento del corazón, se recomienda control regular y dieta baja en sal", paciente3,medico3);
+        HistorialMedico historialMedico6 = new HistorialMedico("25262", LocalDate.of(2025, 5, 14), "El paciente acudió por hipertensión, se realizó un ultrasonido", "Se encontró agrandamiento del corazón, se recomienda control regular y dieta baja en sal", paciente3, medico3);
 
         //Examen
 
-        Examen examen1 = new Examen("2747","Test de sangre", "Se examina hemoglobina",historialMedico1);
-        Examen examen2 = new Examen("2748", "Electrocardiograma", "Se examina la actividad eléctrica del corazón",historialMedico2);
-        Examen examen3 = new Examen("2749", "Radiografía", "Examen de imagen de rayos X para visualizar huesos",historialMedico3);
-        Examen examen4 = new Examen("2750", "Tomografía", "Examen de imágenes de cortes transversales del cuerpo",historialMedico4);
-        Examen examen5 = new Examen("2751", "Análisis de orina", "Examina la composición de la orina",historialMedico5);
-        Examen examen6 = new Examen("2752", "Ultrasonido", "Examina los órganos internos utilizando ondas sonoras",historialMedico6);
+        Examen examen1 = new Examen("2747", "Test de sangre", "Se examina hemoglobina", historialMedico1);
+        Examen examen2 = new Examen("2748", "Electrocardiograma", "Se examina la actividad eléctrica del corazón", historialMedico2);
+        Examen examen3 = new Examen("2749", "Radiografía", "Examen de imagen de rayos X para visualizar huesos", historialMedico3);
+        Examen examen4 = new Examen("2750", "Tomografía", "Examen de imágenes de cortes transversales del cuerpo", historialMedico4);
+        Examen examen5 = new Examen("2751", "Análisis de orina", "Examina la composición de la orina", historialMedico5);
+        Examen examen6 = new Examen("2752", "Ultrasonido", "Examina los órganos internos utilizando ondas sonoras", historialMedico6);
 
         //Tratamiento
 
-        Tratamiento tratamiento1 = new Tratamiento("6934", "Se indica comer carnes para subir la hemoglobina",historialMedico1);
-        Tratamiento tratamiento2 = new Tratamiento("6935", "Se prescribe medicamento para regular la actividad cardíaca",historialMedico2);
-        Tratamiento tratamiento3 = new Tratamiento("6936", "Se recomienda reposo y fisioterapia",historialMedico3);
-        Tratamiento tratamiento4 = new Tratamiento("6937", "Se recomienda cirugía para eliminar el tumor",historialMedico4);
-        Tratamiento tratamiento5 = new Tratamiento("6938", "Se prescribe antibiótico para tratar infección",historialMedico5);
-        Tratamiento tratamiento6 = new Tratamiento("6939", "Se recomienda control regular y dieta baja en sal",historialMedico6);
+        Tratamiento tratamiento1 = new Tratamiento("6934", "Se indica comer carnes para subir la hemoglobina", historialMedico1);
+        Tratamiento tratamiento2 = new Tratamiento("6935", "Se prescribe medicamento para regular la actividad cardíaca", historialMedico2);
+        Tratamiento tratamiento3 = new Tratamiento("6936", "Se recomienda reposo y fisioterapia", historialMedico3);
+        Tratamiento tratamiento4 = new Tratamiento("6937", "Se recomienda cirugía para eliminar el tumor", historialMedico4);
+        Tratamiento tratamiento5 = new Tratamiento("6938", "Se prescribe antibiótico para tratar infección", historialMedico5);
+        Tratamiento tratamiento6 = new Tratamiento("6939", "Se recomienda control regular y dieta baja en sal", historialMedico6);
         //Prescripcion medica
 
         PrescripcionMedica prescripcionMedica1 = new PrescripcionMedica("6345", medicamento1, historialMedico1);
@@ -609,8 +658,8 @@ public class App extends Application {
         Cita cita6 = new Cita("52390", LocalDate.of(2025, 5, 14), LocalTime.of(8, 30), LocalTime.of(9, 15), true, consultorioMedico2, paciente3, medico2);
 
         // Notificacion
-        Notificacion notificacion1 = new Notificacion("52586", LocalTime.of(8, 45),"Recuerde llegar 10 minutos antes.", true, paciente1);
-        Notificacion notificacion2 = new Notificacion("52586", LocalTime.of(9, 35 ),"Recordatorio cita", true, medico1);
+        Notificacion notificacion1 = new Notificacion("52586", LocalTime.of(8, 45), "Recuerde llegar 10 minutos antes.", true, paciente1);
+        Notificacion notificacion2 = new Notificacion("52586", LocalTime.of(9, 35), "Recordatorio cita", true, medico1);
 
         Notificacion notificacion3 = new Notificacion("52587", LocalTime.of(10, 0), "Confirme su asistencia a la cita.", true, paciente1);
         Notificacion notificacion4 = new Notificacion("52588", LocalTime.of(10, 30), "Cita próxima en 30 minutos.", true, medico3);
@@ -763,7 +812,7 @@ public class App extends Application {
             }
         }
         for (Administrador administrador : hospital_main.getListaAdministradores()) {
-            if(administrador.getTheUsuario().getUsuario().equals(usuario) && administrador.getTheUsuario().getContrasena().equals(clave)){
+            if (administrador.getTheUsuario().getUsuario().equals(usuario) && administrador.getTheUsuario().getContrasena().equals(clave)) {
                 return administrador;
             }
         }
@@ -773,28 +822,28 @@ public class App extends Application {
     public LinkedList<HorarioAtencion> getHorarios() {
         LinkedList<HorarioAtencion> listaHorarios = new LinkedList<>();
         for (Medico medico : hospital_main.getListaMedicos()) {
-            for (HorarioAtencion horarioAtencion : medico.getListaHorarioAtenciones()){
-               for (Cita cita: medico.getListaCitas()){
-                   DateTimeFormatter fmtEspanol = DateTimeFormatter.ofPattern("EEEE", new Locale("es", "ES"));
-                   String dia = cita.getDia().format(fmtEspanol);
-                   if ((cita.isEstado()) && !(horarioAtencion.getDia().equalsIgnoreCase(dia) && horarioAtencion.getHoraInicio().equals(cita.getHoraInicio()))){
-                       listaHorarios.add(horarioAtencion);
-                   }
-               }
+            for (HorarioAtencion horarioAtencion : medico.getListaHorarioAtenciones()) {
+                for (Cita cita : medico.getListaCitas()) {
+                    DateTimeFormatter fmtEspanol = DateTimeFormatter.ofPattern("EEEE", new Locale("es", "ES"));
+                    String dia = cita.getDia().format(fmtEspanol);
+                    if ((cita.isEstado()) && !(horarioAtencion.getDia().equalsIgnoreCase(dia) && horarioAtencion.getHoraInicio().equals(cita.getHoraInicio()))) {
+                        listaHorarios.add(horarioAtencion);
+                    }
+                }
             }
         }
 
         return listaHorarios;
     }
 
-    public ConsultorioMedico getConsultorioMedico(LocalDate dia, LocalTime horaInicio){
+    public ConsultorioMedico getConsultorioMedico(LocalDate dia, LocalTime horaInicio) {
         LinkedList<ConsultorioMedico> listaConsultorios = new LinkedList<>(hospital_main.getListaConsultorioMedicos());
         LinkedList<ConsultorioMedico> consultoriosDisponibles = new LinkedList<>();
 
-        for (ConsultorioMedico consultorioMedico: listaConsultorios){
+        for (ConsultorioMedico consultorioMedico : listaConsultorios) {
             boolean consultorioDisponible = true;
-            for (Cita cita: consultorioMedico.getListaCitas()){
-                if (cita.isEstado() && dia.equals(cita.getDia()) && horaInicio.equals(cita.getHoraInicio())){
+            for (Cita cita : consultorioMedico.getListaCitas()) {
+                if (cita.isEstado() && dia.equals(cita.getDia()) && horaInicio.equals(cita.getHoraInicio())) {
                     consultorioDisponible = false;
                     break;
                 }
@@ -814,32 +863,39 @@ public class App extends Application {
 
     }
 
-    public LocalDate getDia(HorarioAtencion horarioAtencion){
+    public LocalDate getDia(HorarioAtencion horarioAtencion) {
         DayOfWeek dia = null;
         switch (horarioAtencion.getDia().toLowerCase()) {
-            case "lunes": dia = DayOfWeek.MONDAY;
-            case "martes": dia = DayOfWeek.TUESDAY;
-            case "miércoles": dia = DayOfWeek.WEDNESDAY;
-            case "jueves": dia = DayOfWeek.THURSDAY;
-            case "viernes": dia = DayOfWeek.FRIDAY;
-            case "sábado":  dia = DayOfWeek.SATURDAY;
-            case "domingo": dia = DayOfWeek.SUNDAY;
+            case "lunes":
+                dia = DayOfWeek.MONDAY;
+            case "martes":
+                dia = DayOfWeek.TUESDAY;
+            case "miércoles":
+                dia = DayOfWeek.WEDNESDAY;
+            case "jueves":
+                dia = DayOfWeek.THURSDAY;
+            case "viernes":
+                dia = DayOfWeek.FRIDAY;
+            case "sábado":
+                dia = DayOfWeek.SATURDAY;
+            case "domingo":
+                dia = DayOfWeek.SUNDAY;
         }
 
         LocalDate dia_elegido;
         Medico medico = horarioAtencion.getTheMedico();
         LocalDate fecha_actual = LocalDate.now();
         Boolean cita_encontrada;
-        while(true){
+        while (true) {
             LocalDate next_day = fecha_actual.with(TemporalAdjusters.nextOrSame(dia));
             cita_encontrada = false;
-            for (Cita cita: medico.getListaCitas()){
-                if (cita.getDia().equals(next_day)){
+            for (Cita cita : medico.getListaCitas()) {
+                if (cita.getDia().equals(next_day)) {
                     cita_encontrada = true;
                     break;
                 }
             }
-            if (!cita_encontrada){
+            if (!cita_encontrada) {
                 dia_elegido = next_day;
                 break;
             }
@@ -848,7 +904,7 @@ public class App extends Application {
         return dia_elegido;
     }
 
-    public boolean verificarID(String id){
+    public boolean verificarID(String id) {
         for (Paciente paciente : hospital_main.getListaPacientes()) {
             if (paciente.getId().equals(id)) {
                 return true;
@@ -861,8 +917,8 @@ public class App extends Application {
         LinkedList<Medicamento> listaMedicamentos = new LinkedList<>();
         for (Medico medico : hospital_main.getListaMedicos()) {
             for (HistorialMedico historialMedico : medico.getListaHistorialMedicos()) {
-                for (PrescripcionMedica prescripcionMedica : historialMedico.getListaPrescripcionMedicas()){
-                    if (!(listaMedicamentos.contains(prescripcionMedica.getTheMedicamentos()))){
+                for (PrescripcionMedica prescripcionMedica : historialMedico.getListaPrescripcionMedicas()) {
+                    if (!(listaMedicamentos.contains(prescripcionMedica.getTheMedicamentos()))) {
                         listaMedicamentos.add(prescripcionMedica.getTheMedicamentos());
                     }
                 }
