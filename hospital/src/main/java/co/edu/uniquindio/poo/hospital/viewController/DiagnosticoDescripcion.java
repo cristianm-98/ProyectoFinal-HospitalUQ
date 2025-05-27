@@ -60,16 +60,17 @@ public class DiagnosticoDescripcion {
 
     @FXML
     void initialize() {
-        assert btnAtras != null : "fx:id=\"btnAtras\" was not injected: check your FXML file 'diagnosticoDescripcion.fxml'.";
-        assert btnGuardar != null : "fx:id=\"btnGuardar\" was not injected: check your FXML file 'diagnosticoDescripcion.fxml'.";
-        assert txtDescripcion != null : "fx:id=\"txtDescripcion\" was not injected: check your FXML file 'diagnosticoDescripcion.fxml'.";
-        assert txtDiagnostico != null : "fx:id=\"txtDiagnostico\" was not injected: check your FXML file 'diagnosticoDescripcion.fxml'.";
-
     }
 
-    public void setApp(App app) {this.app = app;}
-    public void setMedico(Medico medico){this.medico=medico;}
-    public void setPaciente(Paciente paciente){this.paciente=paciente;}
+    public void setApp(App app) {
+        this.app = app;
+    }
+    public void setMedico(Medico medico){
+        this.medico=medico;
+    }
+    public void setPaciente(Paciente paciente){
+        this.paciente=paciente;
+    }
     public void mostrarMensaje(String titulo, String header, String contenido) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);

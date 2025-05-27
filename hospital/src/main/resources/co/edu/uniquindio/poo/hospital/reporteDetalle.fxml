@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="150.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.ReporteDetalleViewController">
+   <children>
+      <Pane prefHeight="202.0" prefWidth="462.0">
+         <children>
+            <ImageView fitHeight="202.0" fitWidth="142.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@Imagen/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="198.0" layoutY="14.0" text="DETALLE REPORTE">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="156.0" layoutY="50.0" prefHeight="15.0" prefWidth="293.0" />
+            <Button fx:id="btnReporteCita" layoutX="179.0" layoutY="88.0" mnemonicParsing="false" onAction="#onReporteCita" text="Reporte Citas">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnReporteMedico" layoutX="292.0" layoutY="88.0" mnemonicParsing="false" onAction="#onReporteMedico" text="Reporte Medicos">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAtras" layoutX="252.0" layoutY="161.0" mnemonicParsing="false" onAction="#onAtras" text="Atras">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Button>
+            <Separator layoutX="148.0" layoutY="138.0" prefHeight="15.0" prefWidth="293.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -69,7 +69,7 @@ public class CancelarCitaViewController {
         Cita citaSeleccionada = tblCitas.getSelectionModel().getSelectedItem();
 
         if (citaSeleccionada != null) {
-            Medico medico = citaSeleccionada.getThemedico();
+            Medico medico = citaSeleccionada.getTheMedico();
             ConsultorioMedico consultorioMedico = citaSeleccionada.getTheConsultorioMedico();
             citasObservableList.remove(citaSeleccionada);
             paciente.eliminarCita(citaSeleccionada);
@@ -87,15 +87,6 @@ public class CancelarCitaViewController {
 
     @FXML
     void initialize() {
-        assert btnAtras != null : "fx:id=\"btnAtras\" was not injected: check your FXML file 'crudCancelarCita.fxml'.";
-        assert btnCancelarCita != null : "fx:id=\"btnCancelarCita\" was not injected: check your FXML file 'crudCancelarCita.fxml'.";
-        assert btnLimpiar != null : "fx:id=\"btnLimpiar\" was not injected: check your FXML file 'crudCancelarCita.fxml'.";
-        assert columDia != null : "fx:id=\"columDia\" was not injected: check your FXML file 'crudCancelarCita.fxml'.";
-        assert columEstado != null : "fx:id=\"columEstado\" was not injected: check your FXML file 'crudCancelarCita.fxml'.";
-        assert columHoraFinal != null : "fx:id=\"columHoraFinal\" was not injected: check your FXML file 'crudCancelarCita.fxml'.";
-        assert columHoraInicio != null : "fx:id=\"columHoraInicio\" was not injected: check your FXML file 'crudCancelarCita.fxml'.";
-        assert columId != null : "fx:id=\"columId\" was not injected: check your FXML file 'crudCancelarCita.fxml'.";
-        assert tblCitas != null : "fx:id=\"tblCitas\" was not injected: check your FXML file 'crudCancelarCita.fxml'.";
         tblCitas.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 

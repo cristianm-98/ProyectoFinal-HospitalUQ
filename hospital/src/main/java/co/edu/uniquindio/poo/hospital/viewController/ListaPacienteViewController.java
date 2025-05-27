@@ -53,12 +53,6 @@ public class ListaPacienteViewController {
 
     @FXML
     void initialize() {
-        assert btnAtras != null : "fx:id=\"btnAtras\" was not injected: check your FXML file 'listaPaciente.fxml'.";
-        assert btnSeleccionarPacient != null : "fx:id=\"btnSeleccionarPacient\" was not injected: check your FXML file 'listaPaciente.fxml'.";
-        assert columIdentificacion != null : "fx:id=\"columIdentificacion\" was not injected: check your FXML file 'listaPaciente.fxml'.";
-        assert columNombre != null : "fx:id=\"columNombre\" was not injected: check your FXML file 'listaPaciente.fxml'.";
-        assert tblPaciente != null : "fx:id=\"tblPaciente\" was not injected: check your FXML file 'listaPaciente.fxml'.";
-
     }
 
     public void setApp(App app) {this.app = app;}

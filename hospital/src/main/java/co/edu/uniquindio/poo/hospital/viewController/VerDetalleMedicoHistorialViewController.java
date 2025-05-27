@@ -85,17 +85,6 @@ public class VerDetalleMedicoHistorialViewController {
 
     @FXML
     void initialize() {
-        assert btnDetalleExamen != null : "fx:id=\"btnDetalleExamen\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnDetallePrescripcion != null : "fx:id=\"btnDetallePrescripcion\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnDetalleTratamiento != null : "fx:id=\"btnDetalleTratamiento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert btnVolver != null : "fx:id=\"btnVolver\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert columDescripTratamiento != null : "fx:id=\"columDescripTratamiento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert columDescripcion != null : "fx:id=\"columDescripcion\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert columMedicamento != null : "fx:id=\"columMedicamento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert columNombExamen != null : "fx:id=\"columNombExamen\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert tblExamen != null : "fx:id=\"tblExamen\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert tblMedicamento != null : "fx:id=\"tblMedicamento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
-        assert tblTratamiento != null : "fx:id=\"tblTratamiento\" was not injected: check your FXML file 'verDetalleMedicoHistorial.fxml'.";
 
     }
 

@@ -85,22 +85,6 @@ public class DetalleHistorialViewController {
 
     @FXML
     void initialize() {
-        assert btnCerrar != null : "fx:id=\"btnCerrar\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert columDescripcionExamen != null : "fx:id=\"columDescripcionExamen\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert columDescripcionTratamiento != null : "fx:id=\"columDescripcionTratamiento\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert columIdExamen != null : "fx:id=\"columIdExamen\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert columIdPrescripcion != null : "fx:id=\"columIdPrescripcion\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert columIdTratamiento != null : "fx:id=\"columIdTratamiento\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert columMedicamentos != null : "fx:id=\"columMedicamentos\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert columNombreExamen != null : "fx:id=\"columNombreExamen\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert lbDiagnostico != null : "fx:id=\"lbDiagnostico\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert lbFechaHistorial != null : "fx:id=\"lbFechaHistorial\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert lbIdHistorial != null : "fx:id=\"lbIdHistorial\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert tbExamenes != null : "fx:id=\"tbExamenes\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert tbPrescripcionMedicas != null : "fx:id=\"tbPrescripcionMedicas\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert tbTratamientos != null : "fx:id=\"tbTratamientos\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-        assert txtDescripcion != null : "fx:id=\"txtDescripcion\" was not injected: check your FXML file 'detalleHistorial.fxml'.";
-
     }
 
     public void setApp(App app) {this.app = app;}

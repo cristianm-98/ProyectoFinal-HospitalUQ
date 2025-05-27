@@ -123,19 +123,6 @@ public class MedicoHistoialViewController {
 
     @FXML
     void initialize() {
-        assert btnActualizarHistorial != null : "fx:id=\"btnActualizarHistorial\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert btnAgregarHistorial != null : "fx:id=\"btnAgregarHistorial\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert btnAtras != null : "fx:id=\"btnAtras\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert btnEliminarHistorial != null : "fx:id=\"btnEliminarHistorial\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert btnVerDetalle != null : "fx:id=\"btnVerDetalle\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert columDescripcion != null : "fx:id=\"columDescripcion\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert columDiagnostico != null : "fx:id=\"columDiagnostico\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert columNombPaciente != null : "fx:id=\"columNombPaciente\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert lblFecha != null : "fx:id=\"lblFecha\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert tblHistorialMedico != null : "fx:id=\"tblHistorialMedico\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert txtDescripMedica != null : "fx:id=\"txtDescripMedica\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert txtDiagMedico != null : "fx:id=\"txtDiagMedico\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
-        assert lblPaciente != null : "fx:id=\"lblPaciente\" was not injected: check your FXML file 'crudMedicoHistorial.fxml'.";
         columDescripcion.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getDescripcion()));
         columDiagnostico.setCellValueFactory((cell -> new SimpleStringProperty(cell.getValue().getDiagnostico())));
         columNombPaciente.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getThePaciente().getNombre()));

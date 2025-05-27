@@ -2,6 +2,8 @@ package co.edu.uniquindio.poo.hospital.model;
 
 import co.edu.uniquindio.poo.hospital.App;
 
+import javax.swing.text.html.HTMLDocument;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Hospital {
@@ -87,7 +89,6 @@ public class Hospital {
 
     /// Paciente CRUD
 
-
     public boolean agregarPaciente(Paciente paciente) {
         this.listaPacientes.add(paciente);
         return true;
@@ -104,7 +105,6 @@ public class Hospital {
         return false;
     }
 
-
     public boolean modificarPaciente(Paciente paciente) {
         String id = paciente.getId();
         for (Paciente paciente_local : this.listaPacientes) {
@@ -117,7 +117,6 @@ public class Hospital {
         return false;
     }
 
-
     public Paciente consultarPaciente(String id) {
         for (Paciente paciente_local : this.listaPacientes) {
             if (paciente_local.getId().equals(id)) {
@@ -128,7 +127,6 @@ public class Hospital {
     }
 
     /// Medico CRUD
-
 
     public boolean agregarMedico(Medico medico) {
         this.listaMedicos.add(medico);
@@ -146,7 +144,6 @@ public class Hospital {
         return false;
     }
 
-
     public boolean modificarMedico(Medico medico) {
         String id = medico.getId();
         for (Medico medico_local : this.listaMedicos) {
@@ -158,7 +155,6 @@ public class Hospital {
         }
         return false;
     }
-
 
     public Medico consultarMedico(String id) {
         for (Medico medico_local : this.listaMedicos) {
@@ -188,7 +184,6 @@ public class Hospital {
         return false;
     }
 
-
     public boolean modificarAdministrador(Administrador administrador) {
         String id = administrador.getId();
         for (Administrador administrador_local : this.listaAdministradores) {
@@ -200,7 +195,6 @@ public class Hospital {
         }
         return false;
     }
-
 
     public Administrador consultarAdministrador(String id) {
         for (Administrador administrador_local : this.listaAdministradores) {
@@ -229,7 +223,6 @@ public class Hospital {
         return false;
     }
 
-
     public boolean modificarConsultorio(ConsultorioMedico consultorioMedico) {
         String id = consultorioMedico.getId();
         for (ConsultorioMedico consultorio_local : this.listaConsultorioMedicos) {
@@ -242,7 +235,6 @@ public class Hospital {
         return false;
     }
 
-
     public ConsultorioMedico consultarConsultorio(String id) {
         for (ConsultorioMedico consultorio_local : this.listaConsultorioMedicos) {
             if (consultorio_local.getId().equals(id)) {
@@ -250,5 +242,18 @@ public class Hospital {
             }
         }
         return null;
+    }
+
+    //Metodo para obtener todas las citas
+    public LinkedList<Cita> obtenerTodasLasCitas() {
+        LinkedList<Cita> totasLasCitas = new LinkedList<>();
+        for (ConsultorioMedico consultorioMedico : listaConsultorioMedicos) {
+            Iterator<Cita> iterator = consultorioMedico.getListaCitas().iterator();
+            while (iterator.hasNext()) {
+                Cita cita = iterator.next();
+                totasLasCitas.add(cita);
+            }
+        }
+        return totasLasCitas;
     }
 }

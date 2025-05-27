@@ -88,14 +88,6 @@ public class SolicitarCitaViewController {
 
     @FXML
     void initialize() {
-        assert btnAtras != null : "fx:id=\"btnAtras\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert btnSolicitarCita != null : "fx:id=\"btnSolicitarCita\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert columDia != null : "fx:id=\"columDia\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert columEspecialidad != null : "fx:id=\"columEspecialidad\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert columHoraFinal != null : "fx:id=\"columHoraFinal\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert columHoraInicio != null : "fx:id=\"columHoraInicio\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert columNombreMedico != null : "fx:id=\"columNombreMedico\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
-        assert tblCita != null : "fx:id=\"tblCita\" was not injected: check your FXML file 'crudSolicitarCita.fxml'.";
         columDia.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getDia()));
         columEspecialidad.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getTheMedico().getEspecialidad().toString()));
         columHoraInicio.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getHoraInicio()));

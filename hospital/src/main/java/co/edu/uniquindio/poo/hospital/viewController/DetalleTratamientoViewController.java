@@ -107,13 +107,6 @@ public class DetalleTratamientoViewController {
 
     @FXML
     void initialize() {
-        assert btnActualizarTratamiento != null : "fx:id=\"btnActualizarTratamiento\" was not injected: check your FXML file 'verDetalleTratamiento.fxml'.";
-        assert btnAgregarTratamiento != null : "fx:id=\"btnAgregarTratamiento\" was not injected: check your FXML file 'verDetalleTratamiento.fxml'.";
-        assert btnAtras != null : "fx:id=\"btnAtras\" was not injected: check your FXML file 'verDetalleTratamiento.fxml'.";
-        assert btnEliminarTrtamiento != null : "fx:id=\"btnEliminarTrtamiento\" was not injected: check your FXML file 'verDetalleTratamiento.fxml'.";
-        assert columDescripcionTratam != null : "fx:id=\"columDescripcionTratam\" was not injected: check your FXML file 'verDetalleTratamiento.fxml'.";
-        assert tblDescripcion != null : "fx:id=\"tblDescripcion\" was not injected: check your FXML file 'verDetalleTratamiento.fxml'.";
-        assert txtDescripcionTratamiento != null : "fx:id=\"txtDescripcionTratamiento\" was not injected: check your FXML file 'verDetalleTratamiento.fxml'.";
         tblDescripcion.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 txtDescripcionTratamiento.setText(newSelection.getDescripcion());

@@ -122,17 +122,6 @@ public class HorarioMedicoViewController {
 
     @FXML
     void initialize() {
-        assert btlHorarioM != null : "fx:id=\"btlHorarioM\" was not injected: check your FXML file 'horarioMedico.fxml'.";
-        assert btnActualizarHorarioM != null : "fx:id=\"btnActualizarHorarioM\" was not injected: check your FXML file 'horarioMedico.fxml'.";
-        assert btnAgregarHorarioM != null : "fx:id=\"btnAgregarHorarioM\" was not injected: check your FXML file 'horarioMedico.fxml'.";
-        assert btnAtras != null : "fx:id=\"btnAtras\" was not injected: check your FXML file 'horarioMedico.fxml'.";
-        assert btnEliminarHorarioM != null : "fx:id=\"btnEliminarHorarioM\" was not injected: check your FXML file 'horarioMedico.fxml'.";
-        assert columAtencion != null : "fx:id=\"columAtencion\" was not injected: check your FXML file 'horarioMedico.fxml'.";
-        assert columHorarioFinal != null : "fx:id=\"columHorarioFinal\" was not injected: check your FXML file 'horarioMedico.fxml'.";
-        assert columHorarioInicio != null : "fx:id=\"columHorarioInicio\" was not injected: check your FXML file 'horarioMedico.fxml'.";
-        assert combDiaAtencion != null : "fx:id=\"combDiaAtencion\" was not injected: check your FXML file 'horarioMedico.fxml'.";
-        assert lbHoraFinal != null : "fx:id=\"combHoraFinal\" was not injected: check your FXML file 'horarioMedico.fxml'.";
-        assert combHoraInicio != null : "fx:id=\"combHoraInicio\" was not injected: check your FXML file 'horarioMedico.fxml'.";
         lbHoraFinal.setText("N/A");
 
         combDiaAtencion.setItems(FXCollections.observableArrayList(

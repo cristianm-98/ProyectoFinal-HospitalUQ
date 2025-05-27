@@ -10,11 +10,11 @@ public class Cita {
     private LocalTime horaFinal;
     private ConsultorioMedico theConsultorioMedico;
     private Paciente thepaciente;
-    private Medico themedico;
+    private Medico theMedico;
     private boolean estado;
 
 
-    public Cita(String id, LocalDate dia, LocalTime horaInicio, LocalTime horaFinal, boolean estado, ConsultorioMedico theConsultorioMedico, Paciente thepaciente, Medico themedico){
+    public Cita(String id, LocalDate dia, LocalTime horaInicio, LocalTime horaFinal, boolean estado, ConsultorioMedico theConsultorioMedico, Paciente thepaciente, Medico theMedico){
         this.id=id;
         this.dia=dia;
         this.horaInicio=horaInicio;
@@ -22,7 +22,7 @@ public class Cita {
         this.estado=estado;
         this.theConsultorioMedico=theConsultorioMedico;
         this.thepaciente=thepaciente;
-        this.themedico=themedico;
+        this.theMedico=theMedico;
     }
 
     public Cita(String id, String dia) {
@@ -68,13 +68,26 @@ public class Cita {
         this.estado = estado;
     }
 
-    public ConsultorioMedico getTheConsultorioMedico() { return theConsultorioMedico; }
-    public void setTheConsultorioMedico(ConsultorioMedico theConsultorioMedico) { this.theConsultorioMedico = theConsultorioMedico; }
+    public ConsultorioMedico getTheConsultorioMedico() {
+        return theConsultorioMedico;
+    }
+    public void setTheConsultorioMedico(ConsultorioMedico theConsultorioMedico) {
+        this.theConsultorioMedico = theConsultorioMedico;
+    }
 
-    public Paciente getThepaciente() { return thepaciente; }
-    public void setThepaciente(Paciente thepaciente) { this.thepaciente = thepaciente; }
+    public Paciente getThepaciente() {
+        return thepaciente;
+    }
 
-    public Medico getThemedico() { return themedico; }
-    public void setThemedico(Medico themedico) { this.themedico = themedico; }
+    public void setThepaciente(Paciente thepaciente) {
+        this.thepaciente = thepaciente;
+    }
 
+    public Medico getTheMedico() {
+        return theMedico;
+    }
+
+    public void setTheMedico(Medico theMedico) {
+        this.theMedico = theMedico;
+    }
 }

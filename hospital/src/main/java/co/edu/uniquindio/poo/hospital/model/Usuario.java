@@ -13,7 +13,7 @@ public class Usuario {
         this.tipoUsuario = tipoUsuario;
     }
 
-    public Usuario(String usuario, String contraseña, String thePersona) {
+    public Usuario(String usuario, String contrasena, String thePersona) {
     }
 
     public String getUsuario() {
@@ -21,6 +21,7 @@ public class Usuario {
     }
 
     public void setUsuario(String usuario) {
+
         this.usuario = usuario;
     }
 
@@ -28,7 +29,7 @@ public class Usuario {
         return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
+    public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 

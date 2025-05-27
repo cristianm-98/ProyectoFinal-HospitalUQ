@@ -66,14 +66,6 @@ public class HistorialMedicoViewController {
 
     @FXML
     void initialize() {
-        assert btnAtras != null : "fx:id=\"btnAtras\" was not injected: check your FXML file 'crudHistorialMedico.fxml'.";
-        assert btnVerDetalle != null : "fx:id=\"btnVerDetalle\" was not injected: check your FXML file 'crudHistorialMedico.fxml'.";
-        assert columDescripcion != null : "fx:id=\"columDescripcion\" was not injected: check your FXML file 'crudHistorialMedico.fxml'.";
-        assert columDiagnostico != null : "fx:id=\"columDiagnostico\" was not injected: check your FXML file 'crudHistorialMedico.fxml'.";
-        assert columFecha != null : "fx:id=\"columFecha\" was not injected: check your FXML file 'crudHistorialMedico.fxml'.";
-        assert columId != null : "fx:id=\"columId\" was not injected: check your FXML file 'crudHistorialMedico.fxml'.";
-        assert tbHistoriales != null : "fx:id=\"tbHistoriales\" was not injected: check your FXML file 'crudHistorialMedico.fxml'.";
-
     }
 
     public void setApp(App app) {this.app = app;}

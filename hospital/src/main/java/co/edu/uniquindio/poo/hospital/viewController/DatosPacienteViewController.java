@@ -2,13 +2,8 @@ package co.edu.uniquindio.poo.hospital.viewController;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.UUID;
-
 import co.edu.uniquindio.poo.hospital.App;
-import co.edu.uniquindio.poo.hospital.model.Administrador;
-import co.edu.uniquindio.poo.hospital.model.Especialidad;
-import co.edu.uniquindio.poo.hospital.model.Medico;
-import co.edu.uniquindio.poo.hospital.model.Paciente;
+import co.edu.uniquindio.poo.hospital.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,13 +15,10 @@ public class DatosPacienteViewController {
 
     private App app;
     private Administrador administrador;
+    private Hospital hospital;
 
-    private ObservableList<Paciente> listaPacientes = FXCollections.observableArrayList();
-    public void setListaPacientes(ObservableList<Paciente> lista) {
-        this.listaPacientes = lista;
-        tblPaciente.setItems(listaPacientes);
+    private ObservableList<Paciente> listaPacientes;
 
-    }
     @FXML
     private ResourceBundle resources;
 
@@ -52,7 +44,7 @@ public class DatosPacienteViewController {
     private TableColumn<Paciente, String> colDireccion;
 
     @FXML
-    private TableColumn<Paciente,Integer> colEdad;
+    private TableColumn<Paciente, Integer> colEdad;
 
     @FXML
     private TableColumn<Paciente, String> colIdentificacion;
@@ -91,18 +83,18 @@ public class DatosPacienteViewController {
     void onActPaciente(ActionEvent event) {
         Paciente pacienteSeleccionado = tblPaciente.getSelectionModel().getSelectedItem();
 
-        if (txtIdPaciente.getText().isEmpty()||
-                txtNombPaciente.getText().isEmpty()||
-                txtEdadPaciente.getText().isEmpty()||
-                txtTelPaciente.getText().isEmpty()||
-                txtDirPaciente.getText().isEmpty()||
+        if (txtIdPaciente.getText().isEmpty() ||
+                txtNombPaciente.getText().isEmpty() ||
+                txtEdadPaciente.getText().isEmpty() ||
+                txtTelPaciente.getText().isEmpty() ||
+                txtDirPaciente.getText().isEmpty() ||
                 txtSangrePaciente.getText().isEmpty()) {
             mostrarAlerta("Por favor complete los datos completos y seleccione una especialidad");
             return;
         }
 
         try {
-            String id= txtIdPaciente.getText();
+            String id = txtIdPaciente.getText();
             String nombre = txtNombPaciente.getText();
             int edad = Integer.parseInt(txtEdadPaciente.getText().trim());
             String telefono = txtTelPaciente.getText();
@@ -110,7 +102,7 @@ public class DatosPacienteViewController {
             String tipoSangre = txtSangrePaciente.getText();
 
             if (pacienteSeleccionado == null) {
-                Paciente newPaciente=new Paciente(id,nombre,edad,telefono,direccion,null,tipoSangre);
+                Paciente newPaciente = new Paciente(id, nombre, edad, telefono, direccion, null, tipoSangre);
                 listaPacientes.add(newPaciente);
             } else {
                 pacienteSeleccionado.setId(id);
@@ -131,32 +123,33 @@ public class DatosPacienteViewController {
     void onAgregPaciente(ActionEvent event) {
         try {
             if (txtIdPaciente.getText().isBlank() ||
-                    txtNombPaciente.getText().isBlank()||
-                    txtEdadPaciente.getText().isBlank()||
-                    txtTelPaciente.getText().isBlank()||
-                    txtDirPaciente.getText().isBlank()||
-                    txtSangrePaciente.getText().isBlank()){
+                    txtNombPaciente.getText().isBlank() ||
+                    txtEdadPaciente.getText().isBlank() ||
+                    txtTelPaciente.getText().isBlank() ||
+                    txtDirPaciente.getText().isBlank() ||
+                    txtSangrePaciente.getText().isBlank()) {
                 mostrarAlerta("Por favor complete los datos completos y seleccione una especialidad");
                 return;
             }
 
-            String id=txtIdPaciente.getText();
+            String id = txtIdPaciente.getText();
             String nombre = txtNombPaciente.getText();
             int edad = Integer.parseInt(txtEdadPaciente.getText());
             String telefono = txtTelPaciente.getText();
             String direccion = txtDirPaciente.getText();
-            String tipoSangre=txtSangrePaciente.getText();
+            String tipoSangre = txtSangrePaciente.getText();
 
 
-            Paciente newPaciente=new Paciente(id,nombre,edad,telefono,direccion,null,tipoSangre);
+            Paciente newPaciente = new Paciente(id, nombre, edad, telefono, direccion, null, tipoSangre);
             listaPacientes.add(newPaciente);
             tblPaciente.refresh();
             limpiarCampo();
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             mostrarAlerta("Edad deber ser numeros enteros");
         }
 
     }
+
     private void mostrarAlerta(String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.ERROR);
         alerta.setTitle("Error");
@@ -175,6 +168,7 @@ public class DatosPacienteViewController {
     void onElimPaciente(ActionEvent event) {
         Paciente pacienteSeleccionado = tblPaciente.getSelectionModel().getSelectedItem();
         if (pacienteSeleccionado != null) {
+            hospital.getListaPacientes().remove(pacienteSeleccionado);
             listaPacientes.remove(pacienteSeleccionado);
             limpiarCampo();
         } else {
@@ -190,9 +184,6 @@ public class DatosPacienteViewController {
 
     @FXML
     void initialize() {
-        tblPaciente.setItems(listaPacientes);
-        tblPaciente.refresh();
-
         colIdentificacion.setCellValueFactory(new PropertyValueFactory<>("id"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colEdad.setCellValueFactory(new PropertyValueFactory<>("edad"));
@@ -203,6 +194,7 @@ public class DatosPacienteViewController {
         tblPaciente.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> mostrarPacienteSeleccionado(newValue)
         );
+        tblPaciente.refresh();
     }
 
     private void mostrarPacienteSeleccionado(Paciente paciente) {
@@ -229,11 +221,16 @@ public class DatosPacienteViewController {
     }
 
     public void setApp(App app) {
-        this.app=app;
+        this.app = app;
     }
 
     public void initAdministrador(Administrador administrador) {
-        this.administrador=administrador;
+        this.administrador = administrador;
     }
-
+    //Metodo para que cargue la inforamcion a la tableView
+    public void initPaciente(Hospital hospital) {
+        this.hospital=hospital;
+        listaPacientes = FXCollections.observableArrayList(hospital.getListaPacientes());
+        tblPaciente.setItems(listaPacientes);
+    }
 }

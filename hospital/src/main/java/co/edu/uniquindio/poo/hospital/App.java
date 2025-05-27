@@ -20,22 +20,9 @@ import java.util.Locale;
 import java.util.Random;
 
 import co.edu.uniquindio.poo.hospital.model.*;
-
 public class App extends Application {
 
     private Stage loginStage;
-
-    //Creacion de la lista para las tableView
-    private ObservableList<Medico>listaMedicos= FXCollections.observableArrayList();
-    private ObservableList<Paciente>listaPacientes=FXCollections.observableArrayList();
-
-    public ObservableList<Medico> getListaMedicos() {
-        return listaMedicos;
-    }
-    public ObservableList<Paciente>getListaPaciente(){
-        return listaPacientes;
-    }
-
     public static Hospital hospital_main = new Hospital("810000913", "Hospital UQ");
 
     @Override
@@ -373,6 +360,24 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+    public void abrirVistaGestionPaciente(Administrador administrador) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudFormularioPaciente.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            DatosPacienteViewController datosPacienteViewController = loader.getController();
+            datosPacienteViewController.setApp(this);
+            datosPacienteViewController.initAdministrador(administrador);
+            datosPacienteViewController.initPaciente(hospital_main);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+
+        }
+    }
     public void abrirVistaGestionMedico(Administrador administrador) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -380,8 +385,8 @@ public class App extends Application {
             AnchorPane rootLayout = (AnchorPane) loader.load();
             DatosMedicosViewController datosMedicosViewController = loader.getController();
             datosMedicosViewController.initAdministrador(administrador);
+            datosMedicosViewController.initMedico(hospital_main);
             datosMedicosViewController.setApp(this);
-            datosMedicosViewController.setListaMedicos(listaMedicos);
             Scene scene = new Scene(rootLayout);
             loginStage.setScene(scene);
             loginStage.show();
@@ -391,15 +396,14 @@ public class App extends Application {
 
         }
     }
-    public void abrirVistaGestionPaciente(Administrador administrador) {
+    public void abrirVistaDetalleReporte(Administrador administrador) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("crudFormularioPaciente.fxml"));
+            loader.setLocation(App.class.getResource("reporteDetalle.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-            DatosPacienteViewController datosPacienteViewController = loader.getController();
-            datosPacienteViewController.initAdministrador(administrador);
-            datosPacienteViewController.setApp(this);
-            datosPacienteViewController.setListaPacientes(listaPacientes);
+            ReporteDetalleViewController reporteDetalleViewController = loader.getController();
+            reporteDetalleViewController.initAdministrador(administrador);
+            reporteDetalleViewController.setApp(this);
             Scene scene = new Scene(rootLayout);
             loginStage.setScene(scene);
             loginStage.show();
@@ -409,38 +413,49 @@ public class App extends Application {
 
         }
     }
+    public void abrirReporteCita(Administrador administrador) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("reporteCita.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            ReporteCitaViewController reporteCitaViewController = loader.getController();
+            reporteCitaViewController.initAdministrador(administrador);
+            reporteCitaViewController.initCita(hospital_main);
+            reporteCitaViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
 
+        }
+    }
+    public void abrirReporteMedico(Administrador administrador) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("reporteMedico.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            ReporteMedicoViewController reporteMedicoViewController = loader.getController();
+            reporteMedicoViewController.initAdministrador(administrador);
+            reporteMedicoViewController.initReporteMedico(hospital_main);
+            reporteMedicoViewController.setApp(this);
+            Scene scene = new Scene(rootLayout);
+            loginStage.setScene(scene);
+            loginStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
 
-
-
+        }
+    }
 
 
     public static void app(String[] args) {
         launch();
     }
-
-
-
     //servicios
     public void inicializarData(){
-
-       /* Paciente paciente = new Paciente("24714234","Adriana Gomez",54,"606874102","Manzana 80",null,"A+");
-        Usuario usuarioPaciente = new Usuario("agomez", "1234", paciente, TipoUsuario.PACIENTE);
-        paciente.setTheUsuario(usuarioPaciente);
-        hospital.getListaPacientes().add(paciente);
-
-
-        Medico medico = new Medico("1054874201","Mateo Hernandez",30,"3145784101","Manzana 80",null,"1054874201",25,Especialidad.MEDICINA_GENERAL);
-        Usuario usuarioMedico = new Usuario("mhernandez","1234",medico,TipoUsuario.MEDICO);
-        medico.setTheUsuario(usuarioMedico);
-        hospital.getListaMedicos().add(medico);
-
-        Administrador administrador =new Administrador("100258138","Anderson Raba",35,"3125871145","Calle 35 N 11N-24",null,"Jefe Sistemas","Citas");
-        Usuario usuarioAdmin=new Usuario("araba","2530",administrador,TipoUsuario.ADMINISTRADOR);
-        administrador.setTheUsuario(usuarioAdmin);
-        hospital.getListaAdministradores().add(administrador);
-
-        */
 
         //Hospital
         hospital_main=new Hospital("8100","Hospital UQ");

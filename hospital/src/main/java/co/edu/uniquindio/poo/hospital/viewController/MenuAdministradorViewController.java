@@ -62,6 +62,7 @@ public class MenuAdministradorViewController {
 
     @FXML
     void onReporte(ActionEvent event) {
+        app.abrirVistaDetalleReporte(this.administrador);
 
     }
     @FXML

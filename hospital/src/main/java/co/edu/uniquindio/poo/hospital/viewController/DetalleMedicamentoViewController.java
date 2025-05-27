@@ -67,11 +67,6 @@ public class DetalleMedicamentoViewController {
 
     @FXML
     void initialize() {
-        assert btnAgregarMedicamento != null : "fx:id=\"btnAgregarMedicamento\" was not injected: check your FXML file 'verDetalleMedicamento.fxml'.";
-        assert btnAtras != null : "fx:id=\"btnAtras\" was not injected: check your FXML file 'verDetalleMedicamento.fxml'.";
-        assert columDescripcionMedic != null : "fx:id=\"columDescripcionMedic\" was not injected: check your FXML file 'verDetalleMedicamento.fxml'.";
-        assert columNombreMedic != null : "fx:id=\"columNombreMedic\" was not injected: check your FXML file 'verDetalleMedicamento.fxml'.";
-        assert tblMedicamento != null : "fx:id=\"tblMedicamento\" was not injected: check your FXML file 'verDetalleMedicamento.fxml'.";
 
     }
 
