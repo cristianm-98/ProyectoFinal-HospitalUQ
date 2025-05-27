@@ -48,7 +48,7 @@
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="btnCerrar" layoutX="202.0" layoutY="213.0" mnemonicParsing="false" onAction="#onCerrar" text="Cerrar">
+            <Button fx:id="btnAtras" layoutX="202.0" layoutY="213.0" mnemonicParsing="false" onAction="#onAtras" text="Cerrar">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>

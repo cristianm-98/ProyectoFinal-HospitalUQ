@@ -253,7 +253,7 @@ public class DatosMedicosViewController {
 
     @FXML
     void onRestaurar(ActionEvent event) {
-        app.abrirContraseniaRestaurarMedico(this.administrador);
+        app.abrirContraseniaRestaurar(administrador,hospital,"medico");
 
     }
 

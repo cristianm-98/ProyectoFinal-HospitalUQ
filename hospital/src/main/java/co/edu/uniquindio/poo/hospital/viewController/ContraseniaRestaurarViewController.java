@@ -29,7 +29,7 @@ public class ContraseniaRestaurarViewController {
     private URL location;
 
     @FXML
-    private Button btnCerrar;
+    private Button btnAtras;
 
     @FXML
     private Button btnBuscar;
@@ -83,6 +83,7 @@ public class ContraseniaRestaurarViewController {
         txtContraseniaNueva.setDisable(false);
         btnRestaurar.setDisable(false);
     }
+
     private void mostrarAlerta(String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Exito");
@@ -107,41 +108,43 @@ public class ContraseniaRestaurarViewController {
         txtContraseniaNueva.setDisable(true);
         btnRestaurar.setDisable(true);
     }
+
     @FXML
-    void onCerrar(ActionEvent event) {
-        if (app != null && administrador!=null) {
-            if("paciente".equalsIgnoreCase(vistaAnterior)){
+    void onAtras(ActionEvent event) {
+        ((Stage) btnAtras.getScene().getWindow()).close();
+
+            if ("paciente".equalsIgnoreCase(vistaAnterior)) {
                 app.abrirVistaGestionPaciente(this.administrador);
+            } else if ("medico".equalsIgnoreCase(vistaAnterior)) {
+                app.abrirVistaGestionMedico(this.administrador);
             }
-        }else if ("medico".equalsIgnoreCase(vistaAnterior)){
-            app.abrirVistaGestionMedico(this.administrador);
+        }
+
+
+        @FXML
+        void initialize () {
+
+        }
+
+        public void initAdministrador (Administrador administrador){
+            this.administrador = administrador;
+
+        }
+        public void initListaMedico (Hospital hospital){
+            this.hospital = hospital;
+            listaMedicos = FXCollections.observableArrayList(hospital.getListaMedicos());
+
+        }
+        public void initListaPaciente (Hospital hospital){
+            this.hospital = hospital;
+            listaPacientes = FXCollections.observableArrayList(hospital.getListaPacientes());
+
+        }
+
+        public void setApp (App app){
+            this.app = app;
+        }
+        public void setVistaAnterior (String vista){
+            this.vistaAnterior = vista;
         }
     }
-
-    @FXML
-    void initialize() {
-
-    }
-
-    public void initAdministrador(Administrador administrador) {
-        this.administrador = administrador;
-
-    }
-    public void initListaMedico(Hospital hospital){
-        this.hospital = hospital;
-        listaMedicos = FXCollections.observableArrayList(hospital.getListaMedicos());
-
-    }
-    public void initListaPaciente(Hospital hospital){
-        this.hospital = hospital;
-        listaPacientes = FXCollections.observableArrayList(hospital.getListaPacientes());
-
-    }
-
-    public void setApp(App app) {
-        this.app=app;
-    }
-    public void setVistaAnterior(String vista){
-        this.vistaAnterior=vista;
-    }
-}

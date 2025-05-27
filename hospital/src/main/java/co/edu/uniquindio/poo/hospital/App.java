@@ -461,45 +461,26 @@ public class App extends Application {
         }
     }
 
-    public void abrirContraseniaRestaurarPaciente(Administrador administrador) {
+    public void abrirContraseniaRestaurar(Administrador administrador,Hospital hospital_main, String vistaAnterior) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("contraseniaRestaurarPaciente.fxml"));
+            loader.setLocation(App.class.getResource("contraseniaRestaurar.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
             ContraseniaRestaurarViewController contraseniaRestaurarViewController = loader.getController();
             contraseniaRestaurarViewController.initAdministrador(administrador);
             contraseniaRestaurarViewController.initListaPaciente(hospital_main);
             contraseniaRestaurarViewController.initListaMedico(hospital_main);
-            contraseniaRestaurarViewController.setVistaAnterior("paciente");
+            contraseniaRestaurarViewController.setVistaAnterior(vistaAnterior);
             contraseniaRestaurarViewController.setApp(this);
             Scene scene = new Scene(rootLayout);
             loginStage.setScene(scene);
             loginStage.show();
+
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
-
-    public void abrirContraseniaRestaurarMedico(Administrador administrador) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("contraseniaRestaurarMedico.fxml"));
-            AnchorPane rootLayout = (AnchorPane) loader.load();
-            ContraseniaRestaurarViewController contraseniaRestaurarViewController = loader.getController();
-            contraseniaRestaurarViewController.initAdministrador(administrador);
-            contraseniaRestaurarViewController.initListaMedico(hospital_main);
-            contraseniaRestaurarViewController.setVistaAnterior("medico");
-            contraseniaRestaurarViewController.setApp(this);
-            Scene scene = new Scene(rootLayout);
-            loginStage.setScene(scene);
-            loginStage.show();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-
 
     public static void app(String[] args) {
         launch();
